@@ -29,15 +29,22 @@ export function coverageData(d, compiled, findings, detection) {
   const nuances = d.positions.filter((x) => x.position === 'PARTIAL' || x.position === 'DIFFERENT');
   const status = (s) => d.propositions.filter((p) => p.statut === s).length;
   const validated = Object.values(d.validations).filter((v) => v.statut === 'valide').length;
-  return { parties: perParty, themes, communes, nuances, status: { propose: status('propose'), en_attente_source: status('en_attente_source') }, validated, compiled: compiled.propositions.length, findings, detection, M };
+  return { parties: perParty, themes, communes, nuances, status: { propose: status('propose'), en_attente_source: status('en_attente_source') }, validated, compiled: compiled.propositions.length, compiledProps: compiled.propositions, findings, detection, M };
 }
 
 export function coverageMarkdown(d, c, today) {
   const L = [];
-  const reliable = c.compiled > 0 && c.parties.every((p) => p.documentees >= 10);
+  // Fiable seulement si chaque parti du périmètre a assez de positions VALIDÉES (soutien/opposition), sur assez de thèmes, sans alerte bloquante.
+  const MIN_POS = 20, MIN_THEMES = 6;
+  const val = c.parties.map((p) => {
+    const ps = c.compiledProps.filter((x) => ['SUPPORT', 'OPPOSE'].includes(x.positions[d.partis[p.k].cle_app]));
+    return { k: p.k, nom: p.nom, n: ps.length, themes: new Set(ps.map((x) => x.theme)).size };
+  });
+  const bloquants = c.findings.filter((f) => f.gravite === 'bloquant').length;
+  const reliable = val.every((v) => v.n >= MIN_POS && v.themes >= MIN_THEMES) && !bloquants;
   L.push(`# Rapport de couverture des programmes — Bastille`, '', `_Généré le ${today} par \`matching/scripts/build.mjs\`. Ne pas éditer à la main._`, '');
   L.push('## En bref', '');
-  L.push(`- **Matching fiable : ${reliable ? 'oui' : 'non, pas encore'}.** ${c.compiled} proposition(s) neutre(s) validée(s) entre(nt) dans le calcul. ${c.compiled ? '' : 'Tant que rien n\'est validé, le jeu compare les partis mesure par mesure, exactement comme avant la refonte.'}`);
+  L.push(`- **Matching fiable : ${reliable ? 'oui' : 'non, pas encore'}.** ${c.compiled} proposition(s) neutre(s) validée(s) entre(nt) dans le calcul. ${c.compiled ? 'Les autres mesures restent comparées une par une, comme avant la refonte.' : 'Tant que rien n\'est validé, le jeu compare les partis mesure par mesure, exactement comme avant la refonte.'} Seuil retenu : ${MIN_POS} positions validées sur au moins ${MIN_THEMES} thèmes par parti, sans alerte bloquante. Aujourd'hui : ${val.map((v) => `${v.nom} ${v.n} position(s), ${v.themes} thème(s)`).join(' ; ')}${bloquants ? ` ; ${bloquants} alerte(s) bloquante(s)` : ''}.`);
   for (const p of c.parties) L.push(`- **${p.nom}** : ${p.citees} mesures citées mot pour mot${p.annoncees ? ` sur ${p.annoncees.toLocaleString('fr-FR')} annoncées (${pct(p.citees, p.annoncees)})` : ''}, plus ${p.pistes} pistes non citées. Position documentée sur ${p.documentees} des ${d.propositions.length} propositions neutres.`);
   L.push(`- **${c.communes.length} propositions** ont une position documentée pour les deux partis ; **${c.nuances.length} positions** sont nuancées (PARTIAL ou DIFFERENT) et ne rapportent jamais de points par défaut.`);
   L.push(`- Sources officielles **inaccessibles** depuis l'environnement de travail le ${today} : l'extraction n'est pas exhaustive (voir « Sources »).`, '');

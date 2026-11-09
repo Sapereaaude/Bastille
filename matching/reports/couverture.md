@@ -4,7 +4,7 @@ _Généré le 2026-11-09 par `matching/scripts/build.mjs`. Ne pas éditer à la 
 
 ## En bref
 
-- **Matching fiable : oui.** 1 proposition(s) neutre(s) validée(s) entre(nt) dans le calcul. 
+- **Matching fiable : non, pas encore.** 1 proposition(s) neutre(s) validée(s) entre(nt) dans le calcul. Les autres mesures restent comparées une par une, comme avant la refonte. Seuil retenu : 20 positions validées sur au moins 6 thèmes par parti, sans alerte bloquante. Aujourd'hui : La France insoumise 1 position(s), 1 thème(s) ; Les Écologistes 1 position(s), 1 thème(s) ; 1 alerte(s) bloquante(s).
 - **La France insoumise** : 12 mesures citées mot pour mot sur 1 069 annoncées (1,1 %), plus 24 pistes non citées. Position documentée sur 19 des 37 propositions neutres.
 - **Les Écologistes** : 12 mesures citées mot pour mot sur 557 annoncées (2,2 %), plus 24 pistes non citées. Position documentée sur 22 des 37 propositions neutres.
 - **7 propositions** ont une position documentée pour les deux partis ; **2 positions** sont nuancées (PARTIAL ou DIFFERENT) et ne rapportent jamais de points par défaut.
