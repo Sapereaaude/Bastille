@@ -1,10 +1,10 @@
 {
  "resume": {
   "SOURCE_INACCESSIBLE": 4,
-  "NON_VALIDE": 110,
-  "PROP_SANS_SOURCE": 4,
+  "NON_VALIDE": 111,
+  "PROP_SANS_SOURCE": 3,
   "POS_DEDUITE": 2,
-  "COR_AMBIGUE": 8,
+  "COR_AMBIGUE": 9,
   "COR_PISTE": 16,
   "REL_AMBIGUE": 2,
   "FAMILLES_INCOHERENTES": 2,
@@ -82,13 +82,6 @@
    "gravite": "info",
    "cible": "BP-TRA-004",
    "message": "Proposition « Faut-il passer aux 32 heures sans perte de salaire dans les métiers pénibles ou de nuit ? » non validée."
-  },
-  {
-   "code": "PROP_SANS_SOURCE",
-   "titre": "Proposition sans mesure source vérifiée",
-   "gravite": "bloquant",
-   "cible": "BP-ECO-001",
-   "message": "Seulement des pistes non citées (LFI-J01)."
   },
   {
    "code": "NON_VALIDE",
@@ -1022,6 +1015,20 @@
    "message": "ECO-J12 → BP-ENV-004 : texte original manquant, non validable en l'état."
   },
   {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-054",
+   "message": "ECO-0076 → BP-ECO-001 : Un montant cible vaut hausse décidée politiquement seulement s'il dépasse la revalorisation automatique attendue d'ici 2027 : à vérifier."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-054",
+   "message": "ECO-0076 → BP-ECO-001 non validée."
+  },
+  {
    "code": "REL_AMBIGUE",
    "titre": "Objectif commun, modalités différentes : à trancher",
    "gravite": "alerte",
@@ -1054,7 +1061,7 @@
    "titre": "Thème surreprésenté",
    "gravite": "alerte",
    "cible": "eco",
-   "message": "5 propositions sourcées (moyenne 3.3)."
+   "message": "6 propositions sourcées (moyenne 3.4)."
   },
   {
    "code": "TEXTE_EXTRAIT",

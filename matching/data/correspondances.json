@@ -795,6 +795,21 @@
     "par": "Claude",
     "le": "2026-11-09"
    }
+  },
+  {
+   "id": "COR-054",
+   "mesure": "ECO-0076",
+   "proposition": "BP-ECO-001",
+   "type": "partielle",
+   "fragment": "Passer le salaire minimum à 2000€ brut par mois",
+   "ambigu": true,
+   "raison_ambiguite": "Un montant cible vaut hausse décidée politiquement seulement s'il dépasse la revalorisation automatique attendue d'ici 2027 : à vérifier.",
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
   }
  ]
 }

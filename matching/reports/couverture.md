@@ -4,7 +4,7 @@ _Généré le 2026-11-09 par `matching/scripts/build.mjs`. Ne pas éditer à la 
 
 ## En bref
 
-- **Matching fiable : non, pas encore.** 1 proposition(s) neutre(s) validée(s) entre(nt) dans le calcul. Les autres mesures restent comparées une par une, comme avant la refonte. Seuil retenu : 20 positions validées sur au moins 6 thèmes par parti, sans alerte bloquante. Aujourd'hui : La France insoumise 1 position(s), 1 thème(s) ; Les Écologistes 1 position(s), 1 thème(s) ; 1 alerte(s) bloquante(s).
+- **Matching fiable : non, pas encore.** 1 proposition(s) neutre(s) validée(s) entre(nt) dans le calcul. Les autres mesures restent comparées une par une, comme avant la refonte. Seuil retenu : 20 positions validées sur au moins 6 thèmes par parti, sans alerte bloquante. Aujourd'hui : La France insoumise 1 position(s), 1 thème(s) ; Les Écologistes 1 position(s), 1 thème(s).
 - **La France insoumise** : 12 mesures citées mot pour mot sur 1 069 annoncées (1,1 %), plus 24 pistes non citées. Position documentée sur 19 des 37 propositions neutres.
 - **Les Écologistes** : 12 mesures citées mot pour mot sur 557 annoncées (2,2 %), plus 24 pistes non citées. Position documentée sur 22 des 37 propositions neutres.
 - **7 propositions** ont une position documentée pour les deux partis ; **2 positions** sont nuancées (PARTIAL ou DIFFERENT) et ne rapportent jamais de points par défaut.
@@ -85,7 +85,6 @@ Aucune opposition explicite (OPPOSE) n'apparaît : les deux programmes sont proc
 
 | Contrôle | Cible | Détail |
 |---|---|---|
-| Proposition sans mesure source vérifiée | BP-ECO-001 | Seulement des pistes non citées (LFI-J01). |
 | Proposition sans mesure source vérifiée | BP-INS-004 | Seulement des pistes non citées (LFI-J09, ECO-J10). |
 | Proposition sans mesure source vérifiée | BP-SEC-005 | Seulement des pistes non citées (LFI-J21, ECO-J20). |
 | Proposition sans mesure source vérifiée | BP-ENV-004 | Seulement des pistes non citées (LFI-J13, ECO-J12). |
@@ -99,6 +98,7 @@ Aucune opposition explicite (OPPOSE) n'apparaît : les deux programmes sont proc
 | Rapprochement douteux ou ambigu | COR-044 | LFI-J20 → BP-SEC-004 : Grenades « de désencerclement » vs « mutilantes » : catégories à comparer. |
 | Rapprochement douteux ou ambigu | COR-048 | ECO-J08 → BP-INS-003 : Processus constituant participatif ≠ Assemblée constituante élue ? |
 | Rapprochement douteux ou ambigu | COR-051 | ECO-J16 → BP-INT-002 : Possible opposition : à confirmer par une citation. |
+| Rapprochement douteux ou ambigu | COR-054 | ECO-0076 → BP-ECO-001 : Un montant cible vaut hausse décidée politiquement seulement s'il dépasse la revalorisation automatique attendue d'ici 2027 : à vérifier. |
 | Objectif commun, modalités différentes : à trancher | BP-ECO-003 · BP-ECO-004 · BP-ECO-005 · BP-ECO-006 | Les deux programmes renforcent l'imposition des plus aisés, par des instruments différents (héritage plafonné et IR à 14 tranches pour LFI ; taxe Zucman et ISF pour les Écologistes). Pas de carte commune « taxer plus les riches » : aucune des deux citations n'énonce ce principe tel quel. À trancher : créer une carte de principe seulement si les programmes l'énoncent explicitement. |
 | Objectif commun, modalités différentes : à trancher | BP-INS-002 · BP-INS-003 | Changer de Constitution : Assemblée constituante (LFI) contre « processus constituant » participatif (Écologistes, piste non citée). Le principe peut être commun, la méthode diverge. |
 
