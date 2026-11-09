@@ -95,6 +95,7 @@ pre{background:var(--soft);border:2px solid var(--ink);padding:10px;overflow:aut
 <script>
 const D=/*__AUDIT_DATA__*/null;
 const KEY='bastille-audit-decisions-v1';
+const FRAMED=(()=>{try{return window.self!==window.top}catch(e){return true}})(); /* page intégrée : téléchargement bloqué, copie seulement */
 let LOCAL={};try{LOCAL=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){LOCAL={}}
 const saveLocal=()=>{try{localStorage.setItem(KEY,JSON.stringify(LOCAL))}catch(e){}};
 const DEC=id=>LOCAL[id]||D.validations[id]||null;
@@ -200,9 +201,9 @@ function merged(){const out=Object.assign({},D.validations,LOCAL);return {_doc:'
 function renderExport(){const j=JSON.stringify(merged(),null,1);const n=Object.keys(LOCAL).length;
   $('#main').innerHTML=`<h1>Exporter les décisions</h1><p class="lead">${n} décision${n>1?'s':''} prise${n>1?'s':''} ici, enregistrée${n>1?'s':''} dans ce navigateur. Pour les faire entrer dans Bastille : remplacer <code>matching/data/validations.json</code> par ce fichier, puis lancer <code>npm run matching:build</code>.</p>
   <div class="row"><label class="chk" style="flex:1 1 220px">Relu par&nbsp;<input id="who" value="${esc(who)}" placeholder="Prénom ou initiales" style="flex:1;min-width:0;border:2px solid var(--ink);padding:6px 8px"></label></div>
-  <div class="row"><button class="btn" id="dl">Télécharger validations.json</button><button class="btn ghost" id="cp">Copier</button><button class="btn ghost" id="rs">Effacer mes décisions locales</button></div><pre>${esc(j)}</pre>`;
+  <div class="row">${FRAMED?'':'<button class="btn" id="dl">Télécharger validations.json</button>'}<button class="btn${FRAMED?'':' ghost'}" id="cp">Copier${FRAMED?' validations.json':''}</button><button class="btn ghost" id="rs">Effacer mes décisions locales</button></div><pre>${esc(j)}</pre>`;
   $('#who').onchange=e=>{who=e.target.value.trim();try{localStorage.setItem(KEY+'-who',who)}catch(_){}Object.values(LOCAL).forEach(d=>{if(!d.par)d.par=who||null});saveLocal();renderExport()};
-  $('#dl').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([j+'\n'],{type:'application/json'}));a.download='validations.json';a.click();toast('Fichier téléchargé')};
+  if($('#dl'))$('#dl').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([j+'\n'],{type:'application/json'}));a.download='validations.json';a.click();toast('Fichier téléchargé')};
   $('#cp').onclick=async()=>{try{await navigator.clipboard.writeText(j);toast('Copié')}catch(e){toast('Copie impossible ici')}};
   $('#rs').onclick=()=>{if(!n)return;LOCAL={};saveLocal();renderExport();toast('Décisions locales effacées')}}
 const VIEWS={props:renderProps,alerts:renderAlerts,cov:renderCov,det:renderDet,export:renderExport};
