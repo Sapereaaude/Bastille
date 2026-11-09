@@ -11,7 +11,8 @@
     "matching:import": "node matching/scripts/import-app.mjs",
     "matching:import-csv": "node matching/scripts/import-csv.mjs",
     "matching:build": "node matching/scripts/build.mjs",
-    "matching:check": "node matching/scripts/build.mjs --check"
+    "matching:check": "node matching/scripts/build.mjs --check",
+    "matching:test-env": "node matching/scripts/build-test.mjs"
   },
   "devDependencies": {
     "jsdom": "^24.1.0",
