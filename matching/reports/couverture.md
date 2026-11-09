@@ -4,7 +4,7 @@ _Généré le 2026-11-09 par `matching/scripts/build.mjs`. Ne pas éditer à la 
 
 ## En bref
 
-- **Matching fiable : non, pas encore.** 0 proposition(s) neutre(s) validée(s) entre(nt) dans le calcul. Tant que rien n'est validé, le jeu compare les partis mesure par mesure, exactement comme avant la refonte.
+- **Matching fiable : oui.** 1 proposition(s) neutre(s) validée(s) entre(nt) dans le calcul. 
 - **La France insoumise** : 12 mesures citées mot pour mot sur 1 069 annoncées (1,1 %), plus 24 pistes non citées. Position documentée sur 19 des 37 propositions neutres.
 - **Les Écologistes** : 12 mesures citées mot pour mot sur 557 annoncées (2,2 %), plus 24 pistes non citées. Position documentée sur 22 des 37 propositions neutres.
 - **7 propositions** ont une position documentée pour les deux partis ; **2 positions** sont nuancées (PARTIAL ou DIFFERENT) et ne rapportent jamais de points par défaut.
@@ -65,7 +65,7 @@ Aucune opposition explicite (OPPOSE) n'apparaît : les deux programmes sont proc
 
 | Proposition | LFI | Écologistes | Statut |
 |---|---|---|---|
-| BP-ENV-001 — Faut-il arrêter la construction de nouveaux réacteurs nucléaires EPR2 ? | SUPPORT | SUPPORT | à valider |
+| BP-ENV-001 — Faut-il arrêter la construction de nouveaux réacteurs nucléaires EPR2 ? | SUPPORT | SUPPORT | valide |
 | BP-ENV-002 — Faut-il planifier la fermeture progressive des centrales nucléaires existantes ? | SUPPORT | SUPPORT | à valider |
 | BP-TRA-001 — Faut-il revenir sur le report de l'âge légal de départ à 64 ans (réforme de 2023) ? | SUPPORT | SUPPORT | à valider |
 | BP-TRA-002 — Faut-il fixer le départ à la retraite à taux plein à 60 ans avec 40 annuités ? | SUPPORT | PARTIAL | à valider |
@@ -123,7 +123,7 @@ Similarité lexicale entre les 72 mesures importées (tous statuts). Elle orient
 
 ## Ce qui entre dans le calcul
 
-- Propositions validées et retenues : **0**. Décisions enregistrées : 0.
+- Propositions validées et retenues : **1**. Décisions enregistrées : 5.
 - Règle : une proposition, une correspondance et une position n'entrent dans le calcul qu'après validation humaine dans `matching/audit.html` (export `validations.json`), et seulement si la preuve est une mesure citée avec sa référence.
 
 ## Prochaines étapes

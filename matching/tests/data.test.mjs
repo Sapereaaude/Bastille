@@ -35,7 +35,7 @@ test('traçabilité : un texte modifié entre deux imports est détecté et l\'a
 });
 
 test('aucune validation : rien n\'entre dans le calcul', () => {
-  assert.equal(compile(fresh()).propositions.length, 0);
+  assert.equal(compile({ ...fresh(), validations: {} }).propositions.length, 0);
 });
 
 test('validation partielle : une proposition sans ses positions validées reste hors calcul', () => {

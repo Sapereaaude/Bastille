@@ -1,7 +1,7 @@
 {
  "resume": {
   "SOURCE_INACCESSIBLE": 4,
-  "NON_VALIDE": 115,
+  "NON_VALIDE": 110,
   "PROP_SANS_SOURCE": 4,
   "POS_DEDUITE": 2,
   "COR_AMBIGUE": 8,
@@ -40,13 +40,6 @@
    "gravite": "alerte",
    "cible": "CSV Bastille annoncés dans le brief",
    "message": "Aucun CSV joint à la demande. L'import CSV est prêt (scripts/import-csv.mjs, modèle dans templates/)."
-  },
-  {
-   "code": "NON_VALIDE",
-   "titre": "Élément non validé : exclu du calcul",
-   "gravite": "info",
-   "cible": "BP-ENV-001",
-   "message": "Proposition « Faut-il arrêter la construction de nouveaux réacteurs nucléaires EPR2 ? » non validée."
   },
   {
    "code": "NON_VALIDE",
@@ -327,20 +320,6 @@
    "gravite": "info",
    "cible": "BP-ENV-004",
    "message": "Proposition « Faut-il interdire les fermes-usines ? » non validée."
-  },
-  {
-   "code": "NON_VALIDE",
-   "titre": "Élément non validé : exclu du calcul",
-   "gravite": "info",
-   "cible": "POS-ENV-001-LFI",
-   "message": "LFI SUPPORT sur BP-ENV-001 non validée."
-  },
-  {
-   "code": "NON_VALIDE",
-   "titre": "Élément non validé : exclu du calcul",
-   "gravite": "info",
-   "cible": "POS-ENV-001-ECO",
-   "message": "ECO SUPPORT sur BP-ENV-001 non validée."
   },
   {
    "code": "NON_VALIDE",
@@ -633,22 +612,8 @@
    "code": "NON_VALIDE",
    "titre": "Élément non validé : exclu du calcul",
    "gravite": "info",
-   "cible": "COR-001",
-   "message": "LFI-0063 → BP-ENV-001 non validée."
-  },
-  {
-   "code": "NON_VALIDE",
-   "titre": "Élément non validé : exclu du calcul",
-   "gravite": "info",
    "cible": "COR-002",
    "message": "LFI-0063 → BP-ENV-002 non validée."
-  },
-  {
-   "code": "NON_VALIDE",
-   "titre": "Élément non validé : exclu du calcul",
-   "gravite": "info",
-   "cible": "COR-003",
-   "message": "ECO-0101 → BP-ENV-001 non validée."
   },
   {
    "code": "COR_AMBIGUE",

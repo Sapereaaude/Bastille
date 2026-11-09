@@ -52,7 +52,7 @@ function play(ctx, n, mode = 'light') {
 }
 
 test('app : données réelles (aucune validation) — partie complète sans erreur, comportement v2 conservé', { skip: !JSDOM && 'jsdom absent' }, () => {
-  const { newHtml } = buildAll();
+  const newHtml = buildAll().newHtml.replace(/const BMX=.*?;\n/, 'const BMX={"propositions":[]};\n');
   const ctx = boot(newHtml);
   const r = play(ctx, 30);
   assert.deepEqual(r.failed, []); assert.deepEqual(ctx.errors, []);
@@ -113,4 +113,16 @@ test('app : sauvegarde ancienne (v2) restaurée sans perte ni plantage', { skip:
   assert.equal(st.n, 18); assert.equal(st.i, 18); assert.equal(st.order, 18);
   const r = play(ctx, 5);
   assert.deepEqual(r.failed, []); assert.deepEqual(ctx.errors, []);
+});
+
+test('app : décisions réelles du dépôt — partie complète sans erreur, propositions validées jouables', { skip: !JSDOM && 'jsdom absent' }, () => {
+  const { newHtml, compiled } = buildAll();
+  const ctx = boot(newHtml);
+  const r = play(ctx, 140);
+  assert.deepEqual(r.failed, []); assert.deepEqual(ctx.errors, []);
+  assert.equal(r.state.P, r.state.P0 + compiled.propositions.length);
+  for (const p of compiled.propositions) {
+    const sup = JSON.parse(ctx.ev(`JSON.stringify(SUPP(BM_ROW[${JSON.stringify(p.id)}]))`)).sort();
+    assert.deepEqual(sup, Object.keys(p.positions).filter((k) => p.positions[k] === 'SUPPORT').sort(), p.id);
+  }
 });
