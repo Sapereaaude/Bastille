@@ -1,0 +1,196 @@
+{
+ "candidates": [
+  {
+   "a": "LFI-J22",
+   "b": "ECO-J22",
+   "score": 1,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-0016",
+   "b": "ECO-J23",
+   "score": 0.833,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-J24",
+   "b": "ECO-J23",
+   "score": 0.833,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-J09",
+   "b": "ECO-J10",
+   "score": 0.667,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-J21",
+   "b": "ECO-J20",
+   "score": 0.6,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-J13",
+   "b": "ECO-J12",
+   "score": 0.5,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-J03",
+   "b": "ECO-J03",
+   "score": 0.429,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-J02",
+   "b": "ECO-J02",
+   "score": 0.3,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-0063",
+   "b": "ECO-0101",
+   "score": 0.294,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-J09",
+   "b": "ECO-J07",
+   "score": 0.286,
+   "theme_identique": false
+  },
+  {
+   "a": "LFI-J10",
+   "b": "ECO-J22",
+   "score": 0.286,
+   "theme_identique": false
+  },
+  {
+   "a": "LFI-J15",
+   "b": "ECO-J16",
+   "score": 0.286,
+   "theme_identique": true
+  },
+  {
+   "a": "ECO-0032",
+   "b": "LFI-J22",
+   "score": 0.25,
+   "theme_identique": false
+  },
+  {
+   "a": "ECO-0114",
+   "b": "LFI-J03",
+   "score": 0.25,
+   "theme_identique": true
+  },
+  {
+   "a": "ECO-0123",
+   "b": "LFI-J23",
+   "score": 0.25,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-J11",
+   "b": "ECO-J11",
+   "score": 0.25,
+   "theme_identique": true
+  },
+  {
+   "a": "LFI-J13",
+   "b": "ECO-J20",
+   "score": 0.25,
+   "theme_identique": false
+  }
+ ],
+ "internal": [
+  {
+   "a": "ECO-0004",
+   "b": "ECO-J09",
+   "score": 1
+  },
+  {
+   "a": "LFI-0016",
+   "b": "LFI-J24",
+   "score": 1
+  },
+  {
+   "a": "LFI-0068",
+   "b": "LFI-J04",
+   "score": 0.833
+  },
+  {
+   "a": "ECO-0114",
+   "b": "ECO-J03",
+   "score": 0.833
+  },
+  {
+   "a": "ECO-0076",
+   "b": "ECO-J01",
+   "score": 0.625
+  },
+  {
+   "a": "LFI-0042",
+   "b": "LFI-J02",
+   "score": 0.6
+  },
+  {
+   "a": "LFI-0112",
+   "b": "LFI-J08",
+   "score": 0.6
+  },
+  {
+   "a": "ECO-0033",
+   "b": "ECO-J06",
+   "score": 0.5
+  },
+  {
+   "a": "ECO-0054",
+   "b": "ECO-J02",
+   "score": 0.5
+  },
+  {
+   "a": "LFI-0098",
+   "b": "LFI-J15",
+   "score": 0.5
+  },
+  {
+   "a": "LFI-0118",
+   "b": "LFI-J19",
+   "score": 0.429
+  },
+  {
+   "a": "ECO-J07",
+   "b": "ECO-J10",
+   "score": 0.4
+  },
+  {
+   "a": "ECO-0101",
+   "b": "ECO-J11",
+   "score": 0.375
+  },
+  {
+   "a": "LFI-0025",
+   "b": "LFI-J05",
+   "score": 0.333
+  },
+  {
+   "a": "LFI-0048",
+   "b": "LFI-J07",
+   "score": 0.333
+  },
+  {
+   "a": "ECO-0121",
+   "b": "ECO-J04",
+   "score": 0.333
+  }
+ ],
+ "recall": {
+  "paires_manuelles": 3,
+  "retrouvees": 1,
+  "manquees": [
+   "ECO-0033|LFI-0048",
+   "ECO-0057|LFI-0118"
+  ]
+ }
+}

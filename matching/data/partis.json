@@ -1,0 +1,7 @@
+{
+  "_doc": "Partis couverts par la couche de propositions neutres. Ajouter un parti = ajouter une entrée ici + ses programmes dans sources.json. Aucune autre modification d'architecture n'est nécessaire. cle_app = clé du parti dans index.html (objet C).",
+  "partis": {
+    "LFI": { "nom": "La France insoumise", "candidat": "Jean-Luc Mélenchon", "cle_app": "M", "programmes": ["lfi-aec-2025", "lfi-aec-2027"], "dans_le_perimetre": true },
+    "ECO": { "nom": "Les Écologistes", "candidat": "Marine Tondelier", "cle_app": "T", "programmes": ["eco-ppe-2026"], "dans_le_perimetre": true }
+  }
+}

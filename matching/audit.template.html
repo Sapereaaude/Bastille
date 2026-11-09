@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bastille · Audit du matching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17171F;--paper:#FFFFFF;--blue:#2B4BB8;--red:#D7372B;--grey:#5E6170;--soft:#F3F5FB;--line:#D9DCE6;--ok:#1F7A4D;--warn:#B26A00}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:Figtree,system-ui,sans-serif;font-size:15px;line-height:1.45;-webkit-text-size-adjust:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 80px}
+header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:2px solid var(--ink)}
+.bar{max-width:860px;margin:0 auto;padding:12px 16px 0;display:flex;align-items:center;gap:10px}
+.mark{display:inline-flex;width:24px;height:16px;border:2px solid var(--ink);flex:none}.mark i{flex:1}.mark i:nth-child(1){background:var(--blue)}.mark i:nth-child(3){background:var(--red)}
+.word{font-family:Anton,Impact,sans-serif;font-size:20px;letter-spacing:.06em}
+.kick{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--grey)}
+.tabs{max-width:860px;margin:0 auto;padding:10px 16px 0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:2px solid var(--ink);border-bottom:0;background:var(--paper);padding:7px 12px;font-weight:800;font-size:13px;cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+h1{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:34px;line-height:1.05;margin:22px 0 6px;text-wrap:balance}
+h2{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:22px;line-height:1.1;margin:26px 0 8px;text-wrap:balance}
+h3{font-size:15px;font-weight:800;margin:16px 0 6px}
+.lead{color:var(--grey);margin:0 0 6px;text-wrap:pretty}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:14px 0}
+.stat{border:2px solid var(--ink);padding:10px 12px;box-shadow:3px 3px 0 var(--ink)}
+.stat b{display:block;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:28px;line-height:1}
+.stat span{font-size:12px;font-weight:700;color:var(--grey)}
+.stat.alert{box-shadow:3px 3px 0 var(--red)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.filters select,.filters input[type=search]{border:2px solid var(--ink);background:var(--paper);padding:7px 9px;min-width:0;border-radius:0}
+.filters input[type=search]{flex:1 1 180px}
+.chk{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;white-space:nowrap}
+.card{border:2px solid var(--ink);margin:14px 0;box-shadow:4px 4px 0 var(--ink);background:var(--paper)}
+.card.valide{box-shadow:4px 4px 0 var(--blue)}.card.rejete{box-shadow:4px 4px 0 var(--red);opacity:.75}
+.chead{padding:12px 14px;border-bottom:2px solid var(--ink);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.chip{display:inline-block;border:1.5px solid var(--ink);padding:1px 7px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.chip.b{background:var(--blue);color:#fff;border-color:var(--blue)}.chip.r{background:var(--red);color:#fff;border-color:var(--red)}.chip.k{background:var(--ink);color:#fff}.chip.g{border-color:var(--line);color:var(--grey)}
+.cbody{padding:12px 14px}
+.q{font-size:19px;font-weight:800;line-height:1.3;margin:0;text-wrap:pretty}
+.ct{margin:6px 0 0;color:var(--grey);font-size:14px}
+ul.nu{margin:8px 0 0;padding-left:18px;font-size:14px}
+.sec{margin-top:14px;border-top:1.5px dashed var(--line);padding-top:10px}
+.sec>.kick{margin-bottom:6px}
+.item{border:1.5px solid var(--line);padding:10px;margin:8px 0;background:var(--soft)}
+.item .top{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.quote{margin:8px 0 0;font-size:14px;overflow-wrap:anywhere;text-wrap:pretty}
+.quote mark{background:#DCE8FF;padding:0 2px}
+.ref{margin-top:6px;font-size:12px;color:var(--grey);overflow-wrap:anywhere}.ref a{color:var(--ink)}
+.flag{margin-top:6px;font-size:13px;font-weight:700;color:var(--warn)}
+.stance{font-weight:800;font-size:12px;letter-spacing:.06em;padding:2px 8px;border:2px solid var(--ink);white-space:nowrap}
+.st-SUPPORT{background:var(--blue);color:#fff;border-color:var(--blue)}.st-OPPOSE{background:var(--red);color:#fff;border-color:var(--red)}.st-PARTIAL,.st-DIFFERENT{background:#FFF1D6;border-color:var(--warn);color:#6B4000}.st-UNKNOWN{background:#fff;border-color:var(--line);color:var(--grey)}
+.dec{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+.dec button{border:2px solid var(--ink);background:var(--paper);padding:5px 10px;font-weight:800;font-size:13px;cursor:pointer;white-space:nowrap}
+.dec button[aria-pressed="true"].v{background:var(--blue);border-color:var(--blue);color:#fff}
+.dec button[aria-pressed="true"].a{background:#FFF1D6;border-color:var(--warn)}
+.dec button[aria-pressed="true"].x{background:var(--red);border-color:var(--red);color:#fff}
+.dec input{flex:1 1 160px;min-width:0;border:1.5px solid var(--line);padding:5px 8px;font-size:13px}
+.dec .na{font-size:12px;color:var(--grey);font-weight:700}
+.calc{margin-top:12px;padding:8px 10px;font-size:13px;font-weight:700;border:2px solid var(--ink);display:flex;gap:8px;align-items:flex-start}
+.calc.in{background:#E6EEFF;border-color:var(--blue)}.calc.out{background:var(--soft)}
+.bulk{border:2px solid var(--ink);background:var(--ink);color:#fff;padding:6px 12px;font-weight:800;font-size:13px;cursor:pointer;white-space:nowrap}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:8px 0}
+th,td{border:1.5px solid var(--ink);padding:6px 8px;text-align:left;vertical-align:top;overflow-wrap:anywhere}
+th{background:var(--ink);color:#fff;font-weight:800}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.grav{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;white-space:nowrap}
+.grav.bloquant{background:var(--red);color:#fff}.grav.alerte{background:#FFF1D6;color:#6B4000}.grav.info{background:var(--soft);color:var(--grey)}
+pre{background:var(--soft);border:2px solid var(--ink);padding:10px;overflow:auto;font-size:12px;max-height:340px}
+.btn{border:2px solid var(--ink);background:var(--ink);color:#fff;padding:10px 14px;font-weight:800;cursor:pointer;box-shadow:3px 3px 0 var(--red)}
+.btn.ghost{background:var(--paper);color:var(--ink);box-shadow:none}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
+.md h1{font-size:28px}.md h2{font-size:20px}.md li{margin:3px 0}
+.empty{padding:24px;text-align:center;color:var(--grey);font-weight:700}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%) translateY(120px);visibility:hidden;background:var(--ink);color:#fff;padding:10px 16px;font-weight:800;transition:transform .25s;z-index:9;white-space:nowrap}
+.toast.on{transform:translateX(-50%) translateY(0);visibility:visible}
+@media (max-width:520px){h1{font-size:28px}.q{font-size:17px}.wrap{padding:0 12px 80px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar"><span class="mark"><i></i><i></i><i></i></span><span class="word">BASTILLE</span><span class="grow" style="flex:1"></span><span class="kick">Audit du matching</span></div>
+  <nav class="tabs" role="tablist">
+    <button class="tab" data-t="props" aria-selected="true">Propositions</button>
+    <button class="tab" data-t="alerts" aria-selected="false">Alertes</button>
+    <button class="tab" data-t="cov" aria-selected="false">Couverture</button>
+    <button class="tab" data-t="det" aria-selected="false">Détection</button>
+    <button class="tab" data-t="export" aria-selected="false">Export</button>
+  </nav>
+</header>
+<main class="wrap" id="main"></main>
+<div class="toast" id="toast"></div>
+<script>
+const D=/*__AUDIT_DATA__*/null;
+const KEY='bastille-audit-decisions-v1';
+let LOCAL={};try{LOCAL=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){LOCAL={}}
+const saveLocal=()=>{try{localStorage.setItem(KEY,JSON.stringify(LOCAL))}catch(e){}};
+const DEC=id=>LOCAL[id]||D.validations[id]||null;
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])).replace(/« /g,'«\u00a0').replace(/ »/g,'\u00a0»');
+const $=s=>document.querySelector(s);
+const M=Object.fromEntries(D.mesures.map(m=>[m.id,m]));
+const VER=new Set(D.verifiees);
+const TH={eco:'Économie',tra:'Travail et retraites',log:'Logement',san:'Santé',edu:'Éducation',env:'Environnement',sec:'Sécurité',imm:'Immigration',ins:'Institutions',int:'International'};
+const PN=k=>D.partis[k]?.nom||k;
+const PREC={principe:'principe',modalite:'modalité',parametre:'paramètre chiffré',faible:'précision faible'};
+const TYPE={equivalente:'équivalente',partielle:'partielle',piste:'piste non citée'};
+const STL={SUPPORT:'Soutien',OPPOSE:'Opposition',PARTIAL:'Partiel',DIFFERENT:'Modalités différentes',UNKNOWN:'Inconnue'};
+let who='';try{who=localStorage.getItem(KEY+'-who')||''}catch(e){}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1800)}
+function decide(id,statut,note){const prev=DEC(id);if(prev&&prev.statut===statut&&note===undefined){delete LOCAL[id]}else{LOCAL[id]={statut,note:note??prev?.note??'',par:who||null,le:new Date().toISOString().slice(0,10)}}saveLocal()}
+/* même règle que lib/compile.mjs : ce qui entrerait dans le calcul */
+function wouldEnter(p){const ok=id=>DEC(id)?.statut==='valide';const why=[];
+  if(!ok(p.id))why.push('proposition non validée');
+  if(p.statut==='en_attente_source')why.push('en attente de source');
+  const cors=D.correspondances.filter(c=>c.proposition===p.id&&ok(c.id)&&c.type!=='piste'&&VER.has(c.mesure));
+  if(!cors.length)why.push('aucune correspondance validée avec une mesure citée');
+  const linked=new Set(cors.map(c=>c.mesure));
+  const pos=D.positions.filter(x=>x.proposition===p.id&&ok(x.id)&&x.position!=='UNKNOWN'&&(x.mesures||[]).length&&x.mesures.every(id=>VER.has(id))&&!(x.position==='SUPPORT'&&x.preuve==='citation'&&!x.mesures.some(id=>linked.has(id))));
+  if(!pos.some(x=>x.position==='SUPPORT'||x.position==='OPPOSE'))why.push('aucune position soutien/opposition validée et prouvée');
+  return {in:!why.length,why,parties:pos.map(x=>x.parti+' '+x.position)}}
+function decRow(id,{disabled=false,label=''}={}){const d=DEC(id);const s=d?.statut;
+  if(disabled)return `<div class="dec"><span class="na">${esc(label)}</span></div>`;
+  return `<div class="dec" data-id="${id}"><button class="v" aria-pressed="${s==='valide'}" data-s="valide">✓ Valider</button><button class="a" aria-pressed="${s==='a_revoir'}" data-s="a_revoir">↺ À revoir</button><button class="x" aria-pressed="${s==='rejete'}" data-s="rejete">✕ Rejeter</button><input placeholder="Note (facultatif)" value="${esc(d?.note||'')}" data-note="${id}"></div>`}
+function hl(text,frag){const t=esc(text);if(!frag)return t;const f=esc(frag.replace(/\s*\[…\]\s*/g,' ').trim());const i=t.indexOf(f);return i<0?t:t.slice(0,i)+'<mark>'+t.slice(i,i+f.length)+'</mark>'+t.slice(i+f.length)}
+const F={theme:'',state:'',q:'',amb:false};
+function propState(p){const s=DEC(p.id)?.statut;return s||(p.statut==='en_attente_source'?'attente':'a_valider')}
+function renderProps(){const P=D.propositions.filter(p=>{
+    if(F.theme&&p.theme!==F.theme)return false;
+    if(F.state&&propState(p)!==F.state)return false;
+    if(F.amb&&!D.correspondances.some(c=>c.proposition===p.id&&c.ambigu)&&!D.positions.some(x=>x.proposition===p.id&&(x.preuve==='deduction'||x.position==='PARTIAL'||x.position==='DIFFERENT')))return false;
+    if(F.q){const h=(p.id+' '+p.question+' '+p.texte_carte).toLowerCase();if(!h.includes(F.q.toLowerCase()))return false}
+    return true});
+  const enter=D.propositions.filter(p=>wouldEnter(p).in).length;
+  const nval=D.propositions.filter(p=>DEC(p.id)?.statut==='valide').length;
+  const bloq=D.constats.filter(f=>f.gravite==='bloquant').length;
+  $('#main').innerHTML=`<h1>Propositions neutres</h1><p class="lead">Chaque proposition relie des mesures originales et la position de chaque parti. Rien n'entre dans le calcul sans votre validation, ni sans citation du programme.</p>
+  <div class="stats"><div class="stat"><b>${D.propositions.length}</b><span>propositions</span></div><div class="stat"><b>${nval}</b><span>validées</span></div><div class="stat"><b>${enter}</b><span>entreraient dans le calcul</span></div><div class="stat alert"><b>${bloq}</b><span>alertes bloquantes</span></div></div>
+  <div class="filters"><select id="f-th"><option value="">Tous les thèmes</option>${Object.entries(TH).map(([k,v])=>`<option value="${k}"${F.theme===k?' selected':''}>${v}</option>`).join('')}</select>
+  <select id="f-st"><option value="">Tous les statuts</option>${[['a_valider','À valider'],['valide','Validées'],['a_revoir','À revoir'],['rejete','Rejetées'],['attente','En attente de source']].map(([k,v])=>`<option value="${k}"${F.state===k?' selected':''}>${v}</option>`).join('')}</select>
+  <input type="search" id="f-q" placeholder="Rechercher" value="${esc(F.q)}"><label class="chk"><input type="checkbox" id="f-amb"${F.amb?' checked':''}> Cas ambigus</label></div>
+  ${P.length?P.map(card).join(''):'<div class="empty">Aucune proposition pour ces filtres.</div>'}`;
+  $('#f-th').onchange=e=>{F.theme=e.target.value;renderProps()};$('#f-st').onchange=e=>{F.state=e.target.value;renderProps()};
+  $('#f-q').oninput=e=>{F.q=e.target.value;clearTimeout(renderProps.t);renderProps.t=setTimeout(()=>{renderProps();const q=$('#f-q');q.focus();q.setSelectionRange(q.value.length,q.value.length)},250)};
+  $('#f-amb').onchange=e=>{F.amb=e.target.checked;renderProps()};bindDec()}
+function card(p){const st=propState(p);const cors=D.correspondances.filter(c=>c.proposition===p.id);const pos=D.positions.filter(x=>x.proposition===p.id);
+  const rel=D.relations.filter(r=>r.propositions.includes(p.id));const w=wouldEnter(p);const flags=D.constats.filter(f=>String(f.cible).split(' · ').includes(p.id)&&f.code!=='NON_VALIDE');
+  const parent=p.parent?D.propositions.find(x=>x.id===p.parent):null;
+  return `<article class="card ${st}" id="${p.id}"><div class="chead"><span class="chip k">${p.id}</span><span class="chip">${TH[p.theme]}</span><span class="chip g">${PREC[p.niveau_precision]||p.niveau_precision}</span><span class="chip g">famille : ${esc(p.famille)}</span>${p.statut==='en_attente_source'?'<span class="chip r">en attente de source</span>':''}</div>
+  <div class="cbody"><p class="q">${esc(p.question)}</p><p class="ct">Carte : « ${esc(p.texte_carte.replace(/\|/g,' '))} » · Simple : « ${esc(p.texte_simple.replace(/\|/g,' '))} »</p>
+  ${parent?`<p class="ct">Précise : <a href="#${parent.id}">${parent.id}</a> — ${esc(parent.question)}</p>`:''}
+  ${p.nuances.length?`<ul class="nu">${p.nuances.map(n=>`<li>${esc(n)}</li>`).join('')}</ul>`:''}
+  ${rel.map(r=>`<div class="flag">⚑ ${esc(r.note)}</div>`).join('')}
+  ${flags.map(f=>`<div class="flag">⚑ ${esc(f.titre)} : ${esc(f.message)}</div>`).join('')}
+  <div class="sec"><div class="kick">Mesures originales (${cors.length})</div>${cors.map(c=>{const m=M[c.mesure]||{};const v=VER.has(c.mesure);
+    return `<div class="item"><div class="top"><span class="chip ${m.parti==='LFI'?'b':'r'}">${esc(PN(m.parti))}</span><span class="chip k">${c.mesure}</span><span class="chip g">${TYPE[c.type]}</span>${v?'<span class="chip g">citée</span>':'<span class="chip r">texte original manquant</span>'}${m.texte_extrait?'<span class="chip g">extrait</span>':''}</div>
+    <div class="quote">${m.texte_original?'« '+hl(m.texte_original,c.fragment)+' »':`<i>Reformulation Bastille : ${esc(m.reformulation_bastille)}</i>`}</div>
+    <div class="ref">${[m.titre_document,m.reference,m.page?'p. '+m.page:null].filter(Boolean).map(esc).join(' · ')||'Aucune référence'}${m.url?` · <a href="${esc(m.url)}" target="_blank" rel="noopener">source ↗</a>`:''}</div>
+    ${c.ambigu?`<div class="flag">⚑ ${esc(c.raison_ambiguite||'Rapprochement ambigu')}</div>`:''}
+    ${decRow(c.id,{disabled:c.type==='piste',label:'Non validable : saisir d\'abord le texte original et sa référence.'})}</div>`}).join('')}</div>
+  <div class="sec"><div class="kick">Positions des partis</div>${pos.map(x=>{const ec=Object.entries(x.ecarts||{}).filter(([,v])=>v);
+    return `<div class="item"><div class="top"><span class="chip ${x.parti==='LFI'?'b':'r'}">${esc(PN(x.parti))}</span><span class="stance st-${x.position}">${STL[x.position]}</span>${x.confiance?`<span class="chip g">confiance ${x.confiance}</span>`:''}${x.preuve==='deduction'?'<span class="chip r">déduite</span>':''}</div>
+    <div class="quote">${esc(x.justification)}</div>${ec.length?`<div class="ref">${ec.map(([k,v])=>`<b>${k}</b> : ${esc(v)}`).join(' · ')}</div>`:''}
+    ${x.mesures.length?`<div class="ref">Preuve : ${x.mesures.join(', ')}</div>`:''}${x.pistes.length?`<div class="ref">Pistes à vérifier : ${x.pistes.join(', ')}</div>`:''}
+    ${decRow(x.id,{disabled:x.position==='UNKNOWN',label:'Position inconnue : ne compte pas, rien à valider.'})}</div>`}).join('')}</div>
+  <div class="sec"><div class="kick">Proposition</div>${p.statut==='en_attente_source'?decRow(p.id,{disabled:true,label:'Non validable tant que les pistes ne sont pas citées.'}):decRow(p.id)}
+  ${p.statut!=='en_attente_source'?`<div class="row"><button class="bulk" data-bulk="${p.id}">Valider tout ce qui n'a pas d'alerte</button></div>`:''}
+  <div class="calc ${w.in?'in':'out'}">${w.in?`✓ Entrerait dans le calcul (${w.parties.join(', ')})`:`○ Hors calcul : ${w.why.join(' ; ')}`}</div></div></div></article>`}
+function bindDec(){document.querySelectorAll('.dec[data-id] button').forEach(b=>b.onclick=()=>{const id=b.closest('.dec').dataset.id;decide(id,b.dataset.s);rerenderKeep(id)});
+  document.querySelectorAll('.dec input[data-note]').forEach(i=>i.onchange=()=>{const id=i.dataset.note;const d=DEC(id);LOCAL[id]={statut:d?.statut||'a_revoir',note:i.value,par:who||null,le:new Date().toISOString().slice(0,10)};saveLocal();toast('Note enregistrée')});
+  document.querySelectorAll('[data-bulk]').forEach(b=>b.onclick=()=>{const pid=b.dataset.bulk;let n=0,skip=0;
+    D.correspondances.filter(c=>c.proposition===pid&&c.type!=='piste').forEach(c=>{if(c.ambigu||!VER.has(c.mesure)){skip++;return}decide(c.id,'valide','');n++});
+    D.positions.filter(x=>x.proposition===pid&&x.position!=='UNKNOWN').forEach(x=>{if(x.preuve!=='citation'||x.confiance!=='haute'){skip++;return}decide(x.id,'valide','');n++});
+    decide(pid,'valide','');n++;rerenderKeep(pid);toast(`${n} validés · ${skip} à examiner un par un`)})}
+function rerenderKeep(id){const el=document.getElementById(id)||document.querySelector(`[data-id="${id}"]`);const y=el?el.getBoundingClientRect().top:0;renderProps();const e2=document.getElementById(id)||document.querySelector(`[data-id="${id}"]`);if(e2)window.scrollBy(0,e2.getBoundingClientRect().top-y)}
+function renderAlerts(){const G={bloquant:[],alerte:[],info:[]};D.constats.forEach(f=>G[f.gravite].push(f));
+  const codes=[...new Set(D.constats.map(f=>f.code))];
+  $('#main').innerHTML=`<h1>Alertes d'audit</h1><p class="lead">Contrôles automatiques : propositions sans source, positions sans preuve, rapprochements douteux, redondances, équilibre des thèmes, documentation des partis, versions des programmes.</p>
+  <div class="stats">${Object.entries(G).map(([g,a])=>`<div class="stat${g==='bloquant'?' alert':''}"><b>${a.length}</b><span>${g==='bloquant'?'bloquantes':g==='alerte'?'à examiner':'informations'}</span></div>`).join('')}</div>
+  <div class="filters"><select id="f-code"><option value="">Tous les contrôles</option>${codes.map(c=>`<option value="${c}">${esc(D.constats.find(f=>f.code===c).titre)} (${D.constats.filter(f=>f.code===c).length})</option>`).join('')}</select></div>
+  <div class="tw"><table><thead><tr><th>Gravité</th><th>Contrôle</th><th>Cible</th><th>Détail</th></tr></thead><tbody id="al-b"></tbody></table></div>`;
+  const draw=c=>{$('#al-b').innerHTML=['bloquant','alerte','info'].flatMap(g=>G[g]).filter(f=>!c||f.code===c).map(f=>`<tr><td><span class="grav ${f.gravite}">${f.gravite}</span></td><td>${esc(f.titre)}</td><td>${String(f.cible).split(' · ').map(x=>D.propositions.some(p=>p.id===x)?`<a href="#${x}" data-go="${x}">${x}</a>`:esc(x)).join(' · ')}</td><td>${esc(f.message)}</td></tr>`).join('')};
+  draw('');$('#f-code').onchange=e=>draw(e.target.value);
+  $('#al-b').onclick=e=>{const a=e.target.closest('[data-go]');if(!a)return;e.preventDefault();go('props');setTimeout(()=>document.getElementById(a.dataset.go)?.scrollIntoView({block:'start'}),30)}}
+function md(src){const out=[];let tbl=null,list=false;const inl=s=>esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/(^|[\s(])_(.+?)_(?=[\s.,;:)]|$)/g,'$1<i>$2</i>').replace(/`(.+?)`/g,'<code>$1</code>');
+  const flush=()=>{if(tbl){out.push('<div class="tw"><table><thead><tr>'+tbl[0].map(c=>`<th>${inl(c)}</th>`).join('')+'</tr></thead><tbody>'+tbl.slice(1).map(r=>'<tr>'+r.map(c=>`<td>${inl(c)}</td>`).join('')+'</tr>').join('')+'</tbody></table></div>');tbl=null}if(list){out.push('</ul>');list=false}};
+  for(const l of src.split('\n')){if(/^\|/.test(l)){if(/^\|[-| ]+\|$/.test(l))continue;if(list){out.push('</ul>');list=false}(tbl=tbl||[]).push(l.slice(1,-1).split(' | ').map(x=>x.trim()));continue}
+    if(/^\s*([-*]|\d+\.)\s/.test(l)){if(tbl)flush();if(!list){out.push('<ul>');list=true}out.push('<li>'+inl(l.replace(/^\s*([-*]|\d+\.)\s/,''))+'</li>');continue}
+    flush();const h=l.match(/^(#{1,3})\s(.*)/);if(h){out.push(`<h${h[1].length}>${inl(h[2])}</h${h[1].length}>`);continue}if(l.trim())out.push(`<p>${inl(l)}</p>`)}flush();return out.join('')}
+function renderCov(){$('#main').innerHTML=`<div class="md">${md(D.couverture_md)}</div>`}
+function renderDet(){const r=D.detection.rappel;
+  $('#main').innerHTML=`<h1>Détection automatique</h1><p class="lead">Similarité lexicale entre toutes les mesures importées. Elle oriente la relecture et repère les doublons ; elle ne valide jamais un rapprochement.</p>
+  <div class="stats"><div class="stat"><b>${r.retrouvees}/${r.paires_manuelles}</b><span>paires manuelles retrouvées</span></div><div class="stat"><b>${D.detection.candidats.length}</b><span>candidats inter-partis</span></div><div class="stat"><b>${D.detection.internes.length}</b><span>doublons internes</span></div></div>
+  ${r.manquees.length?`<p class="lead">Non retrouvées par la détection (rapprochement de sens, pas de mots) : ${r.manquees.map(esc).join(', ')}.</p>`:''}
+  <h2>Candidats inter-partis</h2><div class="tw"><table><thead><tr><th>Mesure A</th><th>Mesure B</th><th>Score</th></tr></thead><tbody>${D.detection.candidats.map(c=>`<tr><td>${lab(c.a)}</td><td>${lab(c.b)}</td><td>${c.score}</td></tr>`).join('')}</tbody></table></div>
+  <h2>Doublons internes</h2><p class="lead">Même parti : mesure citée et piste du jeu « Ça matche ? » qui disent la même chose. À fusionner lors de la vérification.</p><div class="tw"><table><thead><tr><th>Mesure</th><th>Doublon probable</th><th>Score</th></tr></thead><tbody>${D.detection.internes.map(c=>`<tr><td>${lab(c.a)}</td><td>${lab(c.b)}</td><td>${c.score}</td></tr>`).join('')}</tbody></table></div>`}
+const lab=id=>{const m=M[id];return m?`<b>${id}</b> · ${esc((m.reformulation_bastille||m.texte_original||'').slice(0,90))}`:esc(id)};
+function merged(){const out=Object.assign({},D.validations,LOCAL);return {_doc:'Décisions humaines. Seule source autorisée pour faire entrer une proposition, une correspondance ou une position dans le calcul. Exporté depuis matching/audit.html.',decisions:Object.fromEntries(Object.keys(out).sort().map(k=>[k,out[k]]))}}
+function renderExport(){const j=JSON.stringify(merged(),null,1);const n=Object.keys(LOCAL).length;
+  $('#main').innerHTML=`<h1>Exporter les décisions</h1><p class="lead">${n} décision${n>1?'s':''} prise${n>1?'s':''} ici, enregistrée${n>1?'s':''} dans ce navigateur. Pour les faire entrer dans Bastille : remplacer <code>matching/data/validations.json</code> par ce fichier, puis lancer <code>npm run matching:build</code>.</p>
+  <div class="row"><label class="chk" style="flex:1 1 220px">Relu par&nbsp;<input id="who" value="${esc(who)}" placeholder="Prénom ou initiales" style="flex:1;min-width:0;border:2px solid var(--ink);padding:6px 8px"></label></div>
+  <div class="row"><button class="btn" id="dl">Télécharger validations.json</button><button class="btn ghost" id="cp">Copier</button><button class="btn ghost" id="rs">Effacer mes décisions locales</button></div><pre>${esc(j)}</pre>`;
+  $('#who').onchange=e=>{who=e.target.value.trim();try{localStorage.setItem(KEY+'-who',who)}catch(_){}Object.values(LOCAL).forEach(d=>{if(!d.par)d.par=who||null});saveLocal();renderExport()};
+  $('#dl').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([j+'\n'],{type:'application/json'}));a.download='validations.json';a.click();toast('Fichier téléchargé')};
+  $('#cp').onclick=async()=>{try{await navigator.clipboard.writeText(j);toast('Copié')}catch(e){toast('Copie impossible ici')}};
+  $('#rs').onclick=()=>{if(!n)return;LOCAL={};saveLocal();renderExport();toast('Décisions locales effacées')}}
+const VIEWS={props:renderProps,alerts:renderAlerts,cov:renderCov,det:renderDet,export:renderExport};
+function go(t){document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));VIEWS[t]();window.scrollTo(0,0)}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>go(b.dataset.t));
+go('props');
+</script>
+</body>
+</html>

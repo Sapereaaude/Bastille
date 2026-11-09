@@ -1,0 +1,4 @@
+{
+ "_doc": "Décisions humaines. Seule source autorisée pour faire entrer une proposition, une correspondance ou une position dans le calcul. Clé = id (BP-…, COR-…, POS-…). statut : valide | rejete | a_revoir. Fichier exporté depuis matching/audit.html.",
+ "decisions": {}
+}

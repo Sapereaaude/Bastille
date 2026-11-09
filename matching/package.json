@@ -1,0 +1,4 @@
+{
+  "_doc": "Les .js de ce dossier sont en CommonJS/UMD (engine.js est aussi injecté tel quel dans index.html). Les scripts sont en .mjs.",
+  "type": "commonjs"
+}

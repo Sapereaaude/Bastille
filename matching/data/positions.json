@@ -1,0 +1,1799 @@
+{
+ "_doc": "Niveau 3 — position de chaque parti sur chaque proposition neutre. SUPPORT / OPPOSE / PARTIAL / DIFFERENT / UNKNOWN. Une position absente vaut UNKNOWN. Aucune n'entre dans le calcul sans validation humaine (validations.json).",
+ "positions": [
+  {
+   "id": "POS-ENV-001-LFI",
+   "proposition": "BP-ENV-001",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« arrêter le programme de nouveau nucléaire (EPR2) ».",
+   "mesures": [
+    "LFI-0063"
+   ],
+   "pistes": [
+    "LFI-J11"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ENV-001-ECO",
+   "proposition": "BP-ENV-001",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Mettre fin aux nouveaux programmes EPR-2 ».",
+   "mesures": [
+    "ECO-0101"
+   ],
+   "pistes": [
+    "ECO-J11"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ENV-002-LFI",
+   "proposition": "BP-ENV-002",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« Planifier la fermeture progressive des centrales nucléaires existantes ».",
+   "mesures": [
+    "LFI-0063"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": "non précisé dans l'extrait",
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ENV-002-ECO",
+   "proposition": "BP-ENV-002",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Planifier la sortie du nucléaire. » La sortie implique la fermeture des centrales existantes ; le rythme n'est pas précisé.",
+   "mesures": [
+    "ECO-0101"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": "non précisé dans l'extrait",
+    "conditions": null
+   },
+   "confiance": "moyenne",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ENV-003-ECO",
+   "proposition": "BP-ENV-003",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Mettre fin aux nouveaux programmes […] SMR ».",
+   "mesures": [
+    "ECO-0101"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ENV-003-LFI",
+   "proposition": "BP-ENV-003",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Aucune mention des SMR dans les mesures LFI disponibles. L'absence ne vaut pas opposition.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-TRA-001-ECO",
+   "proposition": "BP-TRA-001",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Abroger l'âge légal de départ à la retraite à 64 ans (réforme Borne) ».",
+   "mesures": [
+    "ECO-0054"
+   ],
+   "pistes": [
+    "ECO-J02"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-TRA-001-LFI",
+   "proposition": "BP-TRA-001",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "La citation fixe la retraite à 60 ans, ce qui suppose de revenir sur le report à 64 ans. L'abrogation explicite de la réforme de 2023 n'est pas citée : à confirmer dans la source.",
+   "mesures": [
+    "LFI-0042"
+   ],
+   "pistes": [
+    "LFI-J02"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "moyenne",
+   "preuve": "deduction",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-TRA-002-LFI",
+   "proposition": "BP-TRA-002",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« restaurer le droit à la retraite à 60 ans à taux plein pour 40 annuités de cotisations ».",
+   "mesures": [
+    "LFI-0042"
+   ],
+   "pistes": [
+    "LFI-J02"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-TRA-002-ECO",
+   "proposition": "BP-TRA-002",
+   "parti": "ECO",
+   "position": "PARTIAL",
+   "justification": "Objectif de 60 ans affiché (« viser une retraite à 60 ans »), mais pas immédiat ni pour tous, et sans durée de cotisation.",
+   "mesures": [
+    "ECO-0054"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": "60 ans visé, 62 ans immédiatement",
+    "montants": "aucune durée de cotisation citée",
+    "calendrier": "objectif sans date",
+    "conditions": "priorité aux personnes ayant travaillé tôt et dans des conditions pénibles"
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-TRA-003-ECO",
+   "proposition": "BP-TRA-003",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« revenir immédiatement à un âge minimum à 62 ans ».",
+   "mesures": [
+    "ECO-0054"
+   ],
+   "pistes": [
+    "ECO-J02"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-TRA-003-LFI",
+   "proposition": "BP-TRA-003",
+   "parti": "LFI",
+   "position": "DIFFERENT",
+   "justification": "Même direction, autre seuil : LFI vise 60 ans, pas 62. Rien n'indique si 62 ans serait une étape acceptée.",
+   "mesures": [
+    "LFI-0042"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": "60 ans (LFI) contre 62 ans (proposition)",
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-TRA-004-ECO",
+   "proposition": "BP-TRA-004",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Passer aux 32 heures sans perte de salaire dans les métiers pénibles ou de nuit ».",
+   "mesures": [
+    "ECO-0114"
+   ],
+   "pistes": [
+    "ECO-J03"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": "aides aux entreprises conditionnées"
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-TRA-004-LFI",
+   "proposition": "BP-TRA-004",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu « Ça matche ? » : « Retour aux 35 h, 32 h dans les métiers pénibles ») : à vérifier dans l'édition 2027.",
+   "mesures": [],
+   "pistes": [
+    "LFI-J03"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-001-ECO",
+   "proposition": "BP-ECO-001",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "Fixer le SMIC à 2 000 € brut dès 2027 suppose une hausse décidée politiquement. À vérifier : écart avec la revalorisation automatique attendue.",
+   "mesures": [
+    "ECO-0076"
+   ],
+   "pistes": [
+    "ECO-J01"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "moyenne",
+   "preuve": "deduction",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-001-LFI",
+   "proposition": "BP-ECO-001",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « SMIC à 1 700 € net, indexé sur l'inflation »). Si elle est confirmée : SUPPORT sur le principe.",
+   "mesures": [],
+   "pistes": [
+    "LFI-J01"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-002-ECO",
+   "proposition": "BP-ECO-002",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Passer le salaire minimum à 2000€ brut par mois dès 2027. »",
+   "mesures": [
+    "ECO-0076"
+   ],
+   "pistes": [
+    "ECO-J01"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": "2 000 € brut / mois",
+    "calendrier": "dès 2027",
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-002-LFI",
+   "proposition": "BP-ECO-002",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée avec un montant différent, exprimé en net (1 700 €). Si elle est confirmée : DIFFERENT (montant et unité différents, comparaison à vérifier).",
+   "mesures": [],
+   "pistes": [
+    "LFI-J01"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-003-LFI",
+   "proposition": "BP-ECO-003",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« créer un héritage maximal de 12 millions d'euros ».",
+   "mesures": [
+    "LFI-0025"
+   ],
+   "pistes": [
+    "LFI-J05"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-003-ECO",
+   "proposition": "BP-ECO-003",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures Écologistes disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-004-LFI",
+   "proposition": "BP-ECO-004",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« un barème à 14 tranches contre 5 aujourd'hui ».",
+   "mesures": [
+    "LFI-0068"
+   ],
+   "pistes": [
+    "LFI-J04"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-004-ECO",
+   "proposition": "BP-ECO-004",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures Écologistes disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-005-ECO",
+   "proposition": "BP-ECO-005",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« une taxe Zucman de 2 % au-delà de 100 millions d'euros de patrimoine ».",
+   "mesures": [
+    "ECO-0121"
+   ],
+   "pistes": [
+    "ECO-J04"
+   ],
+   "ecarts": {
+    "seuils": "100 M€",
+    "montants": "2 %",
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-005-LFI",
+   "proposition": "BP-ECO-005",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures LFI disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-006-ECO",
+   "proposition": "BP-ECO-006",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Rétablir l'Impôt sur la Fortune (ISF) en lui ajoutant une composante climatique ».",
+   "mesures": [
+    "ECO-0121"
+   ],
+   "pistes": [
+    "ECO-J04"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": "composante climatique non détaillée"
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ECO-006-LFI",
+   "proposition": "BP-ECO-006",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures LFI disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-LOG-001-LFI",
+   "proposition": "BP-LOG-001",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« un encadrement des loyers partout sur le territoire ».",
+   "mesures": [
+    "LFI-0048"
+   ],
+   "pistes": [
+    "LFI-J07"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-LOG-001-ECO",
+   "proposition": "BP-LOG-001",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« la généralisation, l'amélioration et la pérennisation de l'encadrement des loyers ». « Généralisation » ≈ tout le territoire : à confirmer.",
+   "mesures": [
+    "ECO-0033"
+   ],
+   "pistes": [
+    "ECO-J06"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "moyenne",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-LOG-002-LFI",
+   "proposition": "BP-LOG-002",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« Geler les loyers le temps de déployer un encadrement des loyers ».",
+   "mesures": [
+    "LFI-0048"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-LOG-002-ECO",
+   "proposition": "BP-LOG-002",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Aucun gel mentionné dans l'extrait Écologistes.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-LOG-003-ECO",
+   "proposition": "BP-LOG-003",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Remplacer la garantie Visale […] par une garantie universelle des loyers. »",
+   "mesures": [
+    "ECO-0033"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-LOG-003-LFI",
+   "proposition": "BP-LOG-003",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures LFI disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-LOG-004-LFI",
+   "proposition": "BP-LOG-004",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« Produire 200 000 logements publics par an et 30 000 logements jeunes pendant 5 ans ».",
+   "mesures": [
+    "LFI-0096"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": "200 000 / an + 30 000 logements jeunes",
+    "calendrier": "5 ans",
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-LOG-004-ECO",
+   "proposition": "BP-LOG-004",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures Écologistes disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-IMM-001-LFI",
+   "proposition": "BP-IMM-001",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« Garantir le droit du sol intégral à tous les enfants nés en France ».",
+   "mesures": [
+    "LFI-0016"
+   ],
+   "pistes": [
+    "LFI-J24"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-IMM-001-ECO",
+   "proposition": "BP-IMM-001",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « Droit du sol pour tous les enfants nés en France », « indépendamment de la situation des parents ») : à vérifier, page inconnue.",
+   "mesures": [],
+   "pistes": [
+    "ECO-J23"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-IMM-002-ECO",
+   "proposition": "BP-IMM-002",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Étendre le droit de vote aux étranger·es extra-communautaires pour les élections locales ».",
+   "mesures": [
+    "ECO-0032"
+   ],
+   "pistes": [
+    "ECO-J22"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-IMM-002-LFI",
+   "proposition": "BP-IMM-002",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « Droit de vote des étrangers aux élections locales »), sans durée de résidence.",
+   "mesures": [],
+   "pistes": [
+    "LFI-J22"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-IMM-003-ECO",
+   "proposition": "BP-IMM-003",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« (municipales, intercommunales, départementales et régionales) après cinq années de résidence en France ».",
+   "mesures": [
+    "ECO-0032"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": "5 ans de résidence",
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-IMM-003-LFI",
+   "proposition": "BP-IMM-003",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Aucune durée de résidence connue côté LFI.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-IMM-004-ECO",
+   "proposition": "BP-IMM-004",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Régulariser les travailleur·ses, les étudiant·es et les parents d'enfants scolarisés sur la base de critères objectifs ».",
+   "mesures": [
+    "ECO-0123"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": "durée de résidence, lien familial, activité professionnelle"
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-IMM-004-LFI",
+   "proposition": "BP-IMM-004",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « Régulariser travailleurs, étudiants, parents d'élèves ») : à vérifier, critères inconnus.",
+   "mesures": [],
+   "pistes": [
+    "LFI-J23"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-001-LFI",
+   "proposition": "BP-SEC-001",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« démanteler […] les brigades de répression des actions violentes motorisées (BRAV-M) ».",
+   "mesures": [
+    "LFI-0118"
+   ],
+   "pistes": [
+    "LFI-J19"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-001-ECO",
+   "proposition": "BP-SEC-001",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Démanteler les unités de type BRAV-M. »",
+   "mesures": [
+    "ECO-0057"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": "« de type » : périmètre possiblement plus large"
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-002-LFI",
+   "proposition": "BP-SEC-002",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« démanteler les brigades anticriminalité (BAC) ».",
+   "mesures": [
+    "LFI-0118"
+   ],
+   "pistes": [
+    "LFI-J19"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-002-ECO",
+   "proposition": "BP-SEC-002",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Les Écologistes visent les « unités de type BRAV-M » : la BAC n'est pas citée.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-003-ECO",
+   "proposition": "BP-SEC-003",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Interdire les lanceurs de balles de défense (LBD40) ».",
+   "mesures": [
+    "ECO-0057"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-003-LFI",
+   "proposition": "BP-SEC-003",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « Interdire tasers, LBD et grenades de désencerclement ») : à vérifier.",
+   "mesures": [],
+   "pistes": [
+    "LFI-J20"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-004-ECO",
+   "proposition": "BP-SEC-004",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« les grenades mutilantes » : catégories non listées.",
+   "mesures": [
+    "ECO-0057"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": "types de grenades non précisés"
+   },
+   "confiance": "moyenne",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-004-LFI",
+   "proposition": "BP-SEC-004",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (« grenades de désencerclement ») : à vérifier.",
+   "mesures": [],
+   "pistes": [
+    "LFI-J20"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-005-LFI",
+   "proposition": "BP-SEC-005",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « Interdire la reconnaissance faciale dans l'espace public »).",
+   "mesures": [],
+   "pistes": [
+    "LFI-J21"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SEC-005-ECO",
+   "proposition": "BP-SEC-005",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « Interdire la reconnaissance faciale »).",
+   "mesures": [],
+   "pistes": [
+    "ECO-J20"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INS-001-ECO",
+   "proposition": "BP-INS-001",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Instaurer la proportionnelle intégrale sans prime majoritaire aux élections législatives ».",
+   "mesures": [
+    "ECO-0004"
+   ],
+   "pistes": [
+    "ECO-J09"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INS-001-LFI",
+   "proposition": "BP-INS-001",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures LFI disponibles. L'absence ne vaut pas opposition.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INS-002-LFI",
+   "proposition": "BP-INS-002",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« passer à la 6e République ».",
+   "mesures": [
+    "LFI-0112"
+   ],
+   "pistes": [
+    "LFI-J08"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INS-002-ECO",
+   "proposition": "BP-INS-002",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « Un processus constituant pour une nouvelle République »). Si confirmée : SUPPORT.",
+   "mesures": [],
+   "pistes": [
+    "ECO-J08"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INS-003-LFI",
+   "proposition": "BP-INS-003",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« Convoquer une Constituante ».",
+   "mesures": [
+    "LFI-0112"
+   ],
+   "pistes": [
+    "LFI-J08"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INS-003-ECO",
+   "proposition": "BP-INS-003",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée : « processus constituant » participatif. Si confirmée : probablement DIFFERENT (méthode différente), à trancher.",
+   "mesures": [],
+   "pistes": [
+    "ECO-J08"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INS-004-LFI",
+   "proposition": "BP-INS-004",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : RIC pour proposer, abroger, révoquer).",
+   "mesures": [],
+   "pistes": [
+    "LFI-J09"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INS-004-ECO",
+   "proposition": "BP-INS-004",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : RIC « propositionnel ou abrogatif »).",
+   "mesures": [],
+   "pistes": [
+    "ECO-J10"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-EDU-001-LFI",
+   "proposition": "BP-EDU-001",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« Garantir à tous les bacheliers l'accès sans sélection à la formation de leur choix ».",
+   "mesures": [
+    "LFI-0009"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-EDU-001-ECO",
+   "proposition": "BP-EDU-001",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures Écologistes disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-EDU-002-ECO",
+   "proposition": "BP-EDU-002",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« réduisant la taille des classes à 19 élèves en 2032 et à 12 élèves dans les établissements en réseau d'éducation prioritaire ».",
+   "mesures": [
+    "ECO-0081"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": "19 élèves, 12 en REP/REP+",
+    "montants": null,
+    "calendrier": "2032",
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-EDU-002-LFI",
+   "proposition": "BP-EDU-002",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures LFI disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SAN-001-LFI",
+   "proposition": "BP-SAN-001",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« remboursant à 100 % les soins de santé prescrits ».",
+   "mesures": [
+    "LFI-0087"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SAN-001-ECO",
+   "proposition": "BP-SAN-001",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures Écologistes disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SAN-002-ECO",
+   "proposition": "BP-SAN-002",
+   "parti": "ECO",
+   "position": "SUPPORT",
+   "justification": "« Créer 2 000 nouveaux centres de santé d'ici 2030 ».",
+   "mesures": [
+    "ECO-0122"
+   ],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": "2 000 centres",
+    "calendrier": "2030",
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-SAN-002-LFI",
+   "proposition": "BP-SAN-002",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Non documenté dans les mesures LFI disponibles.",
+   "mesures": [],
+   "pistes": [],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INT-001-LFI",
+   "proposition": "BP-INT-001",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« Se retirer immédiatement du commandement intégré de l'OTAN ».",
+   "mesures": [
+    "LFI-0098"
+   ],
+   "pistes": [
+    "LFI-J15"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": "immédiat",
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INT-001-ECO",
+   "proposition": "BP-INT-001",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée sur l'OTAN, qui ne tranche pas cette question.",
+   "mesures": [],
+   "pistes": [
+    "ECO-J16"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INT-002-LFI",
+   "proposition": "BP-INT-002",
+   "parti": "LFI",
+   "position": "SUPPORT",
+   "justification": "« puis, par étapes, de l'organisation elle-même ».",
+   "mesures": [
+    "LFI-0098"
+   ],
+   "pistes": [
+    "LFI-J15"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": "par étapes",
+    "conditions": null
+   },
+   "confiance": "haute",
+   "preuve": "citation",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-INT-002-ECO",
+   "proposition": "BP-INT-002",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée : « pas question de s'en priver à court terme ». Possible OPPOSE, à vérifier dans la source avant toute attribution.",
+   "mesures": [],
+   "pistes": [
+    "ECO-J16"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ENV-004-LFI",
+   "proposition": "BP-ENV-004",
+   "parti": "LFI",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « Interdire les fermes-usines »).",
+   "mesures": [],
+   "pistes": [
+    "LFI-J13"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "POS-ENV-004-ECO",
+   "proposition": "BP-ENV-004",
+   "parti": "ECO",
+   "position": "UNKNOWN",
+   "justification": "Piste non citée (jeu : « Interdire les fermes-usines et l'élevage en cage »).",
+   "mesures": [],
+   "pistes": [
+    "ECO-J12"
+   ],
+   "ecarts": {
+    "seuils": null,
+    "montants": null,
+    "calendrier": null,
+    "conditions": null
+   },
+   "confiance": null,
+   "preuve": "aucune",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  }
+ ]
+}
