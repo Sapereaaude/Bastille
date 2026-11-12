@@ -1,0 +1,1193 @@
+{
+ "resume": {
+  "SOURCE_INACCESSIBLE": 4,
+  "NON_VALIDE": 111,
+  "PROP_SANS_SOURCE": 3,
+  "POS_DEDUITE": 2,
+  "COR_AMBIGUE": 9,
+  "COR_PISTE": 16,
+  "REL_AMBIGUE": 2,
+  "FAMILLES_INCOHERENTES": 2,
+  "THEME_SURREPRESENTE": 1,
+  "TEXTE_EXTRAIT": 6,
+  "VERSION_PROGRAMME": 12
+ },
+ "constats": [
+  {
+   "code": "SOURCE_INACCESSIBLE",
+   "titre": "Source inaccessible : extraction non exhaustive",
+   "gravite": "alerte",
+   "cible": "https://www.lavenirencommun.org/",
+   "message": "Requête refusée par la liste d'autorisation réseau de l'environnement de travail (shell et outil de lecture web)."
+  },
+  {
+   "code": "SOURCE_INACCESSIBLE",
+   "titre": "Source inaccessible : extraction non exhaustive",
+   "gravite": "alerte",
+   "cible": "https://melenchon2027.fr/programme/livre/",
+   "message": "Idem : URL hors liste d'autorisation."
+  },
+  {
+   "code": "SOURCE_INACCESSIBLE",
+   "titre": "Source inaccessible : extraction non exhaustive",
+   "gravite": "alerte",
+   "cible": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "message": "Idem : URL hors liste d'autorisation."
+  },
+  {
+   "code": "SOURCE_INACCESSIBLE",
+   "titre": "Source inaccessible : extraction non exhaustive",
+   "gravite": "alerte",
+   "cible": "CSV Bastille annoncés dans le brief",
+   "message": "Aucun CSV joint à la demande. L'import CSV est prêt (scripts/import-csv.mjs, modèle dans templates/)."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-ENV-002",
+   "message": "Proposition « Faut-il planifier la fermeture progressive des centrales nucléaires existantes ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-ENV-003",
+   "message": "Proposition « Faut-il renoncer aux petits réacteurs nucléaires modulaires (SMR) ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-TRA-001",
+   "message": "Proposition « Faut-il revenir sur le report de l'âge légal de départ à 64 ans (réforme de 2023) ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-TRA-002",
+   "message": "Proposition « Faut-il fixer le départ à la retraite à taux plein à 60 ans avec 40 annuités ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-TRA-003",
+   "message": "Proposition « Faut-il ramener immédiatement l'âge minimum de départ à 62 ans ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-TRA-004",
+   "message": "Proposition « Faut-il passer aux 32 heures sans perte de salaire dans les métiers pénibles ou de nuit ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-ECO-001",
+   "message": "Proposition « Faut-il augmenter le SMIC par décision politique, au-delà de sa revalorisation automatique ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-ECO-002",
+   "message": "Proposition « Faut-il porter le SMIC à 2 000 € brut par mois dès 2027 ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-ECO-003",
+   "message": "Proposition « Faut-il plafonner à 12 millions d'euros ce qu'une personne peut recevoir en héritage ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-ECO-004",
+   "message": "Proposition « Faut-il passer l'impôt sur le revenu de 5 à 14 tranches ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-ECO-005",
+   "message": "Proposition « Faut-il créer un impôt minimum de 2 % sur les patrimoines de plus de 100 millions d'euros ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-ECO-006",
+   "message": "Proposition « Faut-il rétablir l'impôt sur la fortune (ISF) ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-LOG-001",
+   "message": "Proposition « Faut-il encadrer les loyers sur tout le territoire ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-LOG-002",
+   "message": "Proposition « Faut-il geler les loyers le temps de mettre en place leur encadrement ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-LOG-003",
+   "message": "Proposition « Faut-il remplacer la garantie Visale par une garantie universelle des loyers ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-LOG-004",
+   "message": "Proposition « Faut-il produire 200 000 logements publics par an pendant cinq ans ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-IMM-001",
+   "message": "Proposition « Faut-il accorder la nationalité française dès la naissance à tout enfant né en France ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-IMM-002",
+   "message": "Proposition « Faut-il donner le droit de vote aux élections locales aux étrangers non européens résidant en France ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-IMM-003",
+   "message": "Proposition « Ce droit de vote local doit-il s'ouvrir après cinq ans de résidence, y compris aux départementales et régionales ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-IMM-004",
+   "message": "Proposition « Faut-il régulariser les travailleurs, étudiants et parents d'enfants scolarisés sans titre de séjour, selon des critères définis ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-SEC-001",
+   "message": "Proposition « Faut-il dissoudre les BRAV-M, brigades motorisées de maintien de l'ordre ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-SEC-002",
+   "message": "Proposition « Faut-il dissoudre les brigades anticriminalité (BAC) ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-SEC-003",
+   "message": "Proposition « Faut-il interdire les lanceurs de balles de défense (LBD) ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-SEC-004",
+   "message": "Proposition « Faut-il interdire certaines grenades utilisées par les forces de l'ordre ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-INS-001",
+   "message": "Proposition « Faut-il élire les députés à la proportionnelle intégrale, sans prime majoritaire ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-INS-002",
+   "message": "Proposition « Faut-il adopter une nouvelle Constitution (changer de République) ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-INS-003",
+   "message": "Proposition « La nouvelle Constitution doit-elle être écrite par une Assemblée constituante ? » non validée."
+  },
+  {
+   "code": "PROP_SANS_SOURCE",
+   "titre": "Proposition sans mesure source vérifiée",
+   "gravite": "info",
+   "cible": "BP-INS-004",
+   "message": "Seulement des pistes non citées (LFI-J09, ECO-J10)."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-INS-004",
+   "message": "Proposition « Faut-il créer un référendum d'initiative citoyenne (RIC) pour proposer ou abroger une loi ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-EDU-001",
+   "message": "Proposition « Faut-il garantir à chaque bachelier une place sans sélection dans la formation de son choix ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-EDU-002",
+   "message": "Proposition « Faut-il limiter les classes de primaire à 19 élèves d'ici 2032 (12 en éducation prioritaire) ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-SAN-001",
+   "message": "Proposition « Faut-il rembourser à 100 % par la Sécurité sociale tous les soins prescrits ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-SAN-002",
+   "message": "Proposition « Faut-il créer 2 000 centres de santé d'ici 2030 ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-INT-001",
+   "message": "Proposition « Faut-il quitter immédiatement le commandement intégré de l'OTAN ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-INT-002",
+   "message": "Proposition « Faut-il que la France quitte l'OTAN ? » non validée."
+  },
+  {
+   "code": "PROP_SANS_SOURCE",
+   "titre": "Proposition sans mesure source vérifiée",
+   "gravite": "info",
+   "cible": "BP-SEC-005",
+   "message": "Seulement des pistes non citées (LFI-J21, ECO-J20)."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-SEC-005",
+   "message": "Proposition « Faut-il interdire la reconnaissance faciale dans l'espace public ? » non validée."
+  },
+  {
+   "code": "PROP_SANS_SOURCE",
+   "titre": "Proposition sans mesure source vérifiée",
+   "gravite": "info",
+   "cible": "BP-ENV-004",
+   "message": "Seulement des pistes non citées (LFI-J13, ECO-J12)."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "BP-ENV-004",
+   "message": "Proposition « Faut-il interdire les fermes-usines ? » non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-ENV-002-LFI",
+   "message": "LFI SUPPORT sur BP-ENV-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-ENV-002-ECO",
+   "message": "ECO SUPPORT sur BP-ENV-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-ENV-003-ECO",
+   "message": "ECO SUPPORT sur BP-ENV-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-TRA-001-ECO",
+   "message": "ECO SUPPORT sur BP-TRA-001 non validée."
+  },
+  {
+   "code": "POS_DEDUITE",
+   "titre": "Position déduite, pas citée",
+   "gravite": "alerte",
+   "cible": "POS-TRA-001-LFI",
+   "message": "La citation fixe la retraite à 60 ans, ce qui suppose de revenir sur le report à 64 ans. L'abrogation explicite de la réforme de 2023 n'est pas citée : à confirmer dans la source."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-TRA-001-LFI",
+   "message": "LFI SUPPORT sur BP-TRA-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-TRA-002-LFI",
+   "message": "LFI SUPPORT sur BP-TRA-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-TRA-002-ECO",
+   "message": "ECO PARTIAL sur BP-TRA-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-TRA-003-ECO",
+   "message": "ECO SUPPORT sur BP-TRA-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-TRA-003-LFI",
+   "message": "LFI DIFFERENT sur BP-TRA-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-TRA-004-ECO",
+   "message": "ECO SUPPORT sur BP-TRA-004 non validée."
+  },
+  {
+   "code": "POS_DEDUITE",
+   "titre": "Position déduite, pas citée",
+   "gravite": "alerte",
+   "cible": "POS-ECO-001-ECO",
+   "message": "Fixer le SMIC à 2 000 € brut dès 2027 suppose une hausse décidée politiquement. À vérifier : écart avec la revalorisation automatique attendue."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-ECO-001-ECO",
+   "message": "ECO SUPPORT sur BP-ECO-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-ECO-002-ECO",
+   "message": "ECO SUPPORT sur BP-ECO-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-ECO-003-LFI",
+   "message": "LFI SUPPORT sur BP-ECO-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-ECO-004-LFI",
+   "message": "LFI SUPPORT sur BP-ECO-004 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-ECO-005-ECO",
+   "message": "ECO SUPPORT sur BP-ECO-005 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-ECO-006-ECO",
+   "message": "ECO SUPPORT sur BP-ECO-006 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-LOG-001-LFI",
+   "message": "LFI SUPPORT sur BP-LOG-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-LOG-001-ECO",
+   "message": "ECO SUPPORT sur BP-LOG-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-LOG-002-LFI",
+   "message": "LFI SUPPORT sur BP-LOG-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-LOG-003-ECO",
+   "message": "ECO SUPPORT sur BP-LOG-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-LOG-004-LFI",
+   "message": "LFI SUPPORT sur BP-LOG-004 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-IMM-001-LFI",
+   "message": "LFI SUPPORT sur BP-IMM-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-IMM-002-ECO",
+   "message": "ECO SUPPORT sur BP-IMM-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-IMM-003-ECO",
+   "message": "ECO SUPPORT sur BP-IMM-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-IMM-004-ECO",
+   "message": "ECO SUPPORT sur BP-IMM-004 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-SEC-001-LFI",
+   "message": "LFI SUPPORT sur BP-SEC-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-SEC-001-ECO",
+   "message": "ECO SUPPORT sur BP-SEC-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-SEC-002-LFI",
+   "message": "LFI SUPPORT sur BP-SEC-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-SEC-003-ECO",
+   "message": "ECO SUPPORT sur BP-SEC-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-SEC-004-ECO",
+   "message": "ECO SUPPORT sur BP-SEC-004 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-INS-001-ECO",
+   "message": "ECO SUPPORT sur BP-INS-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-INS-002-LFI",
+   "message": "LFI SUPPORT sur BP-INS-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-INS-003-LFI",
+   "message": "LFI SUPPORT sur BP-INS-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-EDU-001-LFI",
+   "message": "LFI SUPPORT sur BP-EDU-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-EDU-002-ECO",
+   "message": "ECO SUPPORT sur BP-EDU-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-SAN-001-LFI",
+   "message": "LFI SUPPORT sur BP-SAN-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-SAN-002-ECO",
+   "message": "ECO SUPPORT sur BP-SAN-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-INT-001-LFI",
+   "message": "LFI SUPPORT sur BP-INT-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "POS-INT-002-LFI",
+   "message": "LFI SUPPORT sur BP-INT-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-002",
+   "message": "LFI-0063 → BP-ENV-002 non validée."
+  },
+  {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-004",
+   "message": "ECO-0101 → BP-ENV-002 : « Sortie du nucléaire » rapprochée de « fermeture progressive des centrales existantes » : rythme et périmètre non précisés."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-004",
+   "message": "ECO-0101 → BP-ENV-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-005",
+   "message": "ECO-0101 → BP-ENV-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-006",
+   "message": "ECO-0054 → BP-TRA-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-007",
+   "message": "ECO-0054 → BP-TRA-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-008",
+   "message": "LFI-0042 → BP-TRA-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-009",
+   "message": "ECO-0114 → BP-TRA-004 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-010",
+   "message": "ECO-0076 → BP-ECO-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-011",
+   "message": "LFI-0025 → BP-ECO-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-012",
+   "message": "LFI-0068 → BP-ECO-004 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-013",
+   "message": "ECO-0121 → BP-ECO-005 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-014",
+   "message": "ECO-0121 → BP-ECO-006 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-015",
+   "message": "LFI-0048 → BP-LOG-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-016",
+   "message": "LFI-0048 → BP-LOG-002 non validée."
+  },
+  {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-017",
+   "message": "ECO-0033 → BP-LOG-001 : « Généralisation » ≈ « tout le territoire » : équivalence à confirmer."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-017",
+   "message": "ECO-0033 → BP-LOG-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-018",
+   "message": "ECO-0033 → BP-LOG-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-019",
+   "message": "LFI-0096 → BP-LOG-004 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-020",
+   "message": "LFI-0016 → BP-IMM-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-021",
+   "message": "ECO-0032 → BP-IMM-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-022",
+   "message": "ECO-0032 → BP-IMM-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-023",
+   "message": "ECO-0123 → BP-IMM-004 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-024",
+   "message": "LFI-0118 → BP-SEC-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-025",
+   "message": "LFI-0118 → BP-SEC-002 non validée."
+  },
+  {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-026",
+   "message": "ECO-0057 → BP-SEC-001 : « Unités de type BRAV-M » peut viser plus large que les seules BRAV-M."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-026",
+   "message": "ECO-0057 → BP-SEC-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-027",
+   "message": "ECO-0057 → BP-SEC-003 non validée."
+  },
+  {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-028",
+   "message": "ECO-0057 → BP-SEC-004 : Catégorie de grenades non définie."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-028",
+   "message": "ECO-0057 → BP-SEC-004 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-029",
+   "message": "ECO-0004 → BP-INS-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-030",
+   "message": "LFI-0112 → BP-INS-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-031",
+   "message": "LFI-0112 → BP-INS-003 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-032",
+   "message": "LFI-0009 → BP-EDU-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-033",
+   "message": "ECO-0081 → BP-EDU-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-034",
+   "message": "LFI-0087 → BP-SAN-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-035",
+   "message": "ECO-0122 → BP-SAN-002 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-036",
+   "message": "LFI-0098 → BP-INT-001 non validée."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-037",
+   "message": "LFI-0098 → BP-INT-002 non validée."
+  },
+  {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-038",
+   "message": "LFI-J01 → BP-ECO-001 : Montant en net, indexation : si confirmé, SUPPORT sur le principe et DIFFERENT sur BP-ECO-002."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-038",
+   "message": "LFI-J01 → BP-ECO-001 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-039",
+   "message": "LFI-J03 → BP-TRA-004 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-040",
+   "message": "ECO-J23 → BP-IMM-001 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-041",
+   "message": "LFI-J22 → BP-IMM-002 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-042",
+   "message": "LFI-J23 → BP-IMM-004 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-043",
+   "message": "LFI-J20 → BP-SEC-003 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-044",
+   "message": "LFI-J20 → BP-SEC-004 : Grenades « de désencerclement » vs « mutilantes » : catégories à comparer."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-044",
+   "message": "LFI-J20 → BP-SEC-004 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-045",
+   "message": "LFI-J21 → BP-SEC-005 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-046",
+   "message": "ECO-J20 → BP-SEC-005 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-047",
+   "message": "ECO-J08 → BP-INS-002 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-048",
+   "message": "ECO-J08 → BP-INS-003 : Processus constituant participatif ≠ Assemblée constituante élue ?"
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-048",
+   "message": "ECO-J08 → BP-INS-003 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-049",
+   "message": "LFI-J09 → BP-INS-004 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-050",
+   "message": "ECO-J10 → BP-INS-004 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-051",
+   "message": "ECO-J16 → BP-INT-002 : Possible opposition : à confirmer par une citation."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-051",
+   "message": "ECO-J16 → BP-INT-002 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-052",
+   "message": "LFI-J13 → BP-ENV-004 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_PISTE",
+   "titre": "Rapprochement fondé sur une mesure non citée",
+   "gravite": "info",
+   "cible": "COR-053",
+   "message": "ECO-J12 → BP-ENV-004 : texte original manquant, non validable en l'état."
+  },
+  {
+   "code": "COR_AMBIGUE",
+   "titre": "Rapprochement douteux ou ambigu",
+   "gravite": "alerte",
+   "cible": "COR-054",
+   "message": "ECO-0076 → BP-ECO-001 : Un montant cible vaut hausse décidée politiquement seulement s'il dépasse la revalorisation automatique attendue d'ici 2027 : à vérifier."
+  },
+  {
+   "code": "NON_VALIDE",
+   "titre": "Élément non validé : exclu du calcul",
+   "gravite": "info",
+   "cible": "COR-054",
+   "message": "ECO-0076 → BP-ECO-001 non validée."
+  },
+  {
+   "code": "REL_AMBIGUE",
+   "titre": "Objectif commun, modalités différentes : à trancher",
+   "gravite": "alerte",
+   "cible": "BP-ECO-003 · BP-ECO-004 · BP-ECO-005 · BP-ECO-006",
+   "message": "Les deux programmes renforcent l'imposition des plus aisés, par des instruments différents (héritage plafonné et IR à 14 tranches pour LFI ; taxe Zucman et ISF pour les Écologistes). Pas de carte commune « taxer plus les riches » : aucune des deux citations n'énonce ce principe tel quel. À trancher : créer une carte de principe seulement si les programmes l'énoncent explicitement."
+  },
+  {
+   "code": "REL_AMBIGUE",
+   "titre": "Objectif commun, modalités différentes : à trancher",
+   "gravite": "alerte",
+   "cible": "BP-INS-002 · BP-INS-003",
+   "message": "Changer de Constitution : Assemblée constituante (LFI) contre « processus constituant » participatif (Écologistes, piste non citée). Le principe peut être commun, la méthode diverge."
+  },
+  {
+   "code": "FAMILLES_INCOHERENTES",
+   "titre": "Une mesure reliée à des familles différentes",
+   "gravite": "alerte",
+   "cible": "ECO-0033",
+   "message": "Familles : loyers, garantie-loyers. Acceptable si les fragments sont des décisions distinctes ; sinon regrouper."
+  },
+  {
+   "code": "FAMILLES_INCOHERENTES",
+   "titre": "Une mesure reliée à des familles différentes",
+   "gravite": "alerte",
+   "cible": "ECO-0057",
+   "message": "Familles : unites-police, armes-police. Acceptable si les fragments sont des décisions distinctes ; sinon regrouper."
+  },
+  {
+   "code": "THEME_SURREPRESENTE",
+   "titre": "Thème surreprésenté",
+   "gravite": "alerte",
+   "cible": "eco",
+   "message": "6 propositions sourcées (moyenne 3.4)."
+  },
+  {
+   "code": "TEXTE_EXTRAIT",
+   "titre": "Texte original tronqué (extrait)",
+   "gravite": "info",
+   "cible": "ECO-0004",
+   "message": "Contient « … » ou « […] » : compléter le texte intégral depuis la source."
+  },
+  {
+   "code": "TEXTE_EXTRAIT",
+   "titre": "Texte original tronqué (extrait)",
+   "gravite": "info",
+   "cible": "ECO-0033",
+   "message": "Contient « … » ou « […] » : compléter le texte intégral depuis la source."
+  },
+  {
+   "code": "TEXTE_EXTRAIT",
+   "titre": "Texte original tronqué (extrait)",
+   "gravite": "info",
+   "cible": "ECO-0054",
+   "message": "Contient « … » ou « […] » : compléter le texte intégral depuis la source."
+  },
+  {
+   "code": "TEXTE_EXTRAIT",
+   "titre": "Texte original tronqué (extrait)",
+   "gravite": "info",
+   "cible": "LFI-0063",
+   "message": "Contient « … » ou « […] » : compléter le texte intégral depuis la source."
+  },
+  {
+   "code": "TEXTE_EXTRAIT",
+   "titre": "Texte original tronqué (extrait)",
+   "gravite": "info",
+   "cible": "LFI-0118",
+   "message": "Contient « … » ou « […] » : compléter le texte intégral depuis la source."
+  },
+  {
+   "code": "TEXTE_EXTRAIT",
+   "titre": "Texte original tronqué (extrait)",
+   "gravite": "info",
+   "cible": "ECO-0121",
+   "message": "Contient « … » ou « […] » : compléter le texte intégral depuis la source."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0009",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0016",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0025",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0042",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0048",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0063",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0068",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0087",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0096",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0098",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0112",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  },
+  {
+   "code": "VERSION_PROGRAMME",
+   "titre": "Version du programme à vérifier",
+   "gravite": "alerte",
+   "cible": "LFI-0118",
+   "message": "Citée depuis L'Avenir en commun, édition 2025 ; l'édition 2027 est la référence demandée."
+  }
+ ]
+}

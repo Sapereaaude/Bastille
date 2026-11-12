@@ -1,0 +1,46 @@
+{
+  "_doc": "Programmes sources et journal d'accès. Une source inaccessible est consignée ici : l'extraction n'est alors JAMAIS présentée comme exhaustive.",
+  "programmes": {
+    "lfi-aec-2025": {
+      "parti": "LFI",
+      "titre": "L'Avenir en commun",
+      "edition": "édition 2025",
+      "date": null,
+      "url": "https://melenchon2027.fr/programme/livre/",
+      "role": "Source des 12 mesures LFI citées mot pour mot dans le jeu principal (inventaire Bastille, 7 nov. 2026).",
+      "nb_mesures_annoncees": null
+    },
+    "lfi-aec-2027": {
+      "parti": "LFI",
+      "titre": "L'Avenir en commun",
+      "edition": "édition 2027 (5ᵉ édition, 6 nov. 2026 selon les données du jeu)",
+      "date": "2026-11-06",
+      "url_extraction": "https://www.lavenirencommun.org/",
+      "url_verification": "https://melenchon2027.fr/programme/livre/",
+      "role": "Programme de référence demandé par le brief. Seules des reformulations sans citation (jeu « Ça matche ? ») en sont issues à ce stade.",
+      "nb_mesures_annoncees": 1069
+    },
+    "eco-ppe-2026": {
+      "parti": "ECO",
+      "titre": "Pour une prospérité écologique",
+      "edition": "programme adopté le 13 juil. 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+      "date": "2026-07-13",
+      "url": "https://lesecologistes.fr/pages/6ImK65GKUnvibm33WGkjkj/projet-2027",
+      "url_pdf": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+      "role": "Source des 12 mesures Écologistes citées mot pour mot (avec page) et des 24 reformulations du jeu « Ça matche ? ».",
+      "nb_mesures_annoncees": 557
+    }
+  },
+  "acces": [
+    { "date": "2026-11-09", "url": "https://www.lavenirencommun.org/", "statut": "inaccessible", "detail": "Requête refusée par la liste d'autorisation réseau de l'environnement de travail (shell et outil de lecture web)." },
+    { "date": "2026-11-09", "url": "https://melenchon2027.fr/programme/livre/", "statut": "inaccessible", "detail": "Idem : URL hors liste d'autorisation." },
+    { "date": "2026-11-09", "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf", "statut": "inaccessible", "detail": "Idem : URL hors liste d'autorisation." },
+    { "date": "2026-11-09", "url": "CSV Bastille annoncés dans le brief", "statut": "non_fournis", "detail": "Aucun CSV joint à la demande. L'import CSV est prêt (scripts/import-csv.mjs, modèle dans templates/)." }
+  ],
+  "limites": [
+    "Aucune extraction exhaustive : les mesures importées sont celles déjà présentes et sourcées dans Bastille.",
+    "Les 24 mesures citées (12 LFI, 12 Écologistes) ont été vérifiées lors de l'inventaire Bastille ; elles n'ont pas pu être revérifiées ici.",
+    "Les 12 mesures LFI citées proviennent de l'édition 2025 de L'Avenir en commun, alors que le brief demande l'édition 2027 : à revérifier dans l'édition 2027.",
+    "Les 48 mesures du jeu « Ça matche ? » sont des reformulations sans texte original ni page : elles ne servent que de pistes à vérifier et n'entrent jamais dans le calcul."
+  ]
+}

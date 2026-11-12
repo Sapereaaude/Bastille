@@ -1,0 +1,2094 @@
+{
+ "_doc": "Niveau 1 — mesures originales. Généré par scripts/import-app.mjs (+ import-csv.mjs). Ne pas modifier texte_original à la main.",
+ "genere_le": "2026-11-09",
+ "mesures": [
+  {
+   "id": "ECO-0004",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Instaurer la proportionnelle intégrale sans prime majoritaire aux élections législatives…",
+   "texte_extrait": true,
+   "empreinte": "3834588d6b1eee1e",
+   "reference": "p. 162",
+   "page": 162,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "ins",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Instaurer la proportionnelle intégrale aux législatives.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 3,
+    "numero_app": "0004"
+   }
+  },
+  {
+   "id": "LFI-0009",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "Garantir à tous les bacheliers l'accès sans sélection à la formation de leur choix",
+   "texte_extrait": false,
+   "empreinte": "9d2b82ed3400f4e2",
+   "reference": "Partie 4, chap. 2 « Élever le niveau d'éducation et de savoirs » – Refonder et ouvrir l'enseignement supérieur",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "edu",
+   "sous_theme": "Refonder et ouvrir l'enseignement supérieur",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/le-gout-du-futur-aux-nouvelles-frontieres-de-l-humanite/chapitre2",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Garantir à tout bachelier l'accès sans sélection à la formation choisie.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 8,
+    "numero_app": "0009"
+   }
+  },
+  {
+   "id": "LFI-0016",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "Garantir le droit du sol intégral à tous les enfants nés en France",
+   "texte_extrait": false,
+   "empreinte": "70fbb660c6fd920d",
+   "reference": "Partie 3, chap. 4 « Faire triompher l'égalité contre le racisme et les discriminations » – Faire France de tout bois",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "imm",
+   "sous_theme": "Faire France de tout bois",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/mettre-en-securite-sociale/chapitre4",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Garantir le droit du sol intégral à tout enfant né en France.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 15,
+    "numero_app": "0016"
+   }
+  },
+  {
+   "id": "LFI-0025",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "créer un héritage maximal de 12 millions d'euros",
+   "texte_extrait": false,
+   "empreinte": "2e4390999ec3e32e",
+   "reference": "Partie 2, chap. 2 « Partager les richesses » – Faire la révolution fiscale",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "eco",
+   "sous_theme": "Faire la révolution fiscale",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Plafonner l'héritage à 12 millions d'euros maximum.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 24,
+    "numero_app": "0025"
+   }
+  },
+  {
+   "id": "ECO-0032",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Étendre le droit de vote aux étranger·es extra-communautaires pour les élections locales (municipales, intercommunales, départementales et régionales) après cinq années de résidence en France.",
+   "texte_extrait": false,
+   "empreinte": "0902ea2b877fe684",
+   "reference": "p. 163",
+   "page": 163,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "ins",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Droit de vote local des étrangers hors UE après cinq ans de résidence.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 31,
+    "numero_app": "0032"
+   }
+  },
+  {
+   "id": "ECO-0033",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Assurer le droit au logement par la généralisation, l’amélioration et la pérennisation de l’encadrement des loyers. […] Remplacer la garantie Visale […] par une garantie universelle des loyers.",
+   "texte_extrait": true,
+   "empreinte": "66fbffc1523bb52c",
+   "reference": "p. 20 — 2. Pouvoir se loger décemment",
+   "page": 20,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "log",
+   "sous_theme": "2. Pouvoir se loger décemment",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Généraliser l'encadrement des loyers et créer une garantie universelle des loyers.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 32,
+    "numero_app": "0033"
+   }
+  },
+  {
+   "id": "LFI-0042",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "restaurer le droit à la retraite à 60 ans à taux plein pour 40 annuités de cotisations",
+   "texte_extrait": false,
+   "empreinte": "1579266322b02d17",
+   "reference": "Partie 3, chap. 1 « À chacun selon ses besoins »",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "tra",
+   "sous_theme": "À chacun selon ses besoins",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/mettre-en-securite-sociale/chapitre1",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Rétablir la retraite à 60 ans à taux plein avec 40 annuités.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 41,
+    "numero_app": "0042"
+   }
+  },
+  {
+   "id": "LFI-0048",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "Geler les loyers le temps de déployer un encadrement des loyers partout sur le territoire",
+   "texte_extrait": false,
+   "empreinte": "e257816dc16eb542",
+   "reference": "Partie 5, chap. 3 « Une France sans déserts de droits » – Garantir le droit au logement",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "log",
+   "sous_theme": "Garantir le droit au logement",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre3",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Geler les loyers puis les encadrer partout en France.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 47,
+    "numero_app": "0048"
+   }
+  },
+  {
+   "id": "ECO-0054",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Abroger l’âge légal de départ à la retraite à 64 ans (réforme Borne) pour revenir immédiatement à un âge minimum à 62 ans et viser une retraite à 60 ans en priorisant […] les personnes ayant travaillé tôt et dans des conditions pénibles.",
+   "texte_extrait": true,
+   "empreinte": "aa3f2df0447feb9f",
+   "reference": "p. 116",
+   "page": 116,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "tra",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Abroger les 64 ans : retour immédiat à 62 ans, viser 60 ans.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 53,
+    "numero_app": "0054"
+   }
+  },
+  {
+   "id": "ECO-0057",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Interdire les lanceurs de balles de défense (LBD40) et les grenades mutilantes. Démanteler les unités de type BRAV-M.",
+   "texte_extrait": false,
+   "empreinte": "49c1e07dd23bafea",
+   "reference": "p. 165",
+   "page": 165,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "sec",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Interdire les LBD et grenades mutilantes, démanteler les BRAV-M.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 56,
+    "numero_app": "0057"
+   }
+  },
+  {
+   "id": "LFI-0063",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "Planifier la fermeture progressive des centrales nucléaires existantes … arrêter le programme de nouveau nucléaire (EPR2)",
+   "texte_extrait": true,
+   "empreinte": "d73a7a31d2e9b603",
+   "reference": "Partie 1, chap. 3 « Les grands chantiers de la bifurcation écologique »",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "env",
+   "sous_theme": "Les grands chantiers de la bifurcation écologique",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/pour-une-bifurcation-ecologique-et-sociale/chapitre3",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Fermer progressivement les centrales nucléaires et arrêter les nouveaux EPR2.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 62,
+    "numero_app": "0063"
+   }
+  },
+  {
+   "id": "LFI-0068",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "Rendre l'impôt sur le revenu plus progressif avec un barème à 14 tranches contre 5 aujourd'hui",
+   "texte_extrait": false,
+   "empreinte": "23b29ba42f99587d",
+   "reference": "Partie 2, chap. 2 « Partager les richesses » – Faire la révolution fiscale",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "eco",
+   "sous_theme": "Faire la révolution fiscale",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/une-economie-au-service-des-besoins/chapitre2",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Passer l'impôt sur le revenu de 5 à 14 tranches.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 67,
+    "numero_app": "0068"
+   }
+  },
+  {
+   "id": "ECO-0076",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Passer le salaire minimum à 2000€ brut par mois dès 2027.",
+   "texte_extrait": false,
+   "empreinte": "7d164f376e295818",
+   "reference": "p. 55 — 13. Assurer des rémunérations dignes",
+   "page": 55,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "eco",
+   "sous_theme": "13. Assurer des rémunérations dignes",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Porter le salaire minimum à 2 000 € brut par mois dès 2027.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 75,
+    "numero_app": "0076"
+   }
+  },
+  {
+   "id": "ECO-0081",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Faire de l’école primaire une priorité absolue en réduisant la taille des classes à 19 élèves en 2032 et à 12 élèves dans les établissements en réseau d’éducation prioritaire (REP et REP+).",
+   "texte_extrait": false,
+   "empreinte": "7e19923e9a7f6fc4",
+   "reference": "p. 90",
+   "page": 90,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "edu",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Réduire les classes de primaire à 19 élèves en 2032 (12 en REP).",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 80,
+    "numero_app": "0081"
+   }
+  },
+  {
+   "id": "LFI-0087",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "Instaurer le « 100 % Sécu » en remboursant à 100 % les soins de santé prescrits",
+   "texte_extrait": false,
+   "empreinte": "654aa20cda501788",
+   "reference": "Partie 3, chap. 1 « À chacun selon ses besoins »",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "san",
+   "sous_theme": "À chacun selon ses besoins",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/mettre-en-securite-sociale/chapitre1",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Rembourser à 100 % par la Sécu tous les soins prescrits.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 86,
+    "numero_app": "0087"
+   }
+  },
+  {
+   "id": "LFI-0096",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "Produire 200 000 logements publics par an et 30 000 logements jeunes pendant 5 ans",
+   "texte_extrait": false,
+   "empreinte": "c8bf67bec0d89e5b",
+   "reference": "Partie 5, chap. 3 « Une France sans déserts de droits » – Garantir le droit au logement",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "log",
+   "sous_theme": "Garantir le droit au logement",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre3",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Produire 200 000 logements publics par an pendant cinq ans.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 95,
+    "numero_app": "0096"
+   }
+  },
+  {
+   "id": "LFI-0098",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "Se retirer immédiatement du commandement intégré de l'OTAN puis, par étapes, de l'organisation elle-même",
+   "texte_extrait": false,
+   "empreinte": "4bbcc1fe9a4fd2d6",
+   "reference": "Partie 6, chap. 2 « Une France indépendante au service de la paix »",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "int",
+   "sous_theme": "Une France indépendante au service de la paix",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/un-monde-ordonne/chapitre2",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Quitter tout de suite le commandement intégré de l'OTAN, puis l'organisation.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 97,
+    "numero_app": "0098"
+   }
+  },
+  {
+   "id": "ECO-0101",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Planifier la sortie du nucléaire. Mettre fin aux nouveaux programmes EPR-2 et SMR extrêmement dispendieux.",
+   "texte_extrait": false,
+   "empreinte": "0e9ea1d889e0fe8a",
+   "reference": "p. 17",
+   "page": 17,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "env",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Planifier la sortie du nucléaire et arrêter les EPR-2 et SMR.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 100,
+    "numero_app": "0101"
+   }
+  },
+  {
+   "id": "LFI-0112",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "Convoquer une Constituante pour passer à la 6e République",
+   "texte_extrait": false,
+   "empreinte": "0d171bfb41481d82",
+   "reference": "Partie 5, chap. 1 « Le pouvoir au peuple » – Réunir une Assemblée constituante pour passer à la 6e République",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "ins",
+   "sous_theme": "Réunir une Assemblée constituante pour passer à la 6e République",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre1",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Convoquer une Assemblée constituante pour passer à la 6e République.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 111,
+    "numero_app": "0112"
+   }
+  },
+  {
+   "id": "ECO-0114",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Passer aux 32 heures sans perte de salaire dans les métiers pénibles ou de nuit en y conditionnant les aides aux entreprises.",
+   "texte_extrait": false,
+   "empreinte": "054924153d087bdd",
+   "reference": "p. 57 — 14. Travailler mieux",
+   "page": 57,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "tra",
+   "sous_theme": "14. Travailler mieux",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Passer aux 32 h sans perte de salaire dans les métiers pénibles ou de nuit.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 113,
+    "numero_app": "0114"
+   }
+  },
+  {
+   "id": "LFI-0118",
+   "parti": "LFI",
+   "programme": "lfi-aec-2025",
+   "texte_original": "démanteler les brigades anticriminalité (BAC) … les brigades de répression des actions violentes motorisées (BRAV-M)",
+   "texte_extrait": true,
+   "empreinte": "7ed8dd91b94f1688",
+   "reference": "Partie 5, chap. 2 « Libertés publiques et sûreté »",
+   "page": null,
+   "titre_document": "L'Avenir en commun (édition 2025)",
+   "theme": "sec",
+   "sous_theme": "Libertés publiques et sûreté",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://melenchon2027.fr/programme/livre/fonder-la-6e-republique/chapitre2",
+   "date_document": null,
+   "version": "édition 2025",
+   "reformulation_bastille": "Démanteler les brigades anticriminalité (BAC) et les BRAV-M.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 117,
+    "numero_app": "0118"
+   }
+  },
+  {
+   "id": "ECO-0121",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Rétablir la fiscalité sur la grande fortune. Mettre en place une taxe Zucman de 2 % au-delà de 100 millions d’euros de patrimoine. […] Rétablir l’Impôt sur la Fortune (ISF) en lui ajoutant une composante climatique…",
+   "texte_extrait": true,
+   "empreinte": "251cc41ee61d55ea",
+   "reference": "p. 66 — 17. Refonder le pacte fiscal",
+   "page": 66,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "eco",
+   "sous_theme": "17. Refonder le pacte fiscal",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Taxe Zucman de 2 % au-delà de 100 M€ et ISF climatique.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 120,
+    "numero_app": "0121"
+   }
+  },
+  {
+   "id": "ECO-0122",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Créer 2 000 nouveaux centres de santé d’ici 2030, notamment dans les zones rurales et les quartiers prioritaires.",
+   "texte_extrait": false,
+   "empreinte": "1a0487d9ad7a49e8",
+   "reference": "p. 114 — 30. Rendre accessible une offre de soin de qualité",
+   "page": 114,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "san",
+   "sous_theme": "30. Rendre accessible une offre de soin de qualité",
+   "sous_theme_origine": "section_du_programme",
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Créer 2 000 nouveaux centres de santé d'ici 2030.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 121,
+    "numero_app": "0122"
+   }
+  },
+  {
+   "id": "ECO-0123",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": "Régulariser les travailleur·ses, les étudiant·es et les parents d’enfants scolarisés sur la base de critères objectifs (durée de résidence, effectivité du lien familial, durée ou promesse d’activité professionnelle).",
+   "texte_extrait": false,
+   "empreinte": "6cdfc2eb5df260aa",
+   "reference": "p. 178",
+   "page": 178,
+   "titre_document": "Pour une prospérité écologique – Le nouveau programme des Écologistes",
+   "theme": "imm",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf",
+   "date_document": "juillet 2026 (PDF créé le 15/07/2026, modifié le 25/08/2026)",
+   "version": "juillet 2026",
+   "reformulation_bastille": "Régulariser travailleurs, étudiants et parents d'élèves sur critères objectifs.",
+   "verification": {
+    "statut": "verifiee_inventaire",
+    "source": "Inventaire de traçabilité Bastille (7 nov. 2026)",
+    "revérifiée_ici": false,
+    "note": "Source officielle inaccessible depuis l'environnement le 9 nov. 2026."
+   },
+   "origine": {
+    "type": "jeu_principal",
+    "index_app": 122,
+    "numero_app": "0123"
+   }
+  },
+  {
+   "id": "LFI-J01",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "tra",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "SMIC à 1 700 € net, indexé sur l'inflation.",
+   "contexte_bastille": "Aujourd'hui : environ 1 478 € net. Indexé : il suit automatiquement la hausse des prix.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 0
+   }
+  },
+  {
+   "id": "LFI-J02",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "tra",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Retraite à 60 ans pour 40 annuités de cotisation.",
+   "contexte_bastille": "Le programme abroge la réforme de 2023, qui porte l'âge légal vers 64 ans.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 1
+   }
+  },
+  {
+   "id": "LFI-J03",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "tra",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Retour aux 35 h, 32 h dans les métiers pénibles.",
+   "contexte_bastille": "Les heures sup' seraient majorées : +25 % pour les 4 premières, +50 % au-delà.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 2
+   }
+  },
+  {
+   "id": "LFI-J04",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "eco",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Impôt sur le revenu à 14 tranches au lieu de 5.",
+   "contexte_bastille": "Aujourd'hui : 5 tranches, de 0 à 45 %. Plus de tranches, c'est un impôt plus progressif.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 3
+   }
+  },
+  {
+   "id": "LFI-J05",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "eco",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Personne ne peut hériter de plus de 12 millions d'euros.",
+   "contexte_bastille": "Aujourd'hui, pas de plafond : l'héritage est taxé selon un barème, jusqu'à 45 % en ligne directe.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 4
+   }
+  },
+  {
+   "id": "LFI-J06",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "log",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Réquisitionner les logements vides.",
+   "contexte_bastille": "La loi le permet déjà, mais c'est très rarement utilisé.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 5
+   }
+  },
+  {
+   "id": "LFI-J07",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "log",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Encadrer les loyers partout, à la baisse dans les grandes villes.",
+   "contexte_bastille": "Aujourd'hui, seules quelques villes volontaires plafonnent les loyers.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 6
+   }
+  },
+  {
+   "id": "LFI-J08",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "ins",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Convoquer une Constituante pour une 6ᵉ République.",
+   "contexte_bastille": "Une assemblée rédige une nouvelle Constitution, soumise ensuite à référendum. Fin de la Ve République.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 7
+   }
+  },
+  {
+   "id": "LFI-J09",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "ins",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Un RIC pour proposer ou abroger une loi, ou révoquer un élu.",
+   "contexte_bastille": "RIC : référendum d'initiative citoyenne. Aujourd'hui, le référendum d'initiative partagée exige 185 parlementaires et 4,8 millions de signatures.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 8
+   }
+  },
+  {
+   "id": "LFI-J10",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "ins",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Droit de vote à 16 ans.",
+   "contexte_bastille": "Aujourd'hui, on vote à partir de 18 ans.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 9
+   }
+  },
+  {
+   "id": "LFI-J11",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "env",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Sortir du nucléaire : abandon des EPR, démantèlement.",
+   "contexte_bastille": "Le nucléaire produit environ deux tiers de l'électricité française. Le programme vise 100 % de renouvelables.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 10
+   }
+  },
+  {
+   "id": "LFI-J12",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "env",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Supprimer les vols intérieurs quand le train fait moins de 4 h.",
+   "contexte_bastille": "Depuis 2023, seuls les vols remplaçables par moins de 2 h 30 de train sont interdits.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 11
+   }
+  },
+  {
+   "id": "LFI-J13",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "env",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Interdire les fermes-usines.",
+   "contexte_bastille": "Vise l'élevage intensif de très grande taille.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 12
+   }
+  },
+  {
+   "id": "LFI-J14",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "env",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Moratoire sur les méga-bassines.",
+   "contexte_bastille": "Grandes réserves d'eau pompée pour l'agriculture, contestées notamment à Sainte-Soline. Moratoire : on gèle les projets.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 13
+   }
+  },
+  {
+   "id": "LFI-J15",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "int",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Sortir du commandement intégré de l'OTAN, puis de l'OTAN.",
+   "contexte_bastille": "La France a réintégré le commandement intégré en 2009. Le programme prévoit d'en sortir par étapes.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 14
+   }
+  },
+  {
+   "id": "LFI-J16",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "int",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Abroger les accords de libre-échange existants.",
+   "contexte_bastille": "Exemple : le CETA, avec le Canada, appliqué provisoirement depuis 2017.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 15
+   }
+  },
+  {
+   "id": "LFI-J17",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "int",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Ne pas appliquer les normes européennes incompatibles.",
+   "contexte_bastille": "La stratégie dite de « désobéissance » aux traités, sans sortir de l'UE ni de l'euro.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 16
+   }
+  },
+  {
+   "id": "LFI-J18",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "int",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Retirer la France de l'Europe de la défense.",
+   "contexte_bastille": "L'UE monte des projets communs (fonds, achats d'armes groupés). Le programme demande un « opt-out ».",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 17
+   }
+  },
+  {
+   "id": "LFI-J19",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "sec",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Police de proximité, démanteler les BAC et les BRAV-M.",
+   "contexte_bastille": "BAC : brigades anticriminalité. BRAV-M : brigades motorisées créées en 2019 pour les manifestations.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 18
+   }
+  },
+  {
+   "id": "LFI-J20",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "sec",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Interdire tasers, LBD et grenades de désencerclement.",
+   "contexte_bastille": "LBD : lanceur de balles de défense, utilisé notamment en maintien de l'ordre.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 19
+   }
+  },
+  {
+   "id": "LFI-J21",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "sec",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Interdire la reconnaissance faciale dans l'espace public.",
+   "contexte_bastille": "Les JO 2024 ont testé la vidéosurveillance algorithmique, sans reconnaissance faciale.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 20
+   }
+  },
+  {
+   "id": "LFI-J22",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "imm",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Droit de vote des étrangers aux élections locales.",
+   "contexte_bastille": "Aujourd'hui, seuls les citoyens européens votent aux municipales et aux européennes.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 21
+   }
+  },
+  {
+   "id": "LFI-J23",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "imm",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Régulariser travailleurs, étudiants, parents d'élèves.",
+   "contexte_bastille": "Vise les travailleurs, étudiants et parents d'enfants scolarisés sans papiers. Aujourd'hui : au cas par cas, en préfecture.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 22
+   }
+  },
+  {
+   "id": "LFI-J24",
+   "parti": "LFI",
+   "programme": "lfi-aec-2027",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "imm",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Droit du sol intégral pour tous les enfants nés en France.",
+   "contexte_bastille": "Aujourd'hui, un enfant né en France de parents étrangers devient en général français à sa majorité, sous conditions de résidence.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 23
+   }
+  },
+  {
+   "id": "ECO-J01",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "tra",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "SMIC à 2 000 € brut par mois dès 2027.",
+   "contexte_bastille": "2 000 € brut, c'est environ 1 580 € net. Aujourd'hui : environ 1 478 € net.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 0
+   }
+  },
+  {
+   "id": "ECO-J02",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "tra",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Retraite : retour immédiat à 62 ans, cap sur 60 ans.",
+   "contexte_bastille": "Abroge la réforme de 2023. 60 ans visés d'abord pour celles et ceux qui ont commencé tôt ou ont un métier pénible.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 1
+   }
+  },
+  {
+   "id": "ECO-J03",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "tra",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "32 h sans perte de salaire dans les métiers pénibles.",
+   "contexte_bastille": "Aussi pour le travail de nuit. Les aides aux entreprises en dépendraient.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 2
+   }
+  },
+  {
+   "id": "ECO-J04",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "eco",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Rétablir l'impôt sur la fortune, taxe Zucman de 2 %.",
+   "contexte_bastille": "Taxe Zucman : 2 % sur les patrimoines au-delà de 100 millions d'euros. Et un ISF avec une composante climatique.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 3
+   }
+  },
+  {
+   "id": "ECO-J05",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "eco",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Écart de 1 à 20 entre dirigeants et salaire médian en entreprise.",
+   "contexte_bastille": "Objectif fixé aux entreprises, dont dépendraient les aides publiques : le salaire des dirigeants ne dépasserait pas 20 fois le salaire médian.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 4
+   }
+  },
+  {
+   "id": "ECO-J06",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "log",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Généraliser l'encadrement des loyers.",
+   "contexte_bastille": "Aujourd'hui, seules quelques villes volontaires plafonnent les loyers. Le programme veut le rendre durable.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 5
+   }
+  },
+  {
+   "id": "ECO-J07",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "log",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Abroger la loi Kasbarian.",
+   "contexte_bastille": "Loi de 2023 contre les squats, qui durcit aussi les procédures contre les locataires en impayé.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 6
+   }
+  },
+  {
+   "id": "ECO-J08",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "ins",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Un processus constituant pour une nouvelle République.",
+   "contexte_bastille": "Le programme parle d'une « Première République écologique et citoyenne », écrite de façon participative.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 7
+   }
+  },
+  {
+   "id": "ECO-J09",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "ins",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Proportionnelle intégrale aux législatives.",
+   "contexte_bastille": "Sans prime majoritaire : chaque parti a des sièges selon son score. Aujourd'hui, scrutin majoritaire par circonscription.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 8
+   }
+  },
+  {
+   "id": "ECO-J10",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "ins",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Un RIC pour proposer ou abroger une loi.",
+   "contexte_bastille": "RIC : référendum d'initiative citoyenne, « propositionnel ou abrogatif », après contrôle de constitutionnalité. Aujourd'hui : 185 parlementaires et 4,8 millions de signatures.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 9
+   }
+  },
+  {
+   "id": "ECO-J11",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "env",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Sortir du nucléaire, stop aux EPR-2 et aux SMR.",
+   "contexte_bastille": "SMR : petits réacteurs modulaires, jugés trop chers par le programme. Le nucléaire fournit environ deux tiers de l'électricité.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 10
+   }
+  },
+  {
+   "id": "ECO-J12",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "env",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Interdire les fermes-usines et l'élevage en cage.",
+   "contexte_bastille": "Vise l'élevage intensif à très grande échelle et les animaux élevés en cage.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 11
+   }
+  },
+  {
+   "id": "ECO-J13",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "env",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Sortir des pesticides de synthèse d'ici 2050.",
+   "contexte_bastille": "Sortie progressive et planifiée, avec celle des engrais azotés.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 12
+   }
+  },
+  {
+   "id": "ECO-J14",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "env",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "100 % de voitures neuves zéro émission en 2035.",
+   "contexte_bastille": "Le programme maintient cet objectif, fixé par l'UE en 2023 et remis en question depuis.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 13
+   }
+  },
+  {
+   "id": "ECO-J15",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "int",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Un saut fédéral européen.",
+   "contexte_bastille": "Partager plus de compétences entre les États et l'Union européenne.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 14
+   }
+  },
+  {
+   "id": "ECO-J16",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "int",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Un commandement militaire intégré européen.",
+   "contexte_bastille": "Sous la tutelle du Conseil de l'UE. Sur l'OTAN : pas question de s'en priver à court terme, mais elle « n'est plus acquise ».",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 15
+   }
+  },
+  {
+   "id": "ECO-J17",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "int",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Soutenir militairement l'Ukraine, longue portée incluse.",
+   "contexte_bastille": "Fournir du matériel militaire, y compris des capacités de frappe à longue portée.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 16
+   }
+  },
+  {
+   "id": "ECO-J18",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "int",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Reconnaître les crimes du passé colonial de la France.",
+   "contexte_bastille": "Le programme parle de reconnaître « l'héritage colonial de la France, ses crimes, ses complicités ».",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 17
+   }
+  },
+  {
+   "id": "ECO-J19",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "sec",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Remplacer l'IGPN par une autorité indépendante.",
+   "contexte_bastille": "IGPN : la « police des polices ». Aujourd'hui, des policiers enquêtent sur des policiers. Idem pour la gendarmerie (IGGN).",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 18
+   }
+  },
+  {
+   "id": "ECO-J20",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "sec",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Interdire la reconnaissance faciale.",
+   "contexte_bastille": "Et faire évaluer la vidéosurveillance de façon indépendante.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 19
+   }
+  },
+  {
+   "id": "ECO-J21",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "sec",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Légaliser et encadrer le cannabis.",
+   "contexte_bastille": "Production, vente et consommation encadrées. Aujourd'hui, le cannabis récréatif est interdit.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 20
+   }
+  },
+  {
+   "id": "ECO-J22",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "imm",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Droit de vote des étrangers aux élections locales.",
+   "contexte_bastille": "Pour les étrangers hors UE, après cinq ans de résidence. Aujourd'hui, seuls les citoyens européens votent aux municipales.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 21
+   }
+  },
+  {
+   "id": "ECO-J23",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "imm",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Droit du sol pour tous les enfants nés en France.",
+   "contexte_bastille": "« Indépendamment de la situation des parents. » Aujourd'hui, c'est en général à la majorité, sous conditions de résidence.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 22
+   }
+  },
+  {
+   "id": "ECO-J24",
+   "parti": "ECO",
+   "programme": "eco-ppe-2026",
+   "texte_original": null,
+   "texte_extrait": null,
+   "empreinte": null,
+   "reference": null,
+   "page": null,
+   "titre_document": null,
+   "theme": "imm",
+   "sous_theme": null,
+   "sous_theme_origine": null,
+   "url": null,
+   "date_document": null,
+   "version": null,
+   "reformulation_bastille": "Démanteler Frontex.",
+   "contexte_bastille": "Frontex : agence européenne de garde-frontières, remplacée par une agence de protection des droits des personnes migrantes.",
+   "verification": {
+    "statut": "texte_original_manquant",
+    "source": "Jeu bonus « Ça matche ? » (reformulation, sans citation ni page)",
+    "revérifiée_ici": false,
+    "note": "Piste à vérifier dans le programme officiel. N'entre jamais dans le calcul tant que le texte original et sa référence ne sont pas saisis."
+   },
+   "origine": {
+    "type": "jeu_ca_matche",
+    "index_jeu": 23
+   }
+  }
+ ]
+}

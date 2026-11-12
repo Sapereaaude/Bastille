@@ -1,0 +1,815 @@
+{
+ "_doc": "Table de correspondance mesures originales (niveau 1) ↔ propositions neutres (niveau 2). type : equivalente | partielle | piste. Les pistes (mesures sans texte original) ne sont jamais validables en l'état.",
+ "correspondances": [
+  {
+   "id": "COR-001",
+   "mesure": "LFI-0063",
+   "proposition": "BP-ENV-001",
+   "type": "partielle",
+   "fragment": "arrêter le programme de nouveau nucléaire (EPR2)",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-002",
+   "mesure": "LFI-0063",
+   "proposition": "BP-ENV-002",
+   "type": "partielle",
+   "fragment": "Planifier la fermeture progressive des centrales nucléaires existantes",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-003",
+   "mesure": "ECO-0101",
+   "proposition": "BP-ENV-001",
+   "type": "partielle",
+   "fragment": "Mettre fin aux nouveaux programmes EPR-2",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-004",
+   "mesure": "ECO-0101",
+   "proposition": "BP-ENV-002",
+   "type": "partielle",
+   "fragment": "Planifier la sortie du nucléaire",
+   "ambigu": true,
+   "raison_ambiguite": "« Sortie du nucléaire » rapprochée de « fermeture progressive des centrales existantes » : rythme et périmètre non précisés.",
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-005",
+   "mesure": "ECO-0101",
+   "proposition": "BP-ENV-003",
+   "type": "partielle",
+   "fragment": "Mettre fin aux nouveaux programmes […] SMR",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-006",
+   "mesure": "ECO-0054",
+   "proposition": "BP-TRA-001",
+   "type": "partielle",
+   "fragment": "Abroger l'âge légal de départ à la retraite à 64 ans",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-007",
+   "mesure": "ECO-0054",
+   "proposition": "BP-TRA-003",
+   "type": "partielle",
+   "fragment": "revenir immédiatement à un âge minimum à 62 ans",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-008",
+   "mesure": "LFI-0042",
+   "proposition": "BP-TRA-002",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-009",
+   "mesure": "ECO-0114",
+   "proposition": "BP-TRA-004",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-010",
+   "mesure": "ECO-0076",
+   "proposition": "BP-ECO-002",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-011",
+   "mesure": "LFI-0025",
+   "proposition": "BP-ECO-003",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-012",
+   "mesure": "LFI-0068",
+   "proposition": "BP-ECO-004",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-013",
+   "mesure": "ECO-0121",
+   "proposition": "BP-ECO-005",
+   "type": "partielle",
+   "fragment": "taxe Zucman de 2 % au-delà de 100 millions d'euros",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-014",
+   "mesure": "ECO-0121",
+   "proposition": "BP-ECO-006",
+   "type": "partielle",
+   "fragment": "Rétablir l'Impôt sur la Fortune (ISF)",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-015",
+   "mesure": "LFI-0048",
+   "proposition": "BP-LOG-001",
+   "type": "partielle",
+   "fragment": "un encadrement des loyers partout sur le territoire",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-016",
+   "mesure": "LFI-0048",
+   "proposition": "BP-LOG-002",
+   "type": "partielle",
+   "fragment": "Geler les loyers le temps de déployer",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-017",
+   "mesure": "ECO-0033",
+   "proposition": "BP-LOG-001",
+   "type": "partielle",
+   "fragment": "généralisation […] de l'encadrement des loyers",
+   "ambigu": true,
+   "raison_ambiguite": "« Généralisation » ≈ « tout le territoire » : équivalence à confirmer.",
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-018",
+   "mesure": "ECO-0033",
+   "proposition": "BP-LOG-003",
+   "type": "partielle",
+   "fragment": "Remplacer la garantie Visale […] par une garantie universelle des loyers",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-019",
+   "mesure": "LFI-0096",
+   "proposition": "BP-LOG-004",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-020",
+   "mesure": "LFI-0016",
+   "proposition": "BP-IMM-001",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-021",
+   "mesure": "ECO-0032",
+   "proposition": "BP-IMM-002",
+   "type": "partielle",
+   "fragment": "Étendre le droit de vote aux étranger·es extra-communautaires pour les élections locales",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-022",
+   "mesure": "ECO-0032",
+   "proposition": "BP-IMM-003",
+   "type": "partielle",
+   "fragment": "après cinq années de résidence en France",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-023",
+   "mesure": "ECO-0123",
+   "proposition": "BP-IMM-004",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-024",
+   "mesure": "LFI-0118",
+   "proposition": "BP-SEC-001",
+   "type": "partielle",
+   "fragment": "les brigades de répression des actions violentes motorisées (BRAV-M)",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-025",
+   "mesure": "LFI-0118",
+   "proposition": "BP-SEC-002",
+   "type": "partielle",
+   "fragment": "démanteler les brigades anticriminalité (BAC)",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-026",
+   "mesure": "ECO-0057",
+   "proposition": "BP-SEC-001",
+   "type": "partielle",
+   "fragment": "Démanteler les unités de type BRAV-M",
+   "ambigu": true,
+   "raison_ambiguite": "« Unités de type BRAV-M » peut viser plus large que les seules BRAV-M.",
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-027",
+   "mesure": "ECO-0057",
+   "proposition": "BP-SEC-003",
+   "type": "partielle",
+   "fragment": "Interdire les lanceurs de balles de défense (LBD40)",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-028",
+   "mesure": "ECO-0057",
+   "proposition": "BP-SEC-004",
+   "type": "partielle",
+   "fragment": "les grenades mutilantes",
+   "ambigu": true,
+   "raison_ambiguite": "Catégorie de grenades non définie.",
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-029",
+   "mesure": "ECO-0004",
+   "proposition": "BP-INS-001",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-030",
+   "mesure": "LFI-0112",
+   "proposition": "BP-INS-002",
+   "type": "partielle",
+   "fragment": "passer à la 6e République",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-031",
+   "mesure": "LFI-0112",
+   "proposition": "BP-INS-003",
+   "type": "partielle",
+   "fragment": "Convoquer une Constituante",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-032",
+   "mesure": "LFI-0009",
+   "proposition": "BP-EDU-001",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-033",
+   "mesure": "ECO-0081",
+   "proposition": "BP-EDU-002",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-034",
+   "mesure": "LFI-0087",
+   "proposition": "BP-SAN-001",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-035",
+   "mesure": "ECO-0122",
+   "proposition": "BP-SAN-002",
+   "type": "equivalente",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-036",
+   "mesure": "LFI-0098",
+   "proposition": "BP-INT-001",
+   "type": "partielle",
+   "fragment": "Se retirer immédiatement du commandement intégré de l'OTAN",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-037",
+   "mesure": "LFI-0098",
+   "proposition": "BP-INT-002",
+   "type": "partielle",
+   "fragment": "puis, par étapes, de l'organisation elle-même",
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-038",
+   "mesure": "LFI-J01",
+   "proposition": "BP-ECO-001",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": true,
+   "raison_ambiguite": "Montant en net, indexation : si confirmé, SUPPORT sur le principe et DIFFERENT sur BP-ECO-002.",
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-039",
+   "mesure": "LFI-J03",
+   "proposition": "BP-TRA-004",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-040",
+   "mesure": "ECO-J23",
+   "proposition": "BP-IMM-001",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-041",
+   "mesure": "LFI-J22",
+   "proposition": "BP-IMM-002",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-042",
+   "mesure": "LFI-J23",
+   "proposition": "BP-IMM-004",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-043",
+   "mesure": "LFI-J20",
+   "proposition": "BP-SEC-003",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-044",
+   "mesure": "LFI-J20",
+   "proposition": "BP-SEC-004",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": true,
+   "raison_ambiguite": "Grenades « de désencerclement » vs « mutilantes » : catégories à comparer.",
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-045",
+   "mesure": "LFI-J21",
+   "proposition": "BP-SEC-005",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-046",
+   "mesure": "ECO-J20",
+   "proposition": "BP-SEC-005",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-047",
+   "mesure": "ECO-J08",
+   "proposition": "BP-INS-002",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-048",
+   "mesure": "ECO-J08",
+   "proposition": "BP-INS-003",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": true,
+   "raison_ambiguite": "Processus constituant participatif ≠ Assemblée constituante élue ?",
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-049",
+   "mesure": "LFI-J09",
+   "proposition": "BP-INS-004",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-050",
+   "mesure": "ECO-J10",
+   "proposition": "BP-INS-004",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-051",
+   "mesure": "ECO-J16",
+   "proposition": "BP-INT-002",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": true,
+   "raison_ambiguite": "Possible opposition : à confirmer par une citation.",
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-052",
+   "mesure": "LFI-J13",
+   "proposition": "BP-ENV-004",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-053",
+   "mesure": "ECO-J12",
+   "proposition": "BP-ENV-004",
+   "type": "piste",
+   "fragment": null,
+   "ambigu": false,
+   "raison_ambiguite": null,
+   "detection": "manuelle",
+   "statut": "en_attente_source",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  },
+  {
+   "id": "COR-054",
+   "mesure": "ECO-0076",
+   "proposition": "BP-ECO-001",
+   "type": "partielle",
+   "fragment": "Passer le salaire minimum à 2000€ brut par mois",
+   "ambigu": true,
+   "raison_ambiguite": "Un montant cible vaut hausse décidée politiquement seulement s'il dépasse la revalorisation automatique attendue d'ici 2027 : à vérifier.",
+   "detection": "manuelle",
+   "statut": "propose",
+   "redige": {
+    "par": "Claude",
+    "le": "2026-11-09"
+   }
+  }
+ ]
+}

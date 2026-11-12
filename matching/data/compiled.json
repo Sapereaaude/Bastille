@@ -1,0 +1,77 @@
+{
+ "version": 1,
+ "genere_le": "2026-11-09",
+ "propositions": [
+  {
+   "id": "BP-ENV-001",
+   "theme": "env",
+   "famille": "nucleaire",
+   "parent": null,
+   "niveau_precision": "modalite",
+   "texte_carte": "Arrêter le programme|de nouveaux réacteurs|nucléaires EPR2.",
+   "texte_simple": "Ne plus construire|de nouvelles|centrales EPR2.",
+   "explication_simple": "L'État a lancé la construction de nouveaux réacteurs nucléaires, appelés EPR2. Ce programme serait arrêté.",
+   "question": "Faut-il arrêter la construction de nouveaux réacteurs nucléaires EPR2 ?",
+   "stance": "arrêter le programme de nouveaux réacteurs nucléaires EPR2",
+   "nuances": [
+    "Les Écologistes y ajoutent l'arrêt des petits réacteurs modulaires (SMR) : voir BP-ENV-003."
+   ],
+   "positions": {
+    "M": "SUPPORT",
+    "T": "SUPPORT"
+   },
+   "lead": "M",
+   "also": [
+    "T"
+   ],
+   "mesuresApp": [
+    62,
+    100
+   ],
+   "citations": [
+    {
+     "parti": "LFI",
+     "cle": "M",
+     "texte": "Planifier la fermeture progressive des centrales nucléaires existantes … arrêter le programme de nouveau nucléaire (EPR2)",
+     "reference": "L'Avenir en commun (édition 2025), Partie 1, chap. 3 « Les grands chantiers de la bifurcation écologique »",
+     "url": "https://melenchon2027.fr/programme/livre/pour-une-bifurcation-ecologique-et-sociale/chapitre3"
+    },
+    {
+     "parti": "ECO",
+     "cle": "T",
+     "texte": "Planifier la sortie du nucléaire. Mettre fin aux nouveaux programmes EPR-2 et SMR extrêmement dispendieux.",
+     "reference": "Pour une prospérité écologique – Le nouveau programme des Écologistes, p. 17",
+     "url": "https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf"
+    }
+   ],
+   "detailPositions": [
+    {
+     "cle": "M",
+     "position": "SUPPORT",
+     "justification": "« arrêter le programme de nouveau nucléaire (EPR2) ».",
+     "ecarts": {
+      "seuils": null,
+      "montants": null,
+      "calendrier": null,
+      "conditions": null
+     }
+    },
+    {
+     "cle": "T",
+     "position": "SUPPORT",
+     "justification": "« Mettre fin aux nouveaux programmes EPR-2 ».",
+     "ecarts": {
+      "seuils": null,
+      "montants": null,
+      "calendrier": null,
+      "conditions": null
+     }
+    }
+   ]
+  }
+ ],
+ "avertissements": [
+  "LFI-0063 sort du deck mais BP-ENV-002 n'est pas validée : fragment perdu tant que la validation n'est pas complète.",
+  "ECO-0101 sort du deck mais BP-ENV-002, BP-ENV-003 n'est pas validée : fragment perdu tant que la validation n'est pas complète."
+ ]
+}

@@ -991,7 +991,7 @@ svg .cr-z{box-shadow:none}svg .cr-z rect.hl{fill:rgba(59,91,184,.08);stroke:rgba
     <div class="grow"></div>
     <div id="res-body"></div><div id="res-verdict"></div>
     <p style="display:none"><span id="res-note"></span></p>
-    <div style="display:flex;justify-content:flex-end;margin-top:6px"><button class="pill" id="res-how">🧮 Comment on calcule ?</button><span id="res-cov" style="display:none"></span></div>
+    <div style="display:flex;justify-content:flex-end;margin-top:6px"><button class="pill" id="res-how">🧮 Comment on calcule ?</button><span id="res-cov" style="display:none"></span></div><button id="res-data" style="display:none;align-self:center;margin-top:6px;background:none;border:0;padding:2px 4px;font:inherit;font-size:12px;font-weight:700;color:var(--red2);white-space:nowrap;cursor:pointer;text-decoration:underline;text-underline-offset:3px"></button>
     <div id="res-wrap"></div><div id="res-others" style="margin-top:10px;border:2px solid var(--ink);background:var(--irid2);padding:10px 12px;display:flex;align-items:center;gap:10px"></div>
     <div class="grow"></div>
     <div style="display:flex;gap:10px"><button class="btn" id="res-go" style="flex:1;min-width:0;font-size:20px">Mon profil <span>→</span></button><button class="btn" aria-label="Partager" style="flex:none;width:auto;padding:0 14px;height:56px;background:var(--paper);color:var(--ink);font-size:16px;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"><path d="M12 15V3M7 8l5-5 5 5M5 12v8h14v-8"/></svg></button></div>
@@ -1414,7 +1414,7 @@ svg .cr-z{box-shadow:none}svg .cr-z rect.hl{fill:rgba(59,91,184,.08);stroke:rgba
 
 <script>
 (function(){
-const UNLOCK=16;
+const UNLOCK=15;
 const C={
  P:{n:'Édouard Philippe',s:'Philippe',f:'Édouard',l:'P',party:'Horizons',bg:'#C4D7FF',fg:'#17171F',r:'r1'},
  G:{n:'Raphaël Glucksmann',s:'Glucksmann',f:'Raphaël',l:'G',party:'Place publique',bg:'#E4EDFF',fg:'#17171F',r:'r2'},
@@ -1454,48 +1454,262 @@ const DUMECA=["D", "T", "X", "N", "R", "D", "N", "F", "D", "X", "D", "D", "N", "
 const MG={"rich": [24, 67, 120, 66, 107, 63], "cut": [29, 109, 23, 45], "rigor": [69, 36, 112], "demo": [3, 5, 35, 71, 111], "social": [86, 114, 121, 58, 80, 44, 74, 95, 46], "restrict": [2, 64, 106, 119, 96, 90, 37], "later": [33], "peace": [97, 73], "defense": [14, 104]};
 const BUDGETK=["39,69"];
 const CTX={};const NU={};const SRC={};const RAM={};
-/* ---- moteur de matching v2 (pur, testable hors navigateur) ----
-   Hiérarchie : mesure → famille → thème → score du parti.
-   Chaque parti a un score indépendant 0–100 %, jamais normalisé. */
-const COMPAT={contre:0,neutre:50,pour:75,adore:100}; /* choix de modélisation, documenté dans « Comment on calcule ? » */
-const REL_T={firstN:16,firstThemes:4,firstParties:4,consN:32,consThemes:7,consParties:7,consMin:3,stable:5,gapStable:0};
-const FAM=(P,i)=>P[i][6]||('m'+i);              /* famille : champ 6, sinon la mesure est sa propre famille */
-const ALSO=(P,i)=>P[i][7]||[];                   /* partis engagés sur une mesure strictement identique */
-const partiesOf=(P,i)=>[P[i][2],...ALSO(P,i)];
-const corpusOf=(P,k)=>P.map((_,i)=>i).filter(i=>partiesOf(P,i).includes(k));
-function partyScore(P,A,k){
-  const th={};const ev=[];
-  Object.keys(A).forEach(i=>{i=+i;const a=A[i];if(!(a in COMPAT)||!P[i]||!partiesOf(P,i).includes(k))return;ev.push(i);const t=P[i][0],f=FAM(P,i);th[t]=th[t]||{};(th[t][f]=th[t][f]||[]).push(COMPAT[a])});
-  const themes=Object.keys(th);if(!themes.length)return null;
-  const mean=v=>v.reduce((a,b)=>a+b,0)/v.length;
-  const tm={};themes.forEach(t=>{tm[t]=mean(Object.values(th[t]).map(mean))});
-  const raw=mean(Object.values(tm));
-  return {k,raw,pct:Math.round(raw),comp:ev.length,ok:ev.filter(i=>A[i]==='pour'||A[i]==='adore').length,no:ev.filter(i=>A[i]==='contre').length,fire:ev.filter(i=>A[i]==='adore').length,neu:ev.filter(i=>A[i]==='neutre').length,themes:themes.length,th:tm,corpus:corpusOf(P,k).length,cover:ev.length/Math.max(1,corpusOf(P,k).length)}}
-const MINEVAL=2; /* un parti avec moins de 2 mesures évaluées est classé après les autres (affiché grisé) */
-function engScores(P,A){const ks=[...new Set(P.map(p=>p[2]))];return ks.map(k=>partyScore(P,A,k)).filter(Boolean).sort((a,b)=>((b.comp>=MINEVAL)-(a.comp>=MINEVAL))||b.raw-a.raw||b.comp-a.comp||b.fire-a.fire)}
-/* fiabilité : exploratoire / à confirmer / consolidé — seuils documentés dans REL_T, à calibrer */
-function engReliability(P,A,hist){
-  const ev=Object.keys(A).map(Number).filter(i=>(A[i] in COMPAT)&&P[i]);const n=ev.length;
-  const themes=new Set(ev.map(i=>P[i][0])).size;const sc=engScores(P,A);const parties=sc.filter(x=>x.comp>=REL_T.consMin).length;const partiesAny=sc.length;
-  const h=hist||[];const last=h.slice(-REL_T.stable);const stable=last.length>=REL_T.stable&&last.every(x=>x===last[0]);
-  const miss=[];if(n<REL_T.firstN)miss.push(`${REL_T.firstN-n} réponse${REL_T.firstN-n>1?'s':''} de plus`);if(themes<REL_T.firstThemes)miss.push(`${REL_T.firstThemes-themes} thème${REL_T.firstThemes-themes>1?'s':''} de plus`);if(partiesAny<REL_T.firstParties)miss.push(`des mesures de ${REL_T.firstParties-partiesAny} parti${REL_T.firstParties-partiesAny>1?'s':''} de plus`);
-  let lvl='explo';if(n>=REL_T.firstN&&themes>=REL_T.firstThemes&&partiesAny>=REL_T.firstParties)lvl='confirm';
-  if(lvl==='confirm'&&n>=REL_T.consN&&themes>=REL_T.consThemes&&parties>=REL_T.consParties&&stable)lvl='consol';
-  return {lvl,n,themes,parties,partiesAny,stable,miss,label:{explo:'Exploratoire',confirm:'À confirmer',consol:'Consolidé'}[lvl]}}
-/* sélection des cartes : équilibre partis, thèmes, familles, instruments ; après le 1er pronostic, complète ce qui manque */
-function engPick(P,A,order,rand,mech,twins){
-  const seen=new Set(order);const rem=P.map((_,i)=>i).filter(i=>!seen.has(i));if(!rem.length)return null;
-  const cnt=(f)=>{const m={};order.forEach(i=>{const v=f(i);m[v]=(m[v]||0)+1});return m};
-  const cp=cnt(i=>P[i][2]),ct=cnt(i=>P[i][0]),cf=cnt(i=>FAM(P,i)),cm=cnt(i=>mech?mech[i]:'');
-  const recent=order.slice(-6);const tw=twins||[];
-  const evP={},evT={};Object.keys(A).forEach(i=>{i=+i;if(!(A[i] in COMPAT)||!P[i])return;evP[P[i][2]]=(evP[P[i][2]]||0)+1;evT[P[i][0]]=(evT[P[i][0]]||0)+1});
-  const unlocked=Object.keys(A).filter(i=>A[i] in COMPAT).length>=REL_T.firstN;
-  let best=null,bs=Infinity;
-  rem.forEach(i=>{const k=P[i][2],t=P[i][0];let s=(cp[k]||0)*3+(ct[t]||0)*2+(cf[FAM(P,i)]||0)*4+(cm[mech?mech[i]:'']||0)*0.5;
-    if(unlocked)s+=(evP[k]||0)*2+(evT[t]||0)*1.5;
-    if(tw.some(([a,b])=>(a===i&&recent.includes(b))||(b===i&&recent.includes(a))))s+=6;
-    s+=rand()*0.9;if(s<bs){bs=s;best=i}});
-  return best}
+/* <BASTILLE-MATCHING v3> */
+/* Bastille — moteur de matching v3 (propositions neutres).
+   Pur, sans DOM : chargé tel quel dans index.html (injecté par matching/scripts/build.mjs) et dans les tests Node.
+   Principes :
+   - L'unité de calcul est la PROPOSITION. Une mesure non rattachée à une proposition validée reste sa propre
+     proposition, soutenue par son seul auteur : c'est exactement le comportement du moteur v2.
+   - SUPPORT  → compatibilité = poids de la réponse (contre 0, mitigé 50, d'accord 75, j'adore 100).
+     OPPOSE   → compatibilité miroir (100 − poids).
+     PARTIAL / DIFFERENT → aucun point (jamais 50 % par défaut) : la nuance est remontée, et la carte plus
+                précise (proposition enfant) est proposée en priorité.
+     UNKNOWN / absente → exclue du calcul : ni bonus ni malus.
+   - Agrégation : propositions → famille → thème → moyenne des thèmes. Un sujet décliné en plusieurs cartes
+     (même famille) ne pèse pas plus qu'un sujet à une carte. Chaque parti a un score indépendant, jamais normalisé.
+   - Score ≠ confiance : la marge indicative, le nombre de propositions évaluées, la diversité des thèmes et
+     la quantité de positions documentées sont rendus séparément. */
+(function (root) {
+  'use strict';
+  var COMPAT = { contre: 0, neutre: 50, pour: 75, adore: 100 };
+  var STANCES = ['SUPPORT', 'OPPOSE', 'PARTIAL', 'DIFFERENT', 'UNKNOWN'];
+  var REL = { firstN: 15, firstThemes: 4, firstParties: 4, consN: 32, consThemes: 7, consParties: 7, consMin: 3, stable: 5, maxThemeShare: 0.5 };
+  var MINEVAL = 2;      // moins de 2 propositions évaluées : parti classé après les autres
+  var MIN_FOR_MARGIN = 3; // en dessous, pas de marge affichée : trop peu de données
+  var SD_FLOOR = 15;    // écart-type plancher : évite une fausse précision quand toutes les réponses se ressemblent
+
+  var scored = function (s) { return s === 'SUPPORT' || s === 'OPPOSE'; };
+  var nuanced = function (s) { return s === 'PARTIAL' || s === 'DIFFERENT'; };
+  var mean = function (v) { var t = 0; for (var i = 0; i < v.length; i++) t += v[i]; return t / v.length; };
+  var keys = Object.keys;
+
+  /* Modèle : { units:{id:{id,theme,famille,pos:{parti:position},rows:[],parent,children:[],common}}, rowUnit:{ligne:id}, excluded:Set }
+     P : tableau des mesures du jeu ([thème, texte, auteur, n°, citation, exemple, famille?, autresPartis?]).
+     compiled : propositions validées (matching/lib/compile.mjs). */
+  function buildModel(P, compiled) {
+    var units = {}, rowUnit = {}, excluded = {};
+    var props = (compiled && compiled.propositions) || [];
+    props.forEach(function (p) {
+      units[p.id] = { id: p.id, theme: p.theme, famille: p.famille || p.id, pos: Object.assign({}, p.positions), rows: [], parent: p.parent || null, children: [], common: true };
+      (p.mesuresApp || []).forEach(function (i) { excluded[i] = true; });
+    });
+    keys(units).forEach(function (id) { var u = units[id]; if (u.parent && units[u.parent]) units[u.parent].children.push(id); else u.parent = null; });
+    P.forEach(function (row, i) {
+      if (excluded[i]) return;
+      var id = 'm' + i, pos = {};
+      pos[row[2]] = 'SUPPORT';
+      (row[7] || []).forEach(function (k) { pos[k] = 'SUPPORT'; });
+      units[id] = { id: id, theme: row[0], famille: row[6] || id, pos: pos, rows: [i], parent: null, children: [], common: false };
+      rowUnit[i] = id;
+    });
+    return { units: units, rowUnit: rowUnit, excluded: excluded };
+  }
+
+  // Rattache une ligne de carte (ajoutée au jeu) à une proposition validée.
+  function attachRow(model, row, unitId) { model.units[unitId].rows.push(row); model.rowUnit[row] = unitId; }
+
+  // Lignes jouables dans le deck principal, dans l'ordre croissant.
+  function deckRows(model) { return keys(model.rowUnit).map(Number).sort(function (a, b) { return a - b; }); }
+
+  // Réponses → réponses par proposition. Une proposition répondue deux fois ne compte qu'une fois (dernière réponse).
+  function unitAnswers(model, answers) {
+    var UA = {};
+    (answers || []).forEach(function (x) { var u = model.rowUnit[x.i]; if (u) UA[u] = x.a; });
+    return UA;
+  }
+
+  function partiesOf(model) {
+    var s = {};
+    keys(model.units).forEach(function (id) { var p = model.units[id].pos; keys(p).forEach(function (k) { if (scored(p[k])) s[k] = 1; }); });
+    return keys(s);
+  }
+
+  function corpus(model, k) { var n = 0; keys(model.units).forEach(function (id) { if (scored(model.units[id].pos[k])) n++; }); return n; }
+
+  function partyScore(model, UA, k) {
+    var th = {}, ev = [], ok = 0, no = 0, fire = 0, neu = 0, unknown = 0, nuances = [], commonN = 0;
+    keys(UA).forEach(function (id) {
+      var a = UA[id], u = model.units[id];
+      if (!u || !(a in COMPAT)) return;
+      var s = u.pos[k];
+      if (scored(s)) {
+        var c = s === 'SUPPORT' ? COMPAT[a] : 100 - COMPAT[a];
+        ev.push(c);
+        th[u.theme] = th[u.theme] || {};
+        (th[u.theme][u.famille] = th[u.theme][u.famille] || []).push(c);
+        var yes = a === 'pour' || a === 'adore';
+        if ((s === 'SUPPORT' && yes) || (s === 'OPPOSE' && a === 'contre')) ok++;
+        if ((s === 'SUPPORT' && a === 'contre') || (s === 'OPPOSE' && yes)) no++;
+        if (s === 'SUPPORT' && a === 'adore') fire++;
+        if (a === 'neutre') neu++;
+        if (u.common) commonN++;
+      } else if (nuanced(s)) nuances.push({ unit: id, stance: s, answer: a, children: u.children.slice() });
+      else unknown++;
+    });
+    var themes = keys(th);
+    if (!themes.length) return null;
+    var tm = {};
+    themes.forEach(function (t) { tm[t] = mean(keys(th[t]).map(function (f) { return mean(th[t][f]); })); });
+    var raw = mean(keys(tm).map(function (t) { return tm[t]; }));
+    var n = ev.length, sd = 0;
+    if (n > 1) { var m = mean(ev); sd = Math.sqrt(ev.reduce(function (acc, v) { return acc + (v - m) * (v - m); }, 0) / (n - 1)); }
+    var margin = n >= MIN_FOR_MARGIN ? 1.96 * Math.max(sd, SD_FLOOR) / Math.sqrt(n) : null;
+    var corp = corpus(model, k);
+    return {
+      k: k, raw: raw, pct: Math.round(raw), comp: n, ok: ok, no: no, fire: fire, neu: neu,
+      themes: themes.length, th: tm, corpus: corp, cover: n / Math.max(1, corp),
+      unknown: unknown, nuances: nuances, common: commonN,
+      margin: margin == null ? null : Math.round(margin),
+      interval: margin == null ? null : [Math.max(0, Math.round(raw - margin)), Math.min(100, Math.round(raw + margin))],
+    };
+  }
+
+  function scores(model, UA) {
+    var out = partiesOf(model).map(function (k) { return partyScore(model, UA, k); }).filter(Boolean)
+      .sort(function (a, b) { return ((b.comp >= MINEVAL) - (a.comp >= MINEVAL)) || b.raw - a.raw || b.comp - a.comp || b.fire - a.fire; });
+    // Égalité statistique avec le n°1 : marges qui se chevauchent (ou marge inconnue).
+    var top = out[0];
+    out.forEach(function (x, i) {
+      x.tieWithTop = i > 0 && !!top && x.comp >= MINEVAL && (!x.interval || !top.interval || x.interval[1] >= top.interval[0]);
+    });
+    return out;
+  }
+
+  function reliability(model, UA, hist, opts) {
+    var R = Object.assign({}, REL, opts || {});
+    var ids = keys(UA).filter(function (id) { return (UA[id] in COMPAT) && model.units[id]; });
+    var n = ids.length, byTheme = {}, documented = 0, common = 0, nuances = 0;
+    ids.forEach(function (id) {
+      var u = model.units[id]; byTheme[u.theme] = (byTheme[u.theme] || 0) + 1;
+      var d = keys(u.pos).filter(function (k) { return scored(u.pos[k]); }).length;
+      documented += d; if (d >= 2) common++;
+      nuances += keys(u.pos).filter(function (k) { return nuanced(u.pos[k]); }).length;
+    });
+    var themes = keys(byTheme).length;
+    var dom = keys(byTheme).sort(function (a, b) { return byTheme[b] - byTheme[a]; })[0] || null;
+    var share = n ? (byTheme[dom] / n) : 0;
+    var sc = scores(model, UA);
+    var parties = sc.filter(function (x) { return x.comp >= R.consMin; }).length, partiesAny = sc.length;
+    var h = hist || [], last = h.slice(-R.stable);
+    var stable = last.length >= R.stable && last.every(function (x) { return x === last[0]; });
+    var miss = [];
+    var pl = function (n, s) { return n + ' ' + s + (n > 1 ? 's' : ''); };
+    if (n < R.firstN) miss.push(pl(R.firstN - n, 'réponse') + ' de plus');
+    if (themes < R.firstThemes) miss.push(pl(R.firstThemes - themes, 'thème') + ' de plus');
+    if (partiesAny < R.firstParties) miss.push(pl(R.firstParties - partiesAny, 'parti') + ' de plus');
+    if (n && share > R.maxThemeShare) miss.push('d\'autres thèmes');
+    var lvl = 'explo';
+    if (n >= R.firstN && themes >= R.firstThemes && partiesAny >= R.firstParties && share <= R.maxThemeShare) lvl = 'confirm';
+    if (lvl === 'confirm' && n >= R.consN && themes >= R.consThemes && parties >= R.consParties && stable) lvl = 'consol';
+    var ties = sc.filter(function (x) { return x.tieWithTop; }).map(function (x) { return x.k; });
+    return {
+      lvl: lvl, label: { explo: 'Exploratoire', confirm: 'À confirmer', consol: 'Consolidé' }[lvl],
+      n: n, themes: themes, dominantTheme: dom, dominantShare: share, parties: parties, partiesAny: partiesAny,
+      stable: stable, miss: miss, documented: documented, commonAnswered: common, nuances: nuances, tiesWithTop: ties,
+    };
+  }
+
+  /* Sélection de la prochaine carte. Reprend la formule v2 (équilibre partis, thèmes, familles, mécanismes ;
+     évite d'enchaîner des jumelles) et ajoute :
+     - relance de précision : si une proposition répondue a des positions PARTIAL/DIFFERENT, sa carte enfant passe devant ;
+     - départage : après le premier match, une carte sur deux peut servir à départager les partis à égalité statistique,
+       uniquement si leurs positions documentées diffèrent. La couverture thématique reste prioritaire. */
+  function pick(model, UA, order, rand, opts) {
+    opts = opts || {};
+    var R = Object.assign({}, REL, opts.rel || {});
+    var mech = opts.mech || null, twins = opts.twins || [];
+    var seen = {}; order.forEach(function (i) { seen[i] = 1; });
+    var rem = deckRows(model).filter(function (i) { return !seen[i]; });
+    if (!rem.length) return null;
+    var unitOf = function (i) { return model.units[model.rowUnit[i]]; };
+    var docOf = function (u) { return keys(u.pos).filter(function (k) { return scored(u.pos[k]); }); };
+    var cp = {}, ct = {}, cf = {}, cm = {};
+    order.forEach(function (i) {
+      var u = unitOf(i); if (!u) return;
+      docOf(u).forEach(function (k) { cp[k] = (cp[k] || 0) + 1; });
+      ct[u.theme] = (ct[u.theme] || 0) + 1; cf[u.famille] = (cf[u.famille] || 0) + 1;
+      var me = mech ? mech[i] : ''; cm[me] = (cm[me] || 0) + 1;
+    });
+    var evP = {}, evT = {}, nAns = 0;
+    keys(UA).forEach(function (id) {
+      var u = model.units[id]; if (!u || !(UA[id] in COMPAT)) return; nAns++;
+      docOf(u).forEach(function (k) { evP[k] = (evP[k] || 0) + 1; });
+      evT[u.theme] = (evT[u.theme] || 0) + 1;
+    });
+    var unlocked = nAns >= R.firstN;
+    var recent = order.slice(-6);
+    var tie = null;
+    if (unlocked && order.length % 2 === 0) {
+      var sc = scores(model, UA); if (sc[1] && sc[1].tieWithTop) tie = [sc[0].k, sc[1].k];
+    }
+    var avg = function (m, ks) { if (!ks.length) return 0; var t = 0; ks.forEach(function (k) { t += m[k] || 0; }); return t / ks.length; };
+    var best = null, bs = Infinity;
+    rem.forEach(function (i) {
+      var u = unitOf(i), D = docOf(u);
+      var s = avg(cp, D) * 3 + (ct[u.theme] || 0) * 2 + (cf[u.famille] || 0) * 4 + (cm[mech ? mech[i] : ''] || 0) * 0.5;
+      if (unlocked) s += avg(evP, D) * 2 + (evT[u.theme] || 0) * 1.5;
+      if (twins.some(function (t) { return (t[0] === i && recent.indexOf(t[1]) >= 0) || (t[1] === i && recent.indexOf(t[0]) >= 0); })) s += 6;
+      if (u.parent && (u.parent in UA)) {
+        var pp = model.units[u.parent].pos;
+        if (keys(pp).some(function (k) { return nuanced(pp[k]); })) s -= 5;
+      }
+      if (tie && scored(u.pos[tie[0]]) && scored(u.pos[tie[1]]) && u.pos[tie[0]] !== u.pos[tie[1]]) s -= 3;
+      s += rand() * 0.9;
+      if (s < bs) { bs = s; best = i; }
+    });
+    return best;
+  }
+
+  // Nuances lisibles pour l'interface : « accord sur le principe, divergence sur les modalités ».
+  function explainNuances(model, UA, k) {
+    var r = partyScore(model, UA, k);
+    return r ? r.nuances : [];
+  }
+
+  var api = {
+    VERSION: '3.0.0', COMPAT: COMPAT, STANCES: STANCES, REL: REL, MINEVAL: MINEVAL, SD_FLOOR: SD_FLOOR, MIN_FOR_MARGIN: MIN_FOR_MARGIN,
+    buildModel: buildModel, attachRow: attachRow, deckRows: deckRows, unitAnswers: unitAnswers,
+    partyScore: partyScore, scores: scores, reliability: reliability, pick: pick, explainNuances: explainNuances,
+  };
+  root.BastilleMatching = api;
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+const BMX={"propositions":[{"id":"BP-ENV-001","theme":"env","famille":"nucleaire","parent":null,"texte_carte":"Arrêter le programme|de nouveaux réacteurs|nucléaires EPR2.","texte_simple":"Ne plus construire|de nouvelles|centrales EPR2.","explication_simple":"L'État a lancé la construction de nouveaux réacteurs nucléaires, appelés EPR2. Ce programme serait arrêté.","stance":"arrêter le programme de nouveaux réacteurs nucléaires EPR2","positions":{"M":"SUPPORT","T":"SUPPORT"},"lead":"M","also":["T"],"mesuresApp":[62,100],"citations":[{"parti":"LFI","cle":"M","texte":"Planifier la fermeture progressive des centrales nucléaires existantes … arrêter le programme de nouveau nucléaire (EPR2)","reference":"L'Avenir en commun (édition 2025), Partie 1, chap. 3 « Les grands chantiers de la bifurcation écologique »","url":"https://melenchon2027.fr/programme/livre/pour-une-bifurcation-ecologique-et-sociale/chapitre3"},{"parti":"ECO","cle":"T","texte":"Planifier la sortie du nucléaire. Mettre fin aux nouveaux programmes EPR-2 et SMR extrêmement dispendieux.","reference":"Pour une prospérité écologique – Le nouveau programme des Écologistes, p. 17","url":"https://lesecologistes.fr/document/3N4JsAEmq6vsx42IITGNZa/vdef-programme-1.pdf"}]}]};
+/* ---- raccord v3 ↔ jeu : propositions neutres validées ajoutées au deck (BMX injecté par build.mjs) ---- */
+const P0=P.length;                                   /* mesures d'origine ; au-delà : propositions communes */
+const P0I=()=>P.slice(0,P0).map((_,i)=>i);           /* mini-jeux : uniquement les mesures d'origine */
+const BM=BastilleMatching;
+const BM_MODEL=BM.buildModel(P,BMX);
+const BM_ROW={};
+BMX.propositions.forEach(p=>{const i=P.length;
+  P.push([p.theme,p.texte_carte,p.lead,p.id.replace(/^BP-/,''),p.citations.map(c=>'« '+c.texte+' »').join(' · '),'',p.famille,p.also]);
+  PSIMPLE.push([p.texte_simple,p.explication_simple]);STANCE.push([p.stance,'pas '+p.stance]);
+  SRCM.push(['Proposition commune Bastille',p.citations.map(c=>c.reference).join(' ; '),'',(p.citations[0]||{}).url||'']);
+  DUMECA.push(DUMECA[p.mesuresApp[0]]||'D');BM.attachRow(BM_MODEL,i,p.id);BM_ROW[p.id]=i});
+const BM_DECK=BM.deckRows(BM_MODEL);                 /* lignes jouables : mesures non rattachées + propositions validées */
+const DECKN=()=>BM_DECK.length;
+const BMP=i=>i>=P0?BMX.propositions[i-P0]:null;
+const SUPP=i=>{const u=BM_MODEL.units[BM_MODEL.rowUnit[i]];return u?Object.keys(u.pos).filter(k=>u.pos[k]==='SUPPORT'):[P[i][2],...(P[i][7]||[])]};
+const CNI=i=>i>=P0?SUPP(i).map(k=>CN(k)).join(' et '):CN(P[i][2]);
+const UAN=()=>BM.unitAnswers(BM_MODEL,S.answers);
+const BM_COMMON=BMX.propositions.filter(p=>Object.values(p.positions).filter(s=>s==='SUPPORT'||s==='OPPOSE').length>=2).length;
+/* anciens noms du moteur v2, gardés pour les écrans qui les utilisent */
+const COMPAT=BM.COMPAT;const REL_T=BM.REL;const MINEVAL=BM.MINEVAL;
+const FAM=(P_,i)=>{const u=BM_MODEL.units[BM_MODEL.rowUnit[i]];return u?u.famille:('m'+i)};
+const ALSO=(P_,i)=>P[i][7]||[];
+const partiesOf=(P_,i)=>SUPP(i);
+const corpusOf=(P_,k)=>BM_DECK.filter(i=>SUPP(i).includes(k));
+/* réponses sauvegardées : ré-ancrées sur la proposition (u) ; une mesure devenue proposition commune repart à zéro */
+function bmSanitize(){S.answers=(S.answers||[]).map(x=>{if(x.u&&String(x.u).startsWith('BP-'))return BM_ROW[x.u]!=null?Object.assign({},x,{i:BM_ROW[x.u]}):null;if(!(x.i in BM_MODEL.rowUnit))return null;return x}).filter(Boolean);S.order=S.answers.map(x=>x.i);S.i=S.order.length}
+/* « Comment on calcule ? » : ce qui dépend des propositions communes, des nuances et de la documentation */
+function bmHow(sc,r){const top=sc[0];const nu=sc.slice(0,3).flatMap(x=>x.nuances.map(n=>({k:x.k,n})));
+  const docs=sc.slice(0,4).map(x=>`${CN(x.k)} : ${x.corpus} proposition${x.corpus>1?'s':''} documentée${x.corpus>1?'s':''}`).join(' · ');
+  const nl=s=>s==='PARTIAL'?'d\'accord en partie, sous conditions':'même objectif, modalités différentes';
+  return `<details style="margin-top:10px"><summary class="anton" style="font-size:17px;cursor:pointer">Plusieurs partis, un seul swipe</summary><div style="margin-top:6px">${BM_COMMON?`<b>${BM_COMMON}</b> proposition${BM_COMMON>1?'s':''} commune${BM_COMMON>1?'s':''} validée${BM_COMMON>1?'s':''} : quand tu swipes l'une d'elles, ta réponse compte pour <b>chaque</b> parti qui la défend, et à l'envers pour celui qui s'y oppose explicitement. Une seule fois chacun.`:'Pour l\'instant, aucune proposition commune n\'est validée : chaque carte compte encore pour le seul parti qui l\'a écrite. Les propositions communes arrivent après relecture humaine de chaque rapprochement.'}<br><br>Si un programme ne dit rien sur une proposition, ce parti n'est ni récompensé ni pénalisé : sa position est « inconnue » et ne compte pas. Ne rien dire, ce n'est pas s'opposer.</div></details>
+  <details style="margin-top:10px"><summary class="anton" style="font-size:17px;cursor:pointer">Les nuances</summary><div style="margin-top:6px">Quand un parti est d'accord en partie, ou vise le même but avec d'autres modalités (montant, âge, calendrier), on ne lui donne pas 50 % par défaut : on ne compte rien, et on te propose une carte plus précise pour trancher.${nu.length?`<br><br>Dans tes réponses : ${nu.slice(0,4).map(({k,n})=>`${CN(k)}, ${nl(n.stance)}`).join(' ; ')}.`:''}</div></details>
+  <details style="margin-top:10px"><summary class="anton" style="font-size:17px;cursor:pointer">Pourquoi des partis plus documentés</summary><div style="margin-top:6px">Certains programmes sont plus longs, ou ont plus de mesures déjà vérifiées dans Bastille. Chaque score est une moyenne par thème, pas une somme : publier plus ne rapporte pas plus de points, ça donne juste plus d'occasions d'être comparé.${docs?`<br><br>${docs}.`:''}</div></details>
+  <details style="margin-top:10px"><summary class="anton" style="font-size:17px;cursor:pointer">Pourquoi c'est provisoire</summary><div style="margin-top:6px">Le pourcentage dit à quel point tu es d'accord ; la fiabilité dit à quel point on peut s'y fier. Ce n'est pas la même chose.${top&&top.margin!=null?`<br><br>${CN(top.k)} : ${top.pct} %, à ±${top.margin} points près (marge indicative, calculée sur ${top.comp} proposition${top.comp>1?'s':''}).`:''}${r.tiesWithTop.length?`<br><br>Égalité statistique avec ${r.tiesWithTop.map(k=>CN(k)).join(', ')} : l'écart avec ton n°1 tient dans la marge.`:''}${r.dominantTheme&&r.dominantShare>BM.REL.maxThemeShare?`<br><br>Plus de la moitié de tes réponses portent sur un seul thème (${T[r.dominantTheme][0].toLowerCase()}) : le résultat ne représente pas l'ensemble de tes idées.`:''}<br><br>Données : ${r.documented} positions documentées dans tes ${r.n} réponses${BM_COMMON?`, dont ${r.commonAnswered} proposition${r.commonAnswered>1?'s':''} commune${r.commonAnswered>1?'s':''}`:''}. Les programmes ne sont pas encore couverts en entier.</div></details>`}
+/* </BASTILLE-MATCHING v3> */
 
 
 const ICON={
@@ -1516,14 +1730,14 @@ const ptag=k=>`<span class="ptag">${PC(k)}</span>`;
 const tic=(k,px=22)=>`<span class="ti" style="width:${px}px;height:${px}px;background:${T[k][1]}"><svg width="${Math.round(px*.64)}" height="${Math.round(px*.64)}" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter">${ICON[k]}</svg></span>`;
 const S={intent:null,themes:[],answers:[],i:0,unlocked:false,order:[],topHist:[],seed:0};
 let _rs=1;const srand=()=>{_rs=(_rs*9301+49297)%233280;return _rs/233280};
-function ensureOrder(upTo){const A={};S.answers.forEach(x=>A[x.i]=x.a);_rs=(S.seed||1)+S.order.length*7919;while(S.order.length<=upTo&&S.order.length<P.length){const nx=engPick(P,A,S.order,srand,DUMECA,TWINS);if(nx==null)break;S.order.push(nx)}}
+function ensureOrder(upTo){const UA=UAN();_rs=(S.seed||1)+S.order.length*7919;while(S.order.length<=upTo&&S.order.length<DECKN()){const nx=BM.pick(BM_MODEL,UA,S.order,srand,{mech:DUMECA,twins:TWINS});if(nx==null)break;S.order.push(nx)}}
 function curM(){ensureOrder(S.i);return S.order[S.i]}
 const $=s=>document.querySelector(s);
 const el=(h)=>{const d=document.createElement('div');d.innerHTML=h.trim();return d.firstChild};
 /* six du comparatif ; les autres (x:1) sont les candidat·es déclaré·es au 3 nov. 2026, injecté·es seulement si choisi·es comme intention */
 const CN=k=>C[k]?`${C[k].s} (${C[k].party})`:'';const CNF=k=>C[k]?`${C[k].n} (${C[k].party})`:'';const PC=k=>C[k]?`${C[k].party} (${C[k].s})`:'';
 const SIX=()=>Object.keys(C).filter(k=>!C[k].x);
-const by=(i,k)=>P[i][2]===k||!!(C[k]&&C[k].m&&C[k].m.includes(i));
+const by=(i,k)=>P[i][2]===k||SUPP(i).includes(k)||!!(C[k]&&C[k].m&&C[k].m.includes(i));
 const peb=(k,size,fs)=>`<span class="peb ${C[k].r}" style="width:${size}px;height:${size}px;font-size:${fs}px;background:${C[k].bg};color:${C[k].fg}">${C[k].l}</span>`;
 const lines=t=>t.split('|').map(x=>`<span class="nw">${x}</span>`).join('').replace(/\.<\/span>$/,'<span class="dot">.</span></span>');
 
@@ -1531,7 +1745,7 @@ const lines=t=>t.split('|').map(x=>`<span class="nw">${x}</span>`).join('').repl
 /* ---- persistance locale (un seul téléphone, jamais envoyée) ---- */
 const KEY='bastille-v2-reel';
 function save(){try{localStorage.setItem(KEY,JSON.stringify({deep:S.deep,intent:S.intent,themes:S.themes,answers:S.answers,i:S.i,unlocked:S.unlocked,matched:S.matched,finished:S.finished,reflect:S.reflect,wrapSeen:S.wrapSeen,matchK:S.matchK,order:S.order,topHist:S.topHist,seed:S.seed,coached:S.coached,giftSeen:S.giftSeen,mini:S.mini}))}catch(e){}}
-function restore(){try{const d=JSON.parse(localStorage.getItem(KEY)||'null');if(d&&Array.isArray(d.answers)){delete d.dark;Object.assign(S,d);S.dark=false;if(!Array.isArray(S.order)||!S.order.length){S.order=S.answers.map(x=>x.i);S.i=S.order.length}S.topHist=S.topHist||[];S.seed=S.seed||1;return true}}catch(e){}return false}
+function restore(){try{const d=JSON.parse(localStorage.getItem(KEY)||'null');if(d&&Array.isArray(d.answers)){delete d.dark;Object.assign(S,d);S.dark=false;bmSanitize();S.topHist=S.topHist||[];S.seed=S.seed||1;return true}}catch(e){}return false}
 function wipe(){try{localStorage.removeItem(KEY)}catch(e){}}
 
 
@@ -1592,23 +1806,24 @@ seg.style.setProperty('--n',UNLOCK);for(let i=0;i<UNLOCK;i++)seg.appendChild(el(
 function cardHTML(p,idx){const t=T[p[0]];return `<div class="card" data-i="${idx}" style="background:${tint(idx)}"><div class="tag yes">D'accord</div><div class="tag no">Pas d'accord</div><div class="top"><div style="display:flex;align-items:center;gap:8px">${tic(p[0],24)}<span class="kicker">${t[0]}</span></div><span class="num">N° ${p[3]}</span></div><div class="sep"></div><p>${lines(p[1])}</p>${p[5]?`<div class="ex"><b>${SIMPLE?'Concrètement :':'Ex.'}</b> ${p[5]}</div>`:''}<div class="grow"></div><div style="margin-top:14px;display:flex;align-items:center;justify-content:space-between"><button class="ibtn" data-info="${idx}"><i>i</i>Comprendre la mesure</button></div></div>`}
 function startSwipe(){S.i=0;S.answers=[];S.unlocked=false;S.matched=false;S.order=[];S.topHist=[];S.seed=1+Math.floor(Math.random()*1e6);deck.innerHTML='';$('#toast').classList.remove('on');$('#res-btn').classList.remove('on');$('#res-btn').textContent='🔒 Mes résultats';$('#unlockhint').textContent=t(`Tes résultats se débloquent à la ${UNLOCK}ᵉ réponse.`,`${UNLOCK} réponses. Tu tiendras ? Ta salle de sport dit non.`);renderDeck();updateMeta()}
 function resumeSwipe(){renderDeck();updateMeta();if(S.unlocked){$('#res-btn').classList.add('on');$('#res-btn').textContent='Mes résultats';$('#unlockhint').textContent=t('Chaque réponse affine tes résultats.','Chaque réponse te trahit. Les précédentes t\'avaient déjà vendu·e.')}}
-function renderDeck(){deck.innerHTML='';if(S.i>=P.length){deck.innerHTML='<div class="card" style="justify-content:center;text-align:center"><span class="anton" style="font-size:30px">Plus rien à swiper<span class="dot">.</span></span><span class="ital" style="margin-top:8px;font-size:15px">Pour l\'instant. Les programmes bougent.</span></div>';return}
+function renderDeck(){deck.innerHTML='';if(S.i>=DECKN()){deck.innerHTML='<div class="card" style="justify-content:center;text-align:center"><span class="anton" style="font-size:30px">Plus rien à swiper<span class="dot">.</span></span><span class="ital" style="margin-top:8px;font-size:15px">Pour l\'instant. Les programmes bougent.</span></div>';return}
   ensureOrder(S.i+1);const ci=S.order[S.i],ni=S.order[S.i+1];
   if(ni!=null){const bh=deck.appendChild(el(cardHTML(P[ni],ni)));bh.classList.add('behind');bh.style.background=tint(ni)}
   const c=el(cardHTML(P[ci],ci));deck.appendChild(c);bindDrag(c);if(!S.answers.length){c.classList.add('hint')}const sb=$('#sw-simp');if(sb)sb.classList.toggle('hl',S.answers.length<3&&!SIMPLE)}
 function exploitable(){return S.answers.filter(a=>a.a in COMPAT).length}
-function updateMeta(){const n=exploitable();$('#propnum').textContent='Proposition '+String(S.i+1).padStart(2,'0');$('#bignum').textContent=String(S.i+1).padStart(2,'0');$('#count').textContent=n<UNLOCK?`${n} / ${UNLOCK} réponses`:`${n} réponses · ${Math.min(S.i+1,P.length)} / ${P.length}`;
+function updateMeta(){const n=exploitable();$('#propnum').textContent='Proposition '+String(S.i+1).padStart(2,'0');$('#bignum').textContent=String(S.i+1).padStart(2,'0');$('#count').textContent=n<UNLOCK?`${n} / ${UNLOCK} réponses`:`${n} réponses · ${Math.min(S.i+1,DECKN())} / ${DECKN()}`;
   seg.querySelectorAll('i').forEach((s,i)=>{s.className=i<n?(i===n-1?'c f':'f'):''});
-  if(n>=UNLOCK&&!S.unlocked){S.unlocked=true;$('#toast').classList.add('on');$('#res-btn').classList.add('on');$('#res-btn').textContent='Mes résultats';$('#unlockhint').textContent=t('Chaque réponse affine tes résultats.','Chaque réponse te trahit. Les précédentes t\'avaient déjà vendu·e.');save()}
+  if(n>=UNLOCK&&!S.unlocked&&reliability().lvl==='explo'){$('#unlockhint').textContent=t(`Premier match : encore ${reliability().miss[0]}.`,`Encore ${reliability().miss[0]}. Sinon, c'est du flan.`)}
+  if(n>=UNLOCK&&!S.unlocked&&reliability().lvl!=='explo'){S.unlocked=true;$('#toast').classList.add('on');$('#res-btn').classList.add('on');$('#res-btn').textContent='Mes résultats';$('#unlockhint').textContent=t('Chaque réponse affine tes résultats.','Chaque réponse te trahit. Les précédentes t\'avaient déjà vendu·e.');save()}
   }
 function showCoach(){const c=$('#coach');if(!c||S.coached)return;c.style.display='';const ok=$('#coach-ok');if(ok)ok.onclick=()=>{hideCoach()}}
 function hideCoach(){const c=$('#coach');if(c)c.style.display='none';if(!S.coached){S.coached=true;save()}}
 let busy=false;
-function answer(a){if(S.i>=P.length||busy)return;const c=deck.querySelector('.card:not(.behind)');if(!c)return;
+function answer(a){if(S.i>=DECKN()||busy)return;const c=deck.querySelector('.card:not(.behind)');if(!c)return;
   const fly={pour:'translate(520px,-40px) rotate(18deg)',adore:'translate(560px,-120px) rotate(24deg) scale(1.08)',contre:'translate(-520px,-40px) rotate(-18deg)',neutre:'translate(0,140px) scale(.92)',passe:'translate(0,-560px) rotate(-4deg)'}[a];
   c.classList.remove('drag');c.style.transform=fly;c.style.opacity=a==='neutre'||a==='passe'?'0':'1';
   if(a==='pour'||a==='adore')c.querySelector('.tag.yes').style.opacity=1;if(a==='contre')c.querySelector('.tag.no').style.opacity=1;
-  const mi=curM();S.answers.push({i:mi,a});if(a in COMPAT){const tp=scores()[0];S.topHist=[...(S.topHist||[]),tp?tp.k:null].slice(-12)}showRoast(mi,a);shockPop(mi,a);S.i++;hideCoach();save();busy=true;setTimeout(()=>{busy=false;renderDeck();updateMeta()},S.dark?((S.order[S.i-1]) in HOT?2300:1500):300)}
+  const mi=curM();S.answers.push({i:mi,a,u:BM_MODEL.rowUnit[mi]});if(a in COMPAT){const tp=scores()[0];S.topHist=[...(S.topHist||[]),tp?tp.k:null].slice(-12)}showRoast(mi,a);shockPop(mi,a);S.i++;hideCoach();save();busy=true;setTimeout(()=>{busy=false;renderDeck();updateMeta()},S.dark?((S.order[S.i-1]) in HOT?2300:1500):300)}
 document.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>answer(b.dataset.a));
 function bindDrag(c){let sx=0,sy=0,dx=0,dy=0,on=false;c.querySelector('.ibtn').addEventListener('pointerdown',e=>e.stopPropagation());
   c.addEventListener('pointerdown',e=>{on=true;sx=e.clientX;sy=e.clientY;c.setPointerCapture(e.pointerId);c.classList.add('drag')});
@@ -1621,14 +1836,15 @@ $('#toast-go').onclick=()=>{if(S.shiftOn){S.shiftOn=false;$('#toast').classList.
 
 /* ---- fiche mesure ---- */
 function openInfo(i,withSource){const p=P[i];$('#info-ic').innerHTML=tic(p[0],24);$('#info-theme').textContent=T[p[0]][0];$('#info-num').textContent='N° '+p[3];$('#info-title').innerHTML=lines(p[1]);$('#info-text').textContent=p[4];const ib=$('#info-ex').parentNode;ib.style.display=p[5]?'':'none';$('#info-ex').textContent=p[5]?p[5].charAt(0).toUpperCase()+p[5].slice(1):'';
-  const sm_=SRCM[i];$('#info-src').innerHTML=withSource?`${C[p[2]].n} (${PNAME(p[2])}) · <a href="${sm_[3]}" target="_blank" rel="noopener" style="color:var(--ink)">${sm_[0]}${sm_[1]?', '+sm_[1].replace(/ —.*$/,''):''} ↗</a>`:'Mesure vérifiée dans un programme officiel. Auteur·rice révélé·e dans tes résultats.';$('#info-dim').classList.add('on');$('#info-sheet').classList.add('on')}
+  const sm_=SRCM[i];$('#info-src').innerHTML=withSource?`${C[p[2]].n} (${PNAME(p[2])}) · <a href="${sm_[3]}" target="_blank" rel="noopener" style="color:var(--ink)">${sm_[0]}${sm_[1]?', '+sm_[1].replace(/ —.*$/,''):''} ↗</a>`:'Mesure vérifiée dans un programme officiel. Auteur·rice révélé·e dans tes résultats.';if(i>=P0){const bp=BMP(i);$('#info-num').textContent='Proposition commune';$('#info-src').innerHTML=withSource?bp.citations.map(c=>`${CN(c.cle)} · <a href="${c.url}" target="_blank" rel="noopener" style="color:var(--ink)">${c.reference} ↗</a>`).join('<br>'):`Proposition commune à ${bp.citations.length} programmes, citations vérifiées. Partis révélés dans tes résultats.`}
+  $('#info-dim').classList.add('on');$('#info-sheet').classList.add('on')}
 function openHow(){const sc=scores(),r=reliability(),top=sc[0];const A={};S.answers.forEach(x=>A[x.i]=x.a);const ex=top?Object.entries(top.th).sort((a,b)=>b[1]-a[1]).slice(0,2):[];
   const lv=`<details open style="margin-top:6px"><summary class="anton" style="font-size:17px;cursor:pointer">En bref</summary><div style="margin-top:6px">On compare tes réponses aux propositions des partis, sujet par sujet. Plus tu swipes, plus ton pronostic s'affine.<br><br><b>Ce score mesure tes affinités avec les propositions examinées. Ce n'est ni une recommandation de vote ni une prédiction électorale.</b></div></details>
-  <details style="margin-top:10px"><summary class="anton" style="font-size:17px;cursor:pointer">Ton score en détail</summary><div style="margin-top:6px"><div>• <b>${r.n}</b> proposition${r.n>1?'s':''} évaluée${r.n>1?'s':''}, <b>${r.themes}</b> thème${r.themes>1?'s':''} exploré${r.themes>1?'s':''}, <b>${r.partiesAny}</b> partis rencontrés. Statut : <b>${r.label}</b>${r.miss.length?` (il manque ${r.miss.join(', ')})`:''}.</div>${top?`<div style="margin-top:6px">• ${CN(top.k)} : <b>${top.pct} %</b> sur ${top.comp} mesure${top.comp>1?'s':''} (couverture ${Math.round(top.cover*100)} % de ses ${top.corpus} mesures du jeu).${ex.length?` Par thème : ${ex.map(([t,v])=>`${T[t][0].toLowerCase()} ${Math.round(v)} %`).join(', ')}.`:''}</div>`:''}<div style="margin-top:6px">• Poids des réponses : ✕ 0 % · 🤔 50 % · ❤️ 75 % · 🔥 100 %. Passer ne compte pas.</div><div style="margin-top:6px">• Une mesure strictement identique chez deux partis compte pour les deux ; des mesures proches mais différentes restent distinctes.</div><div style="margin-top:6px">• Le classement peut bouger : chaque nouvelle carte ajoute un thème ou un parti, et les écarts entre partis sont souvent de quelques points.</div></div></details>
-  <details style="margin-top:10px"><summary class="anton" style="font-size:17px;cursor:pointer">Méthodologie complète</summary><div style="margin-top:6px;font-size:13px"><b>Formule.</b> Chaque réponse devient une compatibilité : contre 0, mitigé 50, d'accord 75, j'adore 100 (choix de modélisation, pas une échelle validée). Pour un parti : moyenne des compatibilités par <i>famille</i> de mesures, puis moyenne des familles par <i>thème</i>, puis moyenne des thèmes couverts. Score = moyenne des thèmes, arrondi. Aucun thème n'est pondéré plus qu'un autre, quel que soit son nombre de mesures.<br><br><b>Regroupement.</b> Thèmes : économie, travail et retraites, logement, santé, éducation, environnement (transports inclus), sécurité, immigration, institutions, international. Une famille regroupe des mesures quasi identiques d'un même parti ; par défaut, chaque mesure est sa propre famille.<br><br><b>Propositions communes.</b> Une mesure peut porter plusieurs partis seulement si leurs engagements sont identiques ; dans le corpus actuel, aucune n'est marquée ainsi : des mesures jumelles (même but, moyens différents) restent séparées.<br><br><b>Sélection des cartes.</b> Avant le premier pronostic (${REL_T.firstN} réponses), les cartes équilibrent partis, thèmes, familles et instruments, et évitent d'enchaîner deux mesures jumelles. Ensuite, priorité aux partis et thèmes les moins évalués. Un tirage aléatoire léger départage.<br><br><b>Réponses manquantes.</b> Un parti sans mesure évaluée n'a pas de score. Un thème non exploré n'entre pas dans la moyenne. Rien n'est complété par une valeur neutre. Un parti avec moins de ${MINEVAL} mesures évaluées est classé après les autres et grisé.<br><br><b>Fiabilité.</b> Exploratoire : moins de ${REL_T.firstN} réponses, ${REL_T.firstThemes} thèmes ou ${REL_T.firstParties} partis. À confirmer : au-delà, mais sans ${REL_T.consN} réponses, ${REL_T.consThemes} thèmes, ${REL_T.consParties} partis avec au moins ${REL_T.consMin} mesures et un n°1 stable sur les ${REL_T.stable} dernières réponses. Consolidé : tout cela réuni. Ces seuils sont des choix, à calibrer par simulations, pas des garanties statistiques.<br><br><b>Limites.</b> Le corpus est une sélection de 9 à 12 mesures par candidat, vérifiées dans les programmes officiels référencés sur programmes-2027.fr ; il ne couvre pas tout un programme. Les candidats sans programme publié n'ont pas de score. Les réponses sont indépendantes : rien n'est déduit d'une mesure voisine.<br><br><b>Mise à jour du corpus.</b> À chaque programme publié, ses mesures vérifiées sont ajoutées avec source et page ; les scores se recalculent à partir des réponses déjà données, la couverture change, les scores non.</div></details>`;
+  <details style="margin-top:10px"><summary class="anton" style="font-size:17px;cursor:pointer">Ton score en détail</summary><div style="margin-top:6px"><div>• <b>${r.n}</b> proposition${r.n>1?'s':''} évaluée${r.n>1?'s':''}, <b>${r.themes}</b> thème${r.themes>1?'s':''} exploré${r.themes>1?'s':''}, <b>${r.partiesAny}</b> partis rencontrés. Statut : <b>${r.label}</b>${r.miss.length?` (il manque ${r.miss.join(', ')})`:''}.</div>${top?`<div style="margin-top:6px">• ${CN(top.k)} : <b>${top.pct} %</b> sur ${top.comp} mesure${top.comp>1?'s':''} (couverture ${Math.round(top.cover*100)} % de ses ${top.corpus} mesures du jeu).${ex.length?` Par thème : ${ex.map(([t,v])=>`${T[t][0].toLowerCase()} ${Math.round(v)} %`).join(', ')}.`:''}</div>`:''}<div style="margin-top:6px">• Poids des réponses : ✕ 0 % · 🤔 50 % · ❤️ 75 % · 🔥 100 %. Passer ne compte pas.</div><div style="margin-top:6px">• Une proposition commune compte pour chaque parti qui la défend ; une opposition explicite compte à l'envers ; une position nuancée ou inconnue ne compte pas.</div><div style="margin-top:6px">• Le classement peut bouger : chaque nouvelle carte ajoute un thème ou un parti, et les écarts entre partis sont souvent de quelques points.</div></div></details>
+  ${bmHow(sc,r)}<details style="margin-top:10px"><summary class="anton" style="font-size:17px;cursor:pointer">Méthodologie complète</summary><div style="margin-top:6px;font-size:13px"><b>Formule.</b> Chaque réponse devient une compatibilité : contre 0, mitigé 50, d'accord 75, j'adore 100 (choix de modélisation, pas une échelle validée). Pour un parti : moyenne des compatibilités par <i>famille</i> de mesures, puis moyenne des familles par <i>thème</i>, puis moyenne des thèmes couverts. Score = moyenne des thèmes, arrondi. Si un parti s'oppose explicitement à une proposition, la compatibilité est inversée (100 − poids). Aucun thème n'est pondéré plus qu'un autre, quel que soit son nombre de mesures.<br><br><b>Regroupement.</b> Thèmes : économie, travail et retraites, logement, santé, éducation, environnement (transports inclus), sécurité, immigration, institutions, international. Une famille regroupe des mesures quasi identiques d'un même parti ; par défaut, chaque mesure est sa propre famille.<br><br><b>Propositions communes.</b> Les mesures des programmes sont rattachées à des propositions neutres, formulées sans vocabulaire partisan. Pour chaque proposition, la position de chaque parti est enregistrée à part : soutien, opposition, accord partiel, objectif proche avec d'autres modalités, ou inconnue. Seuls le soutien et l'opposition explicites comptent. Aucun rapprochement n'entre dans le calcul sans relecture humaine et sans citation du programme. Propositions communes validées à ce jour : ${BM_COMMON}.<br><br><b>Sélection des cartes.</b> Avant le premier pronostic (${REL_T.firstN} réponses), les cartes équilibrent partis, thèmes, familles et instruments, et évitent d'enchaîner deux mesures jumelles. Ensuite, priorité aux partis et thèmes les moins évalués. Un tirage aléatoire léger départage.<br><br><b>Réponses manquantes.</b> Un parti sans mesure évaluée n'a pas de score. Un thème non exploré n'entre pas dans la moyenne. Rien n'est complété par une valeur neutre. Un parti avec moins de ${MINEVAL} mesures évaluées est classé après les autres et grisé.<br><br><b>Fiabilité.</b> Exploratoire : moins de ${REL_T.firstN} réponses, ${REL_T.firstThemes} thèmes ou ${REL_T.firstParties} partis, ou plus de la moitié des réponses sur un même thème. À confirmer : au-delà, mais sans ${REL_T.consN} réponses, ${REL_T.consThemes} thèmes, ${REL_T.consParties} partis avec au moins ${REL_T.consMin} mesures et un n°1 stable sur les ${REL_T.stable} dernières réponses. Consolidé : tout cela réuni. Ces seuils sont des choix, à calibrer par simulations, pas des garanties statistiques.<br><br><b>Limites.</b> Le corpus est une sélection de 9 à 12 mesures par candidat, vérifiées dans les programmes officiels référencés sur programmes-2027.fr ; il ne couvre pas tout un programme. Les candidats sans programme publié n'ont pas de score. Les réponses sont indépendantes : rien n'est déduit d'une mesure voisine.<br><br><b>Mise à jour du corpus.</b> À chaque programme publié, ses mesures vérifiées sont ajoutées avec source et page ; les scores se recalculent à partir des réponses déjà données, la couverture change, les scores non.</div></details>`;
   $('#how-body').innerHTML=lv;$('#how-dim').classList.add('on');$('#how-sheet').classList.add('on')}
 function closeHow(){$('#how-dim').classList.remove('on');$('#how-sheet').classList.remove('on')}
-$('#how-dim').onclick=closeHow;$('#how-close').onclick=closeHow;$('#res-how').onclick=openHow;
+$('#how-dim').onclick=closeHow;$('#how-close').onclick=closeHow;$('#res-how').onclick=openHow;$('#res-data').onclick=openHow;
 function closeInfo(){$('#info-dim').classList.remove('on');$('#info-sheet').classList.remove('on')}
 $('#info-dim').onclick=closeInfo;$('#info-close').onclick=closeInfo;
 document.querySelectorAll('.wordmark').forEach(w=>{w.style.cursor='pointer';w.setAttribute('role','link');w.setAttribute('tabindex','0');w.title='Accueil';let wt=0;w.addEventListener('click',e=>{e.stopPropagation();const now=Date.now();if(now-wt<400){wt=0;clearTimeout(w._t);show('s-splash');return}wt=now;w._t=setTimeout(()=>{if(curId!=='s-splash')show('s-home')},380)});w.addEventListener('keydown',e=>{if(e.key==='Enter'){e.stopPropagation();show('s-home')}})});
@@ -1699,7 +1915,7 @@ const SPIRIT={"P": ["Esprit Horizons (Philippe) : retraite à 65 ans, règle d'o
 
 
 /* ---- 🤔 : contexte sans révéler l'auteur ---- */
-function openCtx(){if(S.i>=P.length||busy)return;const i=curM(),p=P[i],c=CTX[i];
+function openCtx(){if(S.i>=DECKN()||busy)return;const i=curM(),p=P[i],c=CTX[i];
   const block=(t,b)=>`<div style="margin-top:12px"><div class="kicker" style="font-size:10px;color:var(--blue)">${t}</div><div style="margin-top:4px;font-size:14px;line-height:1.45">${b}</div></div>`;
   $('#ctx-body').innerHTML=`<div class="anton" style="font-size:20px;line-height:1.05">${p[1].replace(/\|/g,' ')}</div>${!c?block(SIMPLE?'En clair':'Ce que dit le programme',p[4]||'Texte non disponible.')+`<div style="margin-top:12px;font-size:11px;color:var(--grey);line-height:1.4"><b>Source :</b> programme officiel publié pour 2027, référencé sur programmes-2027.fr. L'auteur·rice reste masqué·e jusqu'aux résultats.</div>`:''}${c?block('En clair',SIMPLE?PSIMPLE[i][1]:c[0])+(SIMPLE?block('Concrètement',p[5].charAt(0).toUpperCase()+p[5].slice(1)):'')+block('Pourquoi cette mesure ?',c[1])+block(SIMPLE?'Bon à savoir':'Ce qu\'il faut savoir',c[2].replace(/(Fait|Estimation|Débattu) :/g,'<b>$1 :</b>'))+`<div style="margin-top:12px;font-size:11px;color:var(--grey);line-height:1.4"><b>Sources :</b> ${SRC[i]?SRC[i][0]:'données publiques'}. L'auteur reste masqué jusqu'aux résultats.</div>`:''}`;
   $('#ctx-dim').classList.add('on');$('#ctx-sheet').classList.add('on')}
@@ -1709,8 +1925,8 @@ $('#ctx-btn').onclick=openCtx;$('#ctx-dim').onclick=closeCtx;$('#ctx-ok').onclic
 /* temps de lecture : ~45 ms par caractère, plancher et plafond */
 const rt=(txt,min=1500)=>Math.min(9000,Math.max(min,900+45*String(txt||'').replace(/<[^>]*>/g,'').length));
 /* ---- scoring ---- */
-function scores(){const A={};S.answers.forEach(x=>A[x.i]=x.a);return engScores(P,A)}
-function reliability(){const A={};S.answers.forEach(x=>A[x.i]=x.a);return engReliability(P,A,S.topHist||[])}
+function scores(){return BM.scores(BM_MODEL,UAN())}
+function reliability(){return BM.reliability(BM_MODEL,UAN(),S.topHist||[])}
 
 
 /* ---- fiche candidat depuis les affinités ---- */
@@ -1741,7 +1957,7 @@ function renderResWrap(){const box=$('#res-wrap');if(!box)return;box.innerHTML='
     box.innerHTML=`<button id="res-wrap-go" class="wrapcard${fresh?' fresh':''}"><span class="wc-gift">🎁</span><span style="flex:1;min-width:0;text-align:left"><b>${fresh?t('Ton Dump est prêt !','Ton Dump est prêt. Courage.'):'Ton Dump'}</b><i class="ital">${next?`Nouvelle édition à ${next} mesures · encore ${next-n}`:`${n} mesures. Édition complète.`}</i></span><span class="wc-go">→</span></button>`;
     $('#res-wrap-go').onclick=()=>show('s-wrap',startWrap)}
   else box.innerHTML=`<div class="wraplock"><span>🎁</span><div style="flex:1;min-width:0"><div class="wl-t">Ton Dump se débloque à ${next} mesures</div><div class="wl-bar"><i style="width:${Math.round(n*100/next)}%"></i></div></div><b>${n}/${next}</b></div>`}
-function renderResults(){setTimeout(renderResWrap,0);{const r=reliability();const L=$('#res-lvl');L.textContent=r.label;L.className='stamp'+(r.lvl==='consol'?' b':'');$('#res-cov').textContent=`${r.n} rép. · ${r.themes} thèmes · ${r.partiesAny} partis`}const rs=$('#res-swipe');if(rs){rs.disabled=S.i>=P.length;rs.textContent=S.i>=P.length?'Plus de cartes':'Continuer à swiper'}const sc=scores();const n=exploitable();$('#res-k').textContent=`Vue générale · ${n} rép.`;$('#res-verdict').innerHTML=S.dark&&sc.length?`<div class="ital" style="margin-top:10px;font-size:15px;color:var(--red2);line-height:1.3">${sc[0].pct>=75?`Verdict : ${CN(sc[0].k)} te va comme un gant. Un gant que tu n'as pas lu.`:(sc[0].pct>=55?`Verdict : tu n'es d'accord avec personne, mais un peu avec ${CN(sc[0].k)}. Tiède.`:`Verdict : personne ne te convient. Toi non plus, tu ne te convaincs pas.`)}</div>`:'';$('#res-note').textContent=S.intent&&C[S.intent]&&C[S.intent].x?(C[S.intent].m.length?`${CN(S.intent)} : comparé·e sur ${C[S.intent].m.length} mesures rattachées.`:t(`${CN(S.intent)} : programme pas encore publié, aucun % calculé.`,`${CN(S.intent)} : pas de programme, pas de %. Patience.`)):t('Un score par parti, de 0 à 100 %, sur les mesures évaluées. Ni consigne ni prédiction de vote.','Un score par parti, sur ce que tu as swipé. Pas une consigne de vote. Tu n\'en suis aucune.');const b=$('#res-body');b.innerHTML='';
+function renderResults(){setTimeout(renderResWrap,0);{const r=reliability();const L=$('#res-lvl');L.textContent=r.label;L.className='stamp'+(r.lvl==='consol'?' b':'');$('#res-cov').textContent=`${r.n} rép. · ${r.themes} thèmes · ${r.partiesAny} partis`;const rd=$('#res-data');const part=!BM_COMMON||r.lvl==='explo';rd.style.display=part?'':'none';rd.textContent=!BM_COMMON?t('⚠︎ Données partielles : résultat indicatif','⚠︎ Données partielles. Ton match aussi.'):t('⚠︎ Résultat exploratoire : continue à swiper','⚠︎ Trop tôt pour te juger. Mais on juge.')}const rs=$('#res-swipe');if(rs){rs.disabled=S.i>=DECKN();rs.textContent=S.i>=DECKN()?'Plus de cartes':'Continuer à swiper'}const sc=scores();const n=exploitable();$('#res-k').textContent=`Vue générale · ${n} rép.`;$('#res-verdict').innerHTML=S.dark&&sc.length?`<div class="ital" style="margin-top:10px;font-size:15px;color:var(--red2);line-height:1.3">${sc[0].pct>=75?`Verdict : ${CN(sc[0].k)} te va comme un gant. Un gant que tu n'as pas lu.`:(sc[0].pct>=55?`Verdict : tu n'es d'accord avec personne, mais un peu avec ${CN(sc[0].k)}. Tiède.`:`Verdict : personne ne te convient. Toi non plus, tu ne te convaincs pas.`)}</div>`:'';$('#res-note').textContent=S.intent&&C[S.intent]&&C[S.intent].x?(C[S.intent].m.length?`${CN(S.intent)} : comparé·e sur ${C[S.intent].m.length} mesures rattachées.`:t(`${CN(S.intent)} : programme pas encore publié, aucun % calculé.`,`${CN(S.intent)} : pas de programme, pas de %. Patience.`)):t('Un score par parti, de 0 à 100 %, sur les mesures évaluées. Ni consigne ni prédiction de vote.','Un score par parti, sur ce que tu as swipé. Pas une consigne de vote. Tu n\'en suis aucune.');const b=$('#res-body');b.innerHTML='';
   if(sc.length&&!sc[0].pct){b.innerHTML=`<div class="anton" style="font-size:30px;line-height:1">${t('Personne ne te plaît.','Tout le monde t\'a déçu·e.')}</div><div class="ital" style="margin-top:8px;font-size:14px">${t('<span class="nw">Aucune mesure aimée pour l\'instant :</span><span class="nw">0 % pour tout le monde.</span>','<span class="nw">0 % partout.</span><span class="nw">Même ta mauvaise foi ne vote pas.</span>')}</div>`;return}
   if(!sc.length){b.innerHTML=`<div class="anton" style="font-size:30px;line-height:1">${Math.random()<.5?'On recompte.':'Le peuple a parlé.<br>On n\'a rien entendu.'}</div><div class="ital" style="margin-top:8px;font-size:14px">Réponds d\'accord ou pas d\'accord à quelques cartes.</div>`;return}
   const h=sc[0];b.appendChild(el(`<div class="hero fade" role="button" tabindex="0" data-cand="${h.k}" style="padding:18px 18px 16px;cursor:pointer"><span class="n1">N° 1</span><div style="display:flex;align-items:center;gap:12px;margin-top:4px"><span class="hflag" style="display:flex;flex:none;width:30px;height:40px;border:2px solid var(--ink);cursor:pointer"><i style="flex:1;background:var(--blue)"></i><i style="flex:1;background:#FFF"></i><i style="flex:1;background:var(--red2)"></i></span><div style="flex:1;min-width:0"><div class="anton" style="font-size:24px;line-height:1">${C[h.k].n}</div><div style="margin-top:4px;font-size:13px;font-weight:600;color:var(--grey);white-space:nowrap">(${C[h.k].party})</div></div><span class="anton" style="flex:none;font-size:44px;line-height:.9;color:var(--blue)">${h.pct}<span style="font-size:18px">%</span></span></div></div>`));
@@ -1791,7 +2007,7 @@ const ANS={adore:['Adoré','🔥','var(--blue2)','var(--onaccent)'],pour:['D\'ac
 function renderDetail(){const done=S.answers.filter(x=>x.a!=='passe');$('#det-k').textContent=`Vue détaillée · ${done.length}`;
   const order=['adore','pour','contre','neutre'];
   const top=(scores()[0]||{}).k;const rank=x=>{const l=x.a==='pour'||x.a==='adore';if(l&&P[x.i][2]===top)return 0;if(l&&IK()&&IK()!==top&&by(x.i,IK()))return 1;return 2};detList=done.filter(x=>!detFilter||(detFilter==='top'?rank(x)===0:(detFilter==='int'?rank(x)===1:x.a===detFilter))).sort((a,b)=>rank(a)-rank(b)||order.indexOf(a.a)-order.indexOf(b.a));if(detIdx>=detList.length)detIdx=0;renderDetCard()}
-function detCardHTML(x){const p=P[x.i],A=ANS[x.a];const top=(scores()[0]||{}).k;const liked=x.a==='pour'||x.a==='adore';const isTop=liked&&p[2]===top;const isInt=liked&&IK()&&IK()!==top&&by(x.i,IK());const flag=isTop?`<div class="dflag" style="background:var(--blue)">★ Ton n°1 · ${CN(top)}</div>`:(isInt?`<div class="dflag" style="background:var(--ink);color:var(--paper)">◆ Ton intention · ${CN(IK())}</div>`:'');return `<div class="card ${isTop?'ctop':(isInt?'cint':'')}" style="padding:0;overflow:hidden"><div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:${A[2]};color:${A[3]}"><span style="font-size:16px">${A[1]}</span><span class="kicker" style="font-size:11px">Toi : ${A[0]}</span><span class="grow"></span>${tic(p[0],22)}<span class="kicker" style="font-size:10px">${T[p[0]][0].split(' ')[0]}</span></div>${flag}<div style="padding:16px 18px 14px;display:flex;flex-direction:column;flex:1;min-height:0"><p style="font-size:${flag?'23px':'26px'}">${lines(p[1])}</p>${p[5]?`<div class="ex"><b>${SIMPLE?'Concrètement :':'Ex.'}</b> ${p[5]}</div>`:''}<div class="grow"></div><div style="margin-top:12px;display:flex;align-items:center;gap:10px;padding-top:10px;border-top:2px solid var(--ink)">${peb(p[2],34,15)}<div style="min-width:0"><div class="kicker" style="font-size:9px;color:var(--grey)">Proposé par</div><div style="font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${C[p[2]].n} <span style="font-weight:600;font-size:.85em">(${C[p[2]].party})</span></div></div><span class="grow"></span><button class="ibtn" data-info="${x.i}" data-src="1" aria-label="Comprendre la mesure"><i>i</i></button></div>${S.dark?`<div class="ital" style="margin-top:8px;font-size:13px;color:var(--red2)">${roast(x.i,x.a)}</div>`:''}</div></div>`}
+function detCardHTML(x){const p=P[x.i],A=ANS[x.a];const top=(scores()[0]||{}).k;const liked=x.a==='pour'||x.a==='adore';const isTop=liked&&p[2]===top;const isInt=liked&&IK()&&IK()!==top&&by(x.i,IK());const flag=isTop?`<div class="dflag" style="background:var(--blue)">★ Ton n°1 · ${CN(top)}</div>`:(isInt?`<div class="dflag" style="background:var(--ink);color:var(--paper)">◆ Ton intention · ${CN(IK())}</div>`:'');return `<div class="card ${isTop?'ctop':(isInt?'cint':'')}" style="padding:0;overflow:hidden"><div style="display:flex;align-items:center;gap:8px;padding:10px 16px;background:${A[2]};color:${A[3]}"><span style="font-size:16px">${A[1]}</span><span class="kicker" style="font-size:11px">Toi : ${A[0]}</span><span class="grow"></span>${tic(p[0],22)}<span class="kicker" style="font-size:10px">${T[p[0]][0].split(' ')[0]}</span></div>${flag}<div style="padding:16px 18px 14px;display:flex;flex-direction:column;flex:1;min-height:0"><p style="font-size:${flag?'23px':'26px'}">${lines(p[1])}</p>${p[5]?`<div class="ex"><b>${SIMPLE?'Concrètement :':'Ex.'}</b> ${p[5]}</div>`:''}<div class="grow"></div><div style="margin-top:12px;display:flex;align-items:center;gap:10px;padding-top:10px;border-top:2px solid var(--ink)">${peb(p[2],34,15)}<div style="min-width:0"><div class="kicker" style="font-size:9px;color:var(--grey)">Proposé par</div><div style="font-size:15px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${x.i>=P0?SUPP(x.i).map(k=>C[k].s).join(' et ')+' <span style="font-weight:600;font-size:.85em">(proposition commune)</span>':`${C[p[2]].n} <span style="font-weight:600;font-size:.85em">(${C[p[2]].party})</span>`}</div></div><span class="grow"></span><button class="ibtn" data-info="${x.i}" data-src="1" aria-label="Comprendre la mesure"><i>i</i></button></div>${S.dark?`<div class="ital" style="margin-top:8px;font-size:13px;color:var(--red2)">${roast(x.i,x.a)}</div>`:''}</div></div>`}
 function renderDetCard(dir){const D=$('#det-deck');D.innerHTML='';const n=detList.length;$('#det-pos').textContent=n?`${detIdx+1} / ${n}`:'0 / 0';$('#det-prev').disabled=detIdx<=0;$('#det-next').disabled=detIdx>=n-1;
   if(!n){D.innerHTML='<div class="card" style="justify-content:center;text-align:center"><span class="anton" style="font-size:26px">Rien ici<span class="dot">.</span></span></div>';return}
   if(detIdx+1<n){const bh=el(detCardHTML(detList[detIdx+1]));bh.classList.add('behind');D.appendChild(bh)}
@@ -1856,12 +2072,12 @@ function showTip(id){if(!SIMPLE||!TIPS[id])return;const[n,l,d]=TIPS[id];const L=
 const played={};
 const PEAU_DE={G:'de Place publique (Glucksmann)',R:'des Républicains (Retailleau)',M:'de LFI (Mélenchon)',A:'de Renaissance (Attal)',P:'d\'Horizons (Philippe)',T:'des Écologistes (Tondelier)',U:'de Debout ! (Ruffin)',V:'de La France humaniste (Villepin)',N:'de Nouvelle Énergie (Lisnard)',Q:'de DLF (Dupont-Aignan)',H:'de LO (Arthaud)'};let PEAU_K=null;
 function peauPick(){const ks=SIX().filter(k=>PEAU_DE[k]);PEAU_K=ks[Math.floor(Math.random()*ks.length)];const b=document.querySelector('[data-g="s-peau"] b');if(b){b.textContent='Dans la peau…';const it=b.parentNode.querySelector('i');if(it){it.removeAttribute('data-dark');delete it.dataset.light;it.textContent='D\'un·e électeur·rice '+PEAU_DE[PEAU_K]+'.'}}}
-function renderMenu(){peauPick();const f=!!S.finished;$('#end-stamp').textContent=f?'Terminé':'Jeux bonus';$('#end-h1').innerHTML=f?'<span>Et maintenant,</span><span>on joue<span class="dot"> ?</span></span>':'<span>On joue</span><span>un peu<span class="dot"> ?</span></span>';$('#end-h1').style.fontSize=f?'30px':'34px';$('#end-k').style.display=$('#end-menu2').style.display=f?'':'none';$('#replay').style.display=f?'':'none';$('#end-save').style.display=f?'flex':'none';$('#s-end .endrow').style.display=f?'grid':'none';$('#end-start').style.display=f?'none':'flex';$('#more-swipe span').textContent=S.i>=P.length?'Fini':'Swiper';$('#more-swipe').disabled=S.i>=P.length;document.querySelectorAll('.game').forEach(b=>{b.querySelector('.done').textContent=played[b.dataset.g]?'✓ Joué':''})}
+function renderMenu(){peauPick();const f=!!S.finished;$('#end-stamp').textContent=f?'Terminé':'Jeux bonus';$('#end-h1').innerHTML=f?'<span>Et maintenant,</span><span>on joue<span class="dot"> ?</span></span>':'<span>On joue</span><span>un peu<span class="dot"> ?</span></span>';$('#end-h1').style.fontSize=f?'30px':'34px';$('#end-k').style.display=$('#end-menu2').style.display=f?'':'none';$('#replay').style.display=f?'':'none';$('#end-save').style.display=f?'flex':'none';$('#s-end .endrow').style.display=f?'grid':'none';$('#end-start').style.display=f?'none':'flex';$('#more-swipe span').textContent=S.i>=DECKN()?'Fini':'Swiper';$('#more-swipe').disabled=S.i>=DECKN();document.querySelectorAll('.game').forEach(b=>{b.querySelector('.done').textContent=played[b.dataset.g]?'✓ Joué':''})}
 document.querySelectorAll('.game').forEach(b=>b.onclick=()=>{played[b.dataset.g]=true;show(b.dataset.g,{ 's-devine':startDevine,'s-coince':renderCoince,'s-geek':renderGeek,'s-pari':startPari,'s-peau':()=>{startPeau();if(PEAU_K)peauDeck(PEAU_K)},'s-deep':startDeep,'s-flags':startFlags,'s-duel':startDuel,'s-praud':startPraud,'s-lfi':startLfi,'s-vox':startVox,'s-retro':startRetro,'s-eu':startEu,'s-intrus':startIntrus}[b.dataset.g]);showTip(b.dataset.g)});
 document.querySelectorAll('.back').forEach(b=>b.onclick=()=>{if(b.closest('#s-president,#s-party')||(b.closest('#s-coince')&&hist[hist.length-2]==='s-vs'))goBack();else show('s-end',renderMenu)});
 document.querySelectorAll('#end-menu2 button').forEach(b=>b.onclick=()=>show(b.dataset.to,{'s-results':renderResults,'s-wrap':startWrap,'s-profile':renderProfile,'s-swipe':S.answers.length?resumeSwipe:startSwipe}[b.dataset.to]));
 const shuffle=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
-const pool=()=>{const d=S.answers.filter(x=>x.a!=='passe').map(x=>x.i);return d.length>=3?d:P.map((_,i)=>i)};
+const pool=()=>{const d=S.answers.filter(x=>x.a!=='passe'&&x.i<P0).map(x=>x.i);return d.length>=3?d:P0I()};
 const cardFace=(p,extra='')=>`<div style="display:flex;align-items:center;gap:8px">${tic(p[0],22)}<span class="kicker">${T[p[0]][0]}</span><span class="grow"></span><span class="anton" style="font-size:13px;letter-spacing:.06em;color:var(--grey)">N° ${p[3]}</span></div><p class="anton" style="margin:10px 0 0;font-size:22px;line-height:1.06">${lines(p[1])}</p>${extra}`;
 
 /* ---- jeu 1 : devine ---- */
@@ -1915,7 +2131,7 @@ function startPeau(){pe={k:null,q:[],n:0,ans:[]};const B=$('#pe-body');$('#pe-k'
   B.innerHTML=`<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-top:18px"><h1 style="font-size:36px"><span>Dans la peau</span><span>de qui<span class="dot"> ?</span></span></h1><span class="stamp" style="margin-bottom:6px;flex:none">Empathie</span></div><div class="ital" style="margin-top:8px;font-size:15px;line-height:1.3">${t('<span class="nw">Choisis un électorat, puis swipe comme</span><span class="nw">cette personne le ferait. On compare après.</span>','<span class="nw">Choisis un électorat. Fais semblant</span><span class="nw">de le comprendre. On vérifie après.</span>')}</div><div class="kicker" style="margin-top:18px">Un·e électeur·rice de…</div><div class="cands" id="pe-grid" style="margin-top:10px"></div><div class="ital" style="margin-top:14px;font-size:14px;line-height:1.4">${t('Huit cartes. Tu réponds comme cette personne le ferait, pas comme toi. À la fin, on regarde si tu l\'as bien cernée.','Huit cartes. Son avis, pas le tien. Ça va te reposer.')}</div><div class="grow"></div><div class="ital" style="text-align:center;font-size:14px;white-space:nowrap">${t('Rien ici ne touche tes affinités.','Tes affinités ne bougent pas. Toi non plus.')}</div>`;
   const g=$('#pe-grid');SIX().forEach(k=>{const b=el(`<button class="cand" data-k="${k}">${peb(k,36,16)}<span><small>${C[k].s}</small><b>${PNAME(k)}</b></span></button>`);b.onclick=()=>peauDeck(k);g.appendChild(b)})}
 function peauExpect(i){const p=P[i];if(p[2]===pe.k)return 'pour';if(PAIRS.some(([a,b])=>(a===i&&P[b][2]===pe.k)||(b===i&&P[a][2]===pe.k)))return 'contre';return null}
-function peauDeck(k){pe.k=k;const own=shuffle(P.map((_,i)=>i).filter(i=>P[i][2]===k)).slice(0,4);const vs=shuffle(P.map((_,i)=>i).filter(i=>peauExpect(i)==='contre'&&P[i][2]!==k)).slice(0,2);const other=shuffle(P.map((_,i)=>i).filter(i=>!own.includes(i)&&!vs.includes(i)&&P[i][2]!==k)).slice(0,8-own.length-vs.length);pe.q=shuffle([...own,...vs,...other]);pe.n=0;pe.ans=[];peauCard()}
+function peauDeck(k){pe.k=k;const own=shuffle(P0I().filter(i=>P[i][2]===k)).slice(0,4);const vs=shuffle(P0I().filter(i=>peauExpect(i)==='contre'&&P[i][2]!==k)).slice(0,2);const other=shuffle(P0I().filter(i=>!own.includes(i)&&!vs.includes(i)&&P[i][2]!==k)).slice(0,8-own.length-vs.length);pe.q=shuffle([...own,...vs,...other]);pe.n=0;pe.ans=[];peauCard()}
 function peauCard(){const B=$('#pe-body');const i=pe.q[pe.n],p=P[i];$('#pe-k').textContent=`${PNAME(pe.k)} · ${pe.n+1} / ${pe.q.length}`;
   B.innerHTML=`<button id="pe-switch" aria-label="Changer d'électorat" style="margin-top:16px;display:inline-flex;align-self:flex-start;align-items:center;gap:8px;border:2px solid var(--ink);background:var(--paper);box-shadow:3px 3px 0 var(--ink);padding:5px 8px 5px 6px;color:var(--ink);max-width:100%">${peb(pe.k,26,12)}<span style="display:flex;flex-direction:column;line-height:1.15;text-align:left;min-width:0"><span class="kicker" style="font-size:9.5px;letter-spacing:.1em;white-space:nowrap">Tu es électeur·rice</span><b style="font-size:13px;white-space:nowrap">${PNAME(pe.k)} (${C[pe.k].s})</b></span><span style="flex:none;display:inline-flex;align-items:center;gap:3px;margin-left:4px;padding-left:8px;border-left:1.5px solid var(--ink);font-size:11px;font-weight:700;white-space:nowrap">⇄ ${t('Changer','Fuir')}</span></button><div class="ital" style="margin-top:10px;font-size:15px;white-space:nowrap">${t('Cette personne dirait quoi de ça ?','Son avis. Le tien n\'intéresse personne.')}</div><div class="grow"></div><div class="deck" style="height:250px;margin-top:0"><div class="card behind" style="height:250px"></div><div class="card" style="padding:20px 20px 18px"><div class="top"><div style="display:flex;align-items:center;gap:8px">${tic(p[0],24)}<span class="kicker">${T[p[0]][0]}</span></div><span class="num">N° ${p[3]}</span></div><div class="sep" style="margin:12px 0 16px"></div><p style="font-size:27px">${lines(p[1])}</p></div></div><div style="margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:12px"><button class="btn" id="pe-no" style="height:60px;background:var(--red);font-size:20px;min-width:0">✕ Contre</button><button class="btn" id="pe-yes" style="height:60px;font-size:20px;min-width:0">Pour ❤️</button></div><div class="grow"></div><div class="ital" style="text-align:center;font-size:14px;white-space:nowrap">${t('Pas ton avis à toi. Le sien.','Pas toi. Lui. Concentre-toi.')}</div>`;
   $('#pe-yes').onclick=()=>peauAns('pour');$('#pe-no').onclick=()=>peauAns('contre');$('#pe-switch').onclick=startPeau}
@@ -2575,16 +2791,16 @@ function buildWrap(){const f=dumpFacts();const {A,sc,top,me,rel,em}=f;const st=[
   // 2 ton grand écart
   if(f.far.length){const x=f.far[0];const more=f.far.slice(1,3);
     st.push({k:'Ton grand écart',stamp:'Grand écart',ill:'drapeaux',h:'Tu as des points communs avec des gens qui ne peuvent pas se voir.',sub:t(`${CN(top.k)} en n°1, et pourtant tu as approuvé ${x.liked.length} mesure${x.liked.length>1?'s':''} de ${CN(x.k)}.`,`${CN(top.k)} en n°1. Mais ${CN(x.k)} t'a eu·e ${x.liked.length} fois. Ne le dis à personne.`),lines:[...x.liked.slice(0,2).map(i=>`${em(i)} ${ptxt(i)} — ${CN(x.k)}`),...more.map(y=>`${em(y.liked[0])} ${ptxt(y.liked[0])} — ${CN(y.k)}`)].slice(0,3),kind:'ecart'})}
-  else if(f.NO.length){const red=f.NO.find(i=>i in HOT)??f.NO[0];st.push({k:'Ta ligne rouge',stamp:'Pas de grand écart',ill:'colonne',h:`Jamais : ${low(ptxt(red))}`,sub:t('Tu es resté·e dans ton couloir : aucune mesure aimée hors de ta famille politique. Voilà au moins une chose que tu refuses.','Zéro écart. Tu restes dans ton couloir, et tu refuses ça.'),lines:[`Thème : ${T[P[red][0]][0]} · ${CN(P[red][2])}`],kind:'red'})}
+  else if(f.NO.length){const red=f.NO.find(i=>i in HOT)??f.NO[0];st.push({k:'Ta ligne rouge',stamp:'Pas de grand écart',ill:'colonne',h:`Jamais : ${low(ptxt(red))}`,sub:t('Tu es resté·e dans ton couloir : aucune mesure aimée hors de ta famille politique. Voilà au moins une chose que tu refuses.','Zéro écart. Tu restes dans ton couloir, et tu refuses ça.'),lines:[`Thème : ${T[P[red][0]][0]} · ${CNI(red)}`],kind:'red'})}
   // 3 tes nuances
   if(f.nuances.length){const n=f.nuances[0];const goal=n.txt.split('.')[0].replace(/^Même (but|idée|outil|chiffre)\s*:?\s*/i,'');
-    st.push({k:'Tes nuances',stamp:'Nuance, pas contradiction',ill:'pantheon',h:t(`Tu veux ${low(goal)}. Pas forcément comme ça.`,`${cap(goal)}, oui. Mais pas n'importe comment.`),sub:t('Même objectif, deux moyens. Tu as dit oui à l\'un, non à l\'autre. Ce n\'est pas une contradiction : c\'est une nuance.','Tu choisis le moyen, pas juste la fin. Les programmes détestent ça.'),lines:[`${em(n.y)} ${ptxt(n.y)} — ${CN(P[n.y][2])}`,`${em(n.n)} ${ptxt(n.n)} — ${CN(P[n.n][2])}`,n.txt.split('.').slice(1).join('.').trim()].filter(Boolean),kind:'nuance'})}
+    st.push({k:'Tes nuances',stamp:'Nuance, pas contradiction',ill:'pantheon',h:t(`Tu veux ${low(goal)}. Pas forcément comme ça.`,`${cap(goal)}, oui. Mais pas n'importe comment.`),sub:t('Même objectif, deux moyens. Tu as dit oui à l\'un, non à l\'autre. Ce n\'est pas une contradiction : c\'est une nuance.','Tu choisis le moyen, pas juste la fin. Les programmes détestent ça.'),lines:[`${em(n.y)} ${ptxt(n.y)} — ${CNI(n.y)}`,`${em(n.n)} ${ptxt(n.n)} — ${CNI(n.n)}`,n.txt.split('.').slice(1).join('.').trim()].filter(Boolean),kind:'nuance'})}
   else{const pairs=Object.keys(PRES).filter(k=>{const[a,b]=k.split(',').map(Number);return f.L.includes(a)&&f.L.includes(b)});
-    if(pairs.length){const k=pairs[0],[a,b]=k.split(',').map(Number);st.push({k:'Ta tension',stamp:PRES[k][0]==='contradiction'?'Contradiction':'Tension',ill:'pantheon',h:`${PRES[k][1]} : tu as dit oui aux deux.`,sub:t(COLL[k],COLLD[k]),lines:[`${em(a)} ${ptxt(a)} — ${CN(P[a][2])}`,`${em(b)} ${ptxt(b)} — ${CN(P[b][2])}`],kind:'nuance'})}
+    if(pairs.length){const k=pairs[0],[a,b]=k.split(',').map(Number);st.push({k:'Ta tension',stamp:PRES[k][0]==='contradiction'?'Contradiction':'Tension',ill:'pantheon',h:`${PRES[k][1]} : tu as dit oui aux deux.`,sub:t(COLL[k],COLLD[k]),lines:[`${em(a)} ${ptxt(a)} — ${CNI(a)}`,`${em(b)} ${ptxt(b)} — ${CNI(b)}`],kind:'nuance'})}
     else st.push({k:'Tes nuances',stamp:'Rien à signaler',ill:'pantheon',h:'Pas de nuance détectée. Pour l\'instant.',sub:t('Aucune paire « même but, moyens différents » dans tes réponses. Swipe encore : la politique finit toujours par te mettre face à un choix de moyens.','Tu n\'as pas encore eu à choisir entre deux façons de faire. Ça viendra.'),lines:[],kind:'nuance'})}
   // 4 tes surprises
   if(f.surprises.length){const s0=f.surprises[0];const ks=[...new Set(f.surprises.map(i=>P[i][2]))];
-    st.push({k:'Tes surprises',stamp:'Surprise',ill:'diner',h:`Tu as dit oui à ${CN(P[s0][2])}.`,sub:t(`${ks.length>1?'Ces partis sont':'Ce parti est'} en bas de ton classement. ${f.surprises.length>1?'Ces mesures-là':'Cette mesure-là'}, pourtant, tu ${f.surprises.length>1?'les':'l\''}as approuvée${f.surprises.length>1?'s':''}.`,`En bas de ton classement, et pourtant. Les idées n'ont pas de couleur, c'est embêtant.`),lines:f.surprises.slice(0,3).map(i=>`${em(i)} ${ptxt(i)} — ${CN(P[i][2])}`),kind:'surprise'})}
+    st.push({k:'Tes surprises',stamp:'Surprise',ill:'diner',h:`Tu as dit oui à ${CNI(s0)}.`,sub:t(`${ks.length>1?'Ces partis sont':'Ce parti est'} en bas de ton classement. ${f.surprises.length>1?'Ces mesures-là':'Cette mesure-là'}, pourtant, tu ${f.surprises.length>1?'les':'l\''}as approuvée${f.surprises.length>1?'s':''}.`,`En bas de ton classement, et pourtant. Les idées n'ont pas de couleur, c'est embêtant.`),lines:f.surprises.slice(0,3).map(i=>`${em(i)} ${ptxt(i)} — ${CNI(i)}`),kind:'surprise'})}
   else st.push({k:'Tes surprises',stamp:'Aucune',ill:'diner',h:'Pas de surprise : tes oui restent chez tes favoris.',sub:t('Chaque mesure que tu as approuvée vient d\'un parti bien classé pour toi. Cohérent, ou pas encore assez de cartes.','Tu n\'as aimé que ce que tu aimes déjà. Audacieux.'),lines:[],kind:'surprise'});
   // 5 tes convictions
   if(f.conv.length){const c=f.conv[0],c2=f.conv[1];
@@ -2947,7 +3163,7 @@ function npEnd(boom){np.done=true;const g=np.g;let st,h,sub,cls;
   const sc=$('#s-praud');if(boom&&!npRM()){sc.classList.add('np-boom');setTimeout(()=>sc.classList.remove('np-boom'),700)}
   const B=$('#np-body');B.insertAdjacentHTML('beforeend',`<div class="np-res ${cls}"><div class="np-res-c"><div style="font-size:44px;line-height:1">${st}</div><div class="anton" style="margin-top:8px;font-size:30px;line-height:1;text-transform:uppercase">${h}</div><div class="ital" style="margin-top:8px;font-size:16px;line-height:1.3">${sub}</div><button class="btn" id="np-r2" style="margin-top:16px;height:52px;font-size:18px">Manche 2 <span>→</span></button></div></div>`);
   $('#np-r2').onclick=npRound2}
-function npRound2(){['l1','l2','l3','l4'].forEach(c=>$('#s-praud').classList.remove(c));{const seen=S.answers.filter(x=>x.a!=='passe').map(x=>x.i);const pool=seen.length?seen:P.map((_,i)=>i);np.mi=pool[Math.floor(Math.random()*pool.length)];np.mine=seen.length>0;np.f2=P[np.mi][1].replace(/\|/g,' ')}np.sel=[];
+function npRound2(){['l1','l2','l3','l4'].forEach(c=>$('#s-praud').classList.remove(c));{const seen=S.answers.filter(x=>x.a!=='passe').map(x=>x.i);const pool=seen.length?seen.filter(i=>i<P0):P0I();np.mi=pool[Math.floor(Math.random()*pool.length)];np.mine=seen.length>0;np.f2=P[np.mi][1].replace(/\|/g,' ')}np.sel=[];
   const by=r=>shuffle(NPW.filter(w=>w[6]===r));np.words=shuffle([...by('A').slice(0,3),...by('X').slice(0,3),...by('V').slice(0,2)]);
   const B=$('#np-body');$('#np-k').textContent='Manche 2 / 2';
   B.innerHTML=`<span class="stamp" style="align-self:flex-start;margin-top:16px;font-size:11px">Fabrique ta polémique</span>
@@ -3002,7 +3218,7 @@ const PARI_BET_NO_TRUE=["\"Jamais de la vie\". C'est page 3 de son programme. Tu
 const PARI_BET_YES_FALSE=["\"Évidemment\". C'est chez {A}. Tu lui prêtes des idées comme on prête à un ami : sans vérifier.","Sûr·e de toi, et faux. C'est {A}. Ton candidat, c'est une humeur, pas un programme.","Évidemment pas. {A}. Tu votes à l'oreille, et tu as l'oreille bouchée."];
 
 let pa={};
-function startPari(){const k=IK()||(scores()[0]||{}).k||'P';pa={k,q:shuffle(P.map((_,i)=>i)).slice(0,8),n:0,res:[]};$('#pa-chip').innerHTML=`${peb(k,26,12)}<span class="kicker" style="font-size:11px;letter-spacing:.1em">${IK()?'Ton choix':'Ton n°1'} · ${CNF(k)}</span>`;renderPari()}
+function startPari(){const k=IK()||(scores()[0]||{}).k||'P';pa={k,q:shuffle(P0I()).slice(0,8),n:0,res:[]};$('#pa-chip').innerHTML=`${peb(k,26,12)}<span class="kicker" style="font-size:11px;letter-spacing:.1em">${IK()?'Ton choix':'Ton n°1'} · ${CNF(k)}</span>`;renderPari()}
 function renderPari(){const p=P[pa.q[pa.n]];$('#pa-k').textContent=`Le pari · ${pa.res.filter(Boolean).length} / ${pa.q.length}`;$('#pa-stamp').textContent='Carte '+(pa.n+1);
   $('#pa-deck').innerHTML=`<div class="card behind" style="height:230px;background:${tint(pa.q[pa.n]+1)}"></div><div class="card" style="padding:20px 20px 18px;background:${tint(pa.q[pa.n])}"><div class="top"><div style="display:flex;align-items:center;gap:8px">${tic(p[0],24)}<span class="kicker">${T[p[0]][0]}</span></div><span class="num">N° ${p[3]}</span></div><div class="sep" style="margin:12px 0 16px"></div><p style="font-size:28px">${lines(p[1])}</p><div class="grow"></div><div class="ital" style="margin-top:16px;font-size:15px;white-space:nowrap">Tu paries que ${CN(pa.k)} le propose ?</div><div class="reveal" id="pa-rev"></div></div>`;
   $('#pa-dots').innerHTML=pa.q.map((_,i)=>i).map(i=>`<span style="width:14px;height:14px;border:2px ${i<pa.res.length?'solid':'dashed'} var(--ink);background:${i<pa.res.length?(pa.res[i]?'var(--green)':'var(--red)'):'transparent'}"></span>`).join('');
@@ -3104,13 +3320,13 @@ function buildWrap(){const f=dumpFacts();const {A,sc,top,me,em}=f;const st=[];co
     st.push({kind:'match',k:'Mon match',h:`Je matche avec ${CN(top.k)}.`,sub:note,pct:top.pct,cand:top.k})}
   // 2 grand écart / ligne rouge
   if(f.far.length){const x=f.far[0];st.push({kind:'ecart',k:'Mon grand écart',emo:'🤸',h:'Mon grand écart.',duo:[top.k,x.k],sub:t('D\'accord avec les deux. Eux ne se parlent pas.','D\'accord avec les deux. Je ne le dirai pas à table.'),m:[{i:x.liked[0],lab:`${em(x.liked[0])} ${CN(x.k)}`}]})}
-  else if(f.NO.length){const red=f.NO.find(i=>i in HOT)??f.NO[0];st.push({kind:'red',k:'Ma ligne rouge',emo:'🚫',h:'Ma ligne rouge.',sub:t('Ça, c\'est non.','Ça, c\'est non. Même pour un dîner.'),m:[{i:red,lab:`✕ ${CN(P[red][2])}`}]})}
+  else if(f.NO.length){const red=f.NO.find(i=>i in HOT)??f.NO[0];st.push({kind:'red',k:'Ma ligne rouge',emo:'🚫',h:'Ma ligne rouge.',sub:t('Ça, c\'est non.','Ça, c\'est non. Même pour un dîner.'),m:[{i:red,lab:`✕ ${CNI(red)}`}]})}
   // 3 nuances (seulement s'il y a matière)
-  if(f.nuances.length){const n=f.nuances[0];st.push({kind:'nuance',k:'Mes nuances',emo:'⚖️',h:'Même but. Pas les mêmes moyens.',sub:t('Ce n\'est pas une contradiction, c\'est une nuance.','Je choisis le moyen, pas juste la fin.'),m:[{i:n.y,lab:`✅ ${CN(P[n.y][2])}`},{i:n.n,lab:`✕ ${CN(P[n.n][2])}`,no:1}]})}
+  if(f.nuances.length){const n=f.nuances[0];st.push({kind:'nuance',k:'Mes nuances',emo:'⚖️',h:'Même but. Pas les mêmes moyens.',sub:t('Ce n\'est pas une contradiction, c\'est une nuance.','Je choisis le moyen, pas juste la fin.'),m:[{i:n.y,lab:`✅ ${CNI(n.y)}`},{i:n.n,lab:`✕ ${CNI(n.n)}`,no:1}]})}
   else{const pr=Object.keys(PRES).find(k=>{const[a,b]=k.split(',').map(Number);return f.L.includes(a)&&f.L.includes(b)});
-    if(pr){const[a,b]=pr.split(',').map(Number);st.push({kind:'nuance',k:'Ma tension',emo:'😬',h:'J\'ai dit oui aux deux.',sub:t('Elles tirent dans des sens opposés. Moi, je prends tout.','Cohérence : chargement en cours.'),m:[{i:a,lab:`✅ ${CN(P[a][2])}`},{i:b,lab:`✅ ${CN(P[b][2])}`}]})}}
+    if(pr){const[a,b]=pr.split(',').map(Number);st.push({kind:'nuance',k:'Ma tension',emo:'😬',h:'J\'ai dit oui aux deux.',sub:t('Elles tirent dans des sens opposés. Moi, je prends tout.','Cohérence : chargement en cours.'),m:[{i:a,lab:`✅ ${CNI(a)}`},{i:b,lab:`✅ ${CNI(b)}`}]})}}
   // 4 surprise
-  if(f.surprises.length){const s0=f.surprises[0];st.push({kind:'surprise',k:'Ma surprise',emo:'🙊',h:`Oups. J'ai dit oui à ${CN(P[s0][2])}.`,sub:t('Pourtant, c\'est en bas de mon classement.','Les idées n\'ont pas de couleur. C\'est embêtant.'),m:[{i:s0,lab:`${em(s0)} ${CN(P[s0][2])}`}]})}
+  if(f.surprises.length){const s0=f.surprises[0];st.push({kind:'surprise',k:'Ma surprise',emo:'🙊',h:`Oups. J'ai dit oui à ${CNI(s0)}.`,sub:t('Pourtant, c\'est en bas de mon classement.','Les idées n\'ont pas de couleur. C\'est embêtant.'),m:[{i:s0,lab:`${em(s0)} ${CNI(s0)}`}]})}
   // 5 conviction ou sujet n°1
   if(f.conv.length){const c=f.conv[0];st.push({kind:'conv',k:'Ma conviction',emo:'🧱',h:`Sur ${ART[c.t]||T[c.t][0].toLowerCase()}, je ne bouge pas.`,big:`${Math.round(c.share*100)} %`,bigSub:'de mes réponses dans le même sens',chip:`${c.dir==='pour'?'❤️ Plutôt pour':'✕ Plutôt contre'} · ${c.n} cartes`,sub:''})}
   else if(f.most){st.push({kind:'conv',k:'Mon sujet',emo:TEMO[f.most]||'🗳️',h:`Mon sujet : ${ART[f.most]||T[f.most][0].toLowerCase()}.`,big:String((th[f.most]||[]).length),bigSub:'cartes swipées sur le sujet',chip:t('Je creuse.','J\'ai des avis. Beaucoup.'),sub:''})}
@@ -3558,7 +3774,7 @@ function crWireEnd(B,svgFn,name,again){B.querySelector('.cr-home').onclick=crBac
 function startPov(){const TH=shuffle(Object.keys(T));const seven=TH.slice(0,7);const hot=shuffle(['tra','imm','eco','env','edu','log'].filter(x=>x)).slice(0,3);
  const order=[...seven.slice(0,3),hot[0],...seven.slice(3,5),hot[1],...seven.slice(5),hot[2]];
  CR.pov={order,n:0,picks:[],shown:new Set(),redraw:3};povRound()}
-function povHand(th){const pv=CR.pov;const avail=i=>P[i][0]===th&&!pv.picks.includes(i);let pool=P.map((_,i)=>i).filter(i=>avail(i)&&!pv.shown.has(i));if(pool.length<3)pool=P.map((_,i)=>i).filter(avail);
+function povHand(th){const pv=CR.pov;const avail=i=>P[i][0]===th&&!pv.picks.includes(i);let pool=P0I().filter(i=>avail(i)&&!pv.shown.has(i));if(pool.length<3)pool=P0I().filter(avail);
  const hand=[];pv.picks.forEach(j=>PAIRS.forEach(([a,b])=>{const o=a===j?b:b===j?a:null;if(o!=null&&avail(o)&&!hand.includes(o)&&hand.length<1)hand.push(o)}));
  const seenP=new Set(hand.map(i=>P[i][2]));shuffle(pool).forEach(i=>{if(hand.length<3&&!hand.includes(i)&&!seenP.has(P[i][2])){hand.push(i);seenP.add(P[i][2])}});shuffle(pool).forEach(i=>{if(hand.length<3&&!hand.includes(i))hand.push(i)});
  hand.forEach(i=>pv.shown.add(i));return shuffle(hand)}
@@ -4647,7 +4863,7 @@ function pvShow(mi,force,a){const p=force||pvPick(mi);const s=p.src&&PVS[p.src];
   c.querySelector('.pov-go').onclick=()=>pvClose(1)}
 
 /* proposition d'activation : une seule fois, dans le deck */
-function pvAsk(){if(pvOpen&&!pvOpen.isConnected)pvOpen=null;if(PV.asked||pvOpen||curId!=='s-swipe'||S.i>=P.length)return;
+function pvAsk(){if(pvOpen&&!pvOpen.isConnected)pvOpen=null;if(PV.asked||pvOpen||curId!=='s-swipe'||S.i>=DECKN())return;
   const c=el(`<div class="pov-card pov-ask" role="dialog" aria-label="Activer POV">
    <div class="pov-band"><b>👓 Nouveau : POV</b><span class="pov-type simu">Facultatif</span></div>
    <div class="pov-in"><h3>Et si tu voyais ce que ton vote change dans la vraie vie ?</h3>
@@ -4662,7 +4878,7 @@ const _answer=answer;
 answer=function(a){
   if(pvOpen&&!pvOpen.isConnected){pvOpen=null;lock(false)}
   if(pvOpen)return;
-  if(pvPending||busy||S.i>=P.length)return _answer.apply(this,arguments);
+  if(pvPending||busy||S.i>=DECKN())return _answer.apply(this,arguments);
   const mi=curM(),n0=S.answers.length;
   const r=_answer.apply(this,arguments);
   if(S.answers.length===n0)return r;

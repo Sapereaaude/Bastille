@@ -1,0 +1,10 @@
+{
+ "_doc": "Décisions humaines. Seule source autorisée pour faire entrer une proposition, une correspondance ou une position dans le calcul. Exporté depuis matching/audit.html.",
+ "decisions": {
+  "BP-ENV-001": {"statut": "valide", "note": "", "par": null, "le": "2026-11-09"},
+  "COR-001": {"statut": "valide", "note": "", "par": null, "le": "2026-11-09"},
+  "COR-003": {"statut": "valide", "note": "", "par": null, "le": "2026-11-09"},
+  "POS-ENV-001-ECO": {"statut": "valide", "note": "", "par": null, "le": "2026-11-09"},
+  "POS-ENV-001-LFI": {"statut": "valide", "note": "", "par": null, "le": "2026-11-09"}
+ }
+}
